@@ -1,6 +1,34 @@
 {
   "issues": [
     {
+      "id": "2025-01-31",
+      "slug": "macro-outlook",
+      "title": "The Macro Crossroads: Four Decades of Economic Cycles and What Comes Next",
+      "subtitle": "A comprehensive macroeconomic analysis spanning 40 years of economic cycles",
+      "date": "2025-01-31",
+      "publishedAt": "2025-01-31T09:00:00Z",
+      "url": "issues/2025-01-31-macro-outlook.html",
+      "readingTime": 18,
+      "themeCount": 1,
+      "companyCount": 0,
+      "themes": [
+        {
+          "name": "Macroeconomic Analysis",
+          "slug": "macro-analysis",
+          "thesis": "The US economy in 2025 sits at a delicate juncture. Having achieved a soft landing from the 2021-2022 inflation surge, policymakers now face constrained policy space, structural headwinds, and technological promise. A 40-year historical perspective reveals limited ammunition for future downturns and the need for prudent portfolio positioning.",
+          "companies": []
+        }
+      ],
+      "summary": "This issue provides a comprehensive macroeconomic analysis spanning 40 years of economic cycles (1985-2025). It examines current conditions including GDP growth, inflation, unemployment, Fed policy, and debt levels in historical context. The analysis covers structural shifts including debt accumulation, demographic changes, AI productivity potential, and deglobalization. Investment implications are discussed across base, bull, and bear case scenarios.",
+      "keyTakeaways": [
+        "The Fed has engineered a soft landing, but with limited ammunition for future downturns",
+        "Debt-to-GDP at 124% constrains fiscal flexibility in ways not seen since WWII",
+        "Structural headwinds (demographics, deglobalization) compete with AI-driven productivity tailwinds",
+        "The yield curve's 2022-2024 inversion was a 'false positive'—recession risk remains but is not imminent",
+        "Investors should prioritize quality, diversification, and flexibility in this late-cycle environment"
+      ]
+    },
+    {
       "id": "2026-02-18",
       "slug": "semiconductor-infrastructure-deep-dive",
       "title": "Semiconductor Infrastructure Deep Dive",
@@ -122,8 +150,8 @@
   "meta": {
     "version": "2.0",
     "lastUpdated": "2026-02-18T09:00:00Z",
-    "totalIssues": 1,
-    "totalThemes": 3,
+    "totalIssues": 2,
+    "totalThemes": 4,
     "totalCompanies": 5
   }
 }

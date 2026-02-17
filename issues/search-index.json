@@ -1,0 +1,19 @@
+{
+  "issues": [
+    {
+      "id": "2026-02-18",
+      "slug": "semiconductor-infrastructure-deep-dive",
+      "title": "Semiconductor Infrastructure Deep Dive",
+      "subtitle": "EUV monopolies, process control leaders, and turnaround opportunities",
+      "date": "2026-02-18",
+      "publishedAt": "2026-02-18T09:00:00Z",
+      "url": "issues/2026-02-18.html",
+      "readingTime": 12,
+      "themeCount": 3,
+      "companyCount": 5,
+      "themes": ["EUV Monopolies", "Process Control", "Turnaround Plays"],
+      "companies": ["ASML", "TSMC", "KLAC", "INTC", "AMD"],
+      "ratings": {"Buy": 3, "Hold": 1, "Avoid": 0}
+    }
+  ]
+}

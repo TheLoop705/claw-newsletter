@@ -1,14 +1,129 @@
 {
   "issues": [
     {
+      "id": "2026-02-18",
+      "slug": "semiconductor-infrastructure-deep-dive",
       "title": "Semiconductor Infrastructure Deep Dive",
+      "subtitle": "EUV monopolies, process control leaders, and turnaround opportunities",
       "date": "2026-02-18",
+      "publishedAt": "2026-02-18T09:00:00Z",
       "url": "issues/2026-02-18.html",
+      "readingTime": 12,
+      "themeCount": 3,
+      "companyCount": 5,
       "themes": [
-        {"name": "EUV Monopolies", "companies": ["ASML", "TSMC"]},
-        {"name": "Process Control", "companies": ["KLA"]},
-        {"name": "Turnaround Plays", "companies": ["INTC", "AMD"]}
+        {
+          "name": "EUV Monopolies",
+          "slug": "euv-monopolies",
+          "thesis": "Extreme ultraviolet lithography is the most critical bottleneck in advanced semiconductor manufacturing. ASML's monopoly position and TSMC's manufacturing dominance create irreplaceable moats.",
+          "companies": [
+            {
+              "ticker": "ASML",
+              "name": "ASML Holding N.V.",
+              "rating": "Buy",
+              "marketCap": "$320B",
+              "pe": "32.4",
+              "revenueGrowth": "+18%",
+              "grossMargin": "51%",
+              "operatingMargin": "28%",
+              "bull": "Monopolistic position in EUV lithography with no viable competitor for 3nm and below. Order backlog exceeds €36B. High switching costs and decade-long qualification cycles protect market position.",
+              "bear": "China export restrictions could impact 15-20% of revenue. High R&D intensity requires continuous innovation. Customer concentration risk with TSMC and Samsung.",
+              "priceTarget": "$1,150",
+              "positionSize": "5-7%",
+              "positionRationale": "Core holding in semiconductor infrastructure"
+            },
+            {
+              "ticker": "TSMC",
+              "name": "Taiwan Semiconductor Manufacturing",
+              "rating": "Buy",
+              "marketCap": "$680B",
+              "pe": "22.1",
+              "revenueGrowth": "+24%",
+              "grossMargin": "53%",
+              "operatingMargin": "42%",
+              "bull": "Dominant foundry with 90%+ market share in advanced nodes. Apple, NVIDIA, AMD dependence creates pricing power. Arizona and Japan fabs diversify geopolitical risk.",
+              "bear": "Geopolitical risk regarding Taiwan remains the primary concern. Capital intensity requires massive ongoing investment. Margin pressure from customer concentration.",
+              "priceTarget": "$185",
+              "positionSize": "8-10%",
+              "positionRationale": "Largest position - the picks and shovels of AI"
+            }
+          ]
+        },
+        {
+          "name": "Process Control",
+          "slug": "process-control",
+          "thesis": "As process nodes shrink, yield management becomes exponentially more critical. KLA's inspection and measurement tools are essential for every major fab.",
+          "companies": [
+            {
+              "ticker": "KLAC",
+              "name": "KLA Corporation",
+              "rating": "Buy",
+              "marketCap": "$95B",
+              "pe": "28.7",
+              "revenueGrowth": "+14%",
+              "grossMargin": "59%",
+              "operatingMargin": "35%",
+              "bull": "Dominant market share in process control with 60%+ in key segments. Recurring service revenue provides stability. Increasing complexity at each node drives tool intensity.",
+              "bear": "Cyclical exposure to semiconductor capex. China revenue restrictions impacting growth. Valuation premium to semiconductor equipment peers.",
+              "priceTarget": "$780",
+              "positionSize": "4-5%",
+              "positionRationale": "Defensive quality in semi equipment"
+            }
+          ]
+        },
+        {
+          "name": "Turnaround Plays",
+          "slug": "turnaround-plays",
+          "thesis": "Intel and AMD face different challenges but both offer asymmetric risk/reward. Intel's foundry pivot is high-risk, high-reward. AMD's data center momentum continues.",
+          "companies": [
+            {
+              "ticker": "INTC",
+              "name": "Intel Corporation",
+              "rating": "Hold",
+              "marketCap": "$145B",
+              "pe": "N/A",
+              "revenueGrowth": "-8%",
+              "grossMargin": "39%",
+              "operatingMargin": "-12%",
+              "bull": "Foundry strategy could capture significant TAM if execution succeeds. CHIPS Act funding provides $8.5B in grants. Pat Gelsinger's technical leadership and foundry partnerships.",
+              "bear": "Massive capex requirements with uncertain returns. Manufacturing delays at 18A node. Market share losses to AMD in data center. Dividend suspended.",
+              "priceTarget": "$28",
+              "positionSize": "2-3%",
+              "positionRationale": "Speculative turnaround - size accordingly"
+            },
+            {
+              "ticker": "AMD",
+              "name": "Advanced Micro Devices",
+              "rating": "Buy",
+              "marketCap": "$195B",
+              "pe": "45.2",
+              "revenueGrowth": "+17%",
+              "grossMargin": "47%",
+              "operatingMargin": "12%",
+              "bull": "EPYC dominance in data center with 25%+ share. MI300 AI accelerators gaining traction against NVIDIA. Xilinx integration synergies still being realized.",
+              "bear": "Valuation assumes flawless execution. AI GPU market still NVIDIA-dominated. Gaming and embedded markets remain weak.",
+              "priceTarget": "$195",
+              "positionSize": "4-6%",
+              "positionRationale": "Growth at reasonable price vs NVIDIA"
+            }
+          ]
+        }
+      ],
+      "summary": "This issue examines the critical infrastructure layer of semiconductor manufacturing. EUV lithography remains the ultimate bottleneck, with ASML and TSMC commanding irreplaceable positions. Process control leader KLA offers defensive quality, while Intel presents a high-risk turnaround opportunity and AMD continues its data center momentum.",
+      "keyTakeaways": [
+        "EUV lithography is the most critical chokepoint in advanced semiconductor manufacturing",
+        "ASML and TSMC have built irreplaceable moats through decades of R&D and capital investment",
+        "Process control intensity increases exponentially at each new node, benefiting KLA",
+        "Intel's foundry pivot is a binary outcome - significant upside if execution succeeds",
+        "AMD remains the best risk/reward in AI compute outside of NVIDIA"
       ]
     }
-  ]
+  ],
+  "meta": {
+    "version": "2.0",
+    "lastUpdated": "2026-02-18T09:00:00Z",
+    "totalIssues": 1,
+    "totalThemes": 3,
+    "totalCompanies": 5
+  }
 }

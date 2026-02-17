@@ -4,37 +4,437 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Archive — Atoms Over Bits</title>
+    <meta name="description" content="Browse all past issues of Atoms Over Bits investment research newsletter.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Archive — Atoms Over Bits">
+    <meta property="og:description" content="Browse all past issues of Atoms Over Bits investment research newsletter.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://theloop705.github.io/claw-newsletter/archive.html">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Archive — Atoms Over Bits">
+    <meta name="twitter:description" content="Browse all past issues of Atoms Over Bits investment research newsletter.">
+    
     <link rel="stylesheet" href="css/style.css">
+    <link rel="canonical" href="https://theloop705.github.io/claw-newsletter/archive.html">
 </head>
 <body>
-    <header>
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress"></div>
+    
+    <!-- Header -->
+    <header class="site-header">
         <div class="container">
-            <h1>Atoms Over Bits</h1>
-            <p class="tagline">Weekly investment research</p>
-            <nav>
-                <a href="index.html">Latest</a>
-                <a href="archive.html" class="active">Archive</a>
-                <a href="about.html">About</a>
-            </nav>
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <div class="logo-mark">A</div>
+                    <span class="logo-text">Atoms <span>Over Bits</span></span>
+                </a>
+                
+                <nav class="main-nav" aria-label="Main navigation">
+                    <a href="index.html" class="nav-link">Latest</a>
+                    <a href="archive.html" class="nav-link active">Archive</a>
+                    <a href="themes.html" class="nav-link">Themes</a>
+                    <a href="about.html" class="nav-link">About</a>
+                </nav>
+                
+                <div class="header-actions">
+                    <button class="search-toggle" aria-label="Search">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </button>
+                    <button class="theme-toggle" aria-label="Toggle theme">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </button>
+                    <button class="menu-toggle" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
         </div>
     </header>
+    
+    <!-- Search Overlay -->
+    <div class="search-overlay" aria-hidden="true">
+        <div class="search-container">
+            <div class="search-input-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                <input type="text" class="search-input" placeholder="Search issues, companies, themes..." aria-label="Search">
+                <kbd class="search-shortcut">ESC</kbd>
+            </div>
+            <div class="search-results"></div>
+        </div>
+    </div>
 
     <main class="container">
-        <section class="archive">
-            <h2>Issue Archive</h2>
-            <div id="archive-list" class="archive-list">
-                <p class="loading">Loading archive...</p>
+        <!-- Page Header -->
+        <header class="issue-header">
+            <h1 class="issue-header-title">Issue Archive</h1>
+            <p style="font-size: var(--text-lg); color: var(--text-secondary);">Browse all past issues of Atoms Over Bits investment research.</p>
+        </header>
+
+        <!-- Archive Controls -->
+        <div class="archive-controls">
+            <div class="archive-search">
+                <input type="text" id="archive-search-input" placeholder="Search issues, companies, or themes..." aria-label="Search archive">
             </div>
-        </section>
+            
+            <div class="archive-filter">
+                <label for="theme-filter">Theme:</label>
+                <select id="theme-filter">
+                    <option value="">All Themes</option>
+                    <!-- Populated via JS -->
+                </select>
+            </div>
+            
+            <div class="archive-filter">
+                <label for="rating-filter">Rating:</label>
+                <select id="rating-filter">
+                    <option value="">All Ratings</option>
+                    <option value="Buy">Buy</option>
+                    <option value="Hold">Hold</option>
+                    <option value="Avoid">Avoid</option>
+                    <option value="Speculative">Speculative</option>
+                </select>
+            </div>
+            
+            <div class="archive-view-toggle">
+                <button class="view-btn active" id="view-list" aria-label="List view">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+                <button class="view-btn" id="view-grid" aria-label="Grid view">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Results Count -->
+        <div id="results-count" style="margin-bottom: var(--space-4); color: var(--text-tertiary); font-size: var(--text-sm);">
+            Loading issues...
+        </div>
+
+        <!-- Archive List -->
+        <div id="archive-list" class="archive-list">
+            <!-- Populated via JS -->
+        </div>
+
+        <!-- Archive Grid (hidden by default) -->
+        <div id="archive-grid" class="archive-grid" style="display: none;">
+            <!-- Populated via JS -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="empty-state" style="display: none; text-align: center; padding: var(--space-16);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--text-muted); margin-bottom: var(--space-4);">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <h3 style="color: var(--text-secondary); margin-bottom: var(--space-2);">No issues found</h3>
+            <p style="color: var(--text-muted);">Try adjusting your search or filters.</p>
+            <button class="btn btn-secondary" id="clear-filters" style="margin-top: var(--space-4);">Clear Filters</button>
+        </div>
     </main>
 
-    <footer>
+    <!-- Footer -->
+    <footer class="site-footer">
         <div class="container">
-            <p>Generated by Kimi Claw via OpenClaw</p>
-            <p class="meta">Research for informational purposes only. Not investment advice.</p>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-mark">A</div>
+                        <span class="logo-text">Atoms <span>Over Bits</span></span>
+                    </div>
+                    <p class="footer-description">Weekly investment research on physical infrastructure businesses with software-like valuations.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Navigation</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="index.html">Latest Issue</a></li>
+                        <li class="footer-link"><a href="archive.html">Archive</a></li>
+                        <li class="footer-link"><a href="themes.html">Themes</a></li>
+                        <li class="footer-link"><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="sitemap.xml">Sitemap</a></li>
+                        <li class="footer-link"><a href="#" onclick="window.print(); return false;">Print Page</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="about.html#disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 Atoms Over Bits. Generated by Kimi Claw via OpenClaw.</p>
+                <p class="footer-disclaimer">Research for informational purposes only. Not investment advice.</p>
+            </div>
         </div>
     </footer>
 
-    <script src="js/archive.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Archive page functionality
+        let allIssues = [];
+        let filteredIssues = [];
+        let currentView = 'list';
+        
+        // DOM elements
+        const searchInput = document.getElementById('archive-search-input');
+        const themeFilter = document.getElementById('theme-filter');
+        const ratingFilter = document.getElementById('rating-filter');
+        const viewListBtn = document.getElementById('view-list');
+        const viewGridBtn = document.getElementById('view-grid');
+        const archiveList = document.getElementById('archive-list');
+        const archiveGrid = document.getElementById('archive-grid');
+        const resultsCount = document.getElementById('results-count');
+        const emptyState = document.getElementById('empty-state');
+        const clearFiltersBtn = document.getElementById('clear-filters');
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadIssues();
+            await loadThemes();
+            setupEventListeners();
+            applyFilters();
+        });
+        
+        async function loadIssues() {
+            try {
+                const response = await fetch('issues/index.json');
+                const data = await response.json();
+                allIssues = data.issues || [];
+                filteredIssues = [...allIssues];
+            } catch (error) {
+                console.error('Error loading issues:', error);
+                archiveList.innerHTML = '<p class="loading">Error loading archive. Please try again later.</p>';
+            }
+        }
+        
+        async function loadThemes() {
+            try {
+                const response = await fetch('issues/themes.json');
+                const themes = await response.json();
+                
+                // Populate theme filter
+                themes.forEach(theme => {
+                    if (theme.count > 0) {
+                        const option = document.createElement('option');
+                        option.value = theme.name;
+                        option.textContent = theme.name;
+                        themeFilter.appendChild(option);
+                    }
+                });
+            } catch (error) {
+                console.error('Error loading themes:', error);
+            }
+        }
+        
+        function setupEventListeners() {
+            // Search
+            searchInput.addEventListener('input', debounce(applyFilters, 150));
+            
+            // Filters
+            themeFilter.addEventListener('change', applyFilters);
+            ratingFilter.addEventListener('change', applyFilters);
+            
+            // View toggle
+            viewListBtn.addEventListener('click', () => setView('list'));
+            viewGridBtn.addEventListener('click', () => setView('grid'));
+            
+            // Clear filters
+            clearFiltersBtn.addEventListener('click', clearFilters);
+        }
+        
+        function applyFilters() {
+            const searchQuery = searchInput.value.toLowerCase().trim();
+            const selectedTheme = themeFilter.value;
+            const selectedRating = ratingFilter.value;
+            
+            filteredIssues = allIssues.filter(issue => {
+                // Search filter
+                if (searchQuery) {
+                    const searchableText = [
+                        issue.title,
+                        issue.subtitle,
+                        ...(issue.themes || []).map(t => t.name),
+                        ...(issue.themes || []).flatMap(t => (t.companies || []).map(c => c.ticker + ' ' + c.name))
+                    ].join(' ').toLowerCase();
+                    
+                    if (!searchableText.includes(searchQuery)) {
+                        return false;
+                    }
+                }
+                
+                // Theme filter
+                if (selectedTheme) {
+                    const issueThemes = (issue.themes || []).map(t => t.name);
+                    if (!issueThemes.includes(selectedTheme)) {
+                        return false;
+                    }
+                }
+                
+                // Rating filter
+                if (selectedRating) {
+                    const companies = (issue.themes || []).flatMap(t => t.companies || []);
+                    const hasRating = companies.some(c => c.rating === selectedRating);
+                    if (!hasRating) {
+                        return false;
+                    }
+                }
+                
+                return true;
+            });
+            
+            renderIssues();
+            updateResultsCount();
+        }
+        
+        function renderIssues() {
+            if (filteredIssues.length === 0) {
+                archiveList.style.display = 'none';
+                archiveGrid.style.display = 'none';
+                emptyState.style.display = 'block';
+                return;
+            }
+            
+            emptyState.style.display = 'none';
+            
+            if (currentView === 'list') {
+                archiveList.style.display = 'flex';
+                archiveGrid.style.display = 'none';
+                renderListView();
+            } else {
+                archiveList.style.display = 'none';
+                archiveGrid.style.display = 'grid';
+                renderGridView();
+            }
+        }
+        
+        function renderListView() {
+            archiveList.innerHTML = filteredIssues.map(issue => {
+                const companies = (issue.themes || []).flatMap(t => t.companies || []);
+                const tickers = [...new Set(companies.map(c => c.ticker))].slice(0, 5);
+                
+                return `
+                    <a href="${issue.url}" class="archive-item">
+                        <div class="archive-item-date">${formatDate(issue.date)}</div>
+                        <div class="archive-item-content">
+                            <div class="archive-item-title">${escapeHtml(issue.title)}</div>
+                            <div class="archive-item-themes">${(issue.themes || []).map(t => t.name).join(', ')}</div>
+                        </div>
+                        <div class="archive-item-meta">
+                            <span>${issue.themeCount} themes</span>
+                            <span>•</span>
+                            <span>${issue.companyCount} companies</span>
+                            <span>•</span>
+                            <span>${tickers.join(', ')}</span>
+                        </div>
+                    </a>
+                `;
+            }).join('');
+        }
+        
+        function renderGridView() {
+            archiveGrid.innerHTML = filteredIssues.map(issue => {
+                const companies = (issue.themes || []).flatMap(t => t.companies || []);
+                const tickers = [...new Set(companies.map(c => c.ticker))].slice(0, 5);
+                
+                return `
+                    <a href="${issue.url}" class="card card-link">
+                        <div class="card-header">
+                            <div style="font-size: var(--text-xs); color: var(--accent-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: var(--space-2);">
+                                ${formatDate(issue.date)}
+                            </div>
+                            <h3 style="font-size: var(--text-lg); font-weight: 600; margin-bottom: var(--space-2);">${escapeHtml(issue.title)}</h3>
+                            <p style="font-size: var(--text-sm); color: var(--text-tertiary);">${escapeHtml(issue.subtitle || '')}</p>
+                        </div>
+                        <div class="card-body">
+                            <div style="display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-4);">
+                                ${(issue.themes || []).slice(0, 3).map(t => `
+                                    <span style="font-size: var(--text-xs); padding: var(--space-1) var(--space-3); background: var(--bg-tertiary); border-radius: var(--radius-full); color: var(--text-secondary);">${t.name}</span>
+                                `).join('')}
+                            </div>
+                            <div style="font-size: var(--text-sm); color: var(--text-muted);">${tickers.join(', ')}</div>
+                        </div>
+                        <div class="card-footer">
+                            <span style="font-size: var(--text-sm); color: var(--text-tertiary);">${issue.themeCount} themes • ${issue.companyCount} companies</span>
+                            <span style="color: var(--accent-primary);">→</span>
+                        </div>
+                    </a>
+                `;
+            }).join('');
+        }
+        
+        function setView(view) {
+            currentView = view;
+            viewListBtn.classList.toggle('active', view === 'list');
+            viewGridBtn.classList.toggle('active', view === 'grid');
+            renderIssues();
+        }
+        
+        function updateResultsCount() {
+            const total = allIssues.length;
+            const filtered = filteredIssues.length;
+            
+            if (filtered === total) {
+                resultsCount.textContent = `${total} issue${total !== 1 ? 's' : ''}`;
+            } else {
+                resultsCount.textContent = `Showing ${filtered} of ${total} issue${total !== 1 ? 's' : ''}`;
+            }
+        }
+        
+        function clearFilters() {
+            searchInput.value = '';
+            themeFilter.value = '';
+            ratingFilter.value = '';
+            applyFilters();
+        }
+        
+        function formatDate(dateString) {
+            if (!dateString) return '';
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+        }
+        
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+        
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+    </script>
 </body>
 </html>

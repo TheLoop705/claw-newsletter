@@ -1,7 +1,7 @@
 [
-  {"name": "Semiconductor Equipment", "count": 1},
-  {"name": "Foundries", "count": 1},
-  {"name": "Process Control", "count": 1},
-  {"name": "Memory", "count": 1},
-  {"name": "Turnarounds", "count": 1}
+  {"name": "Semiconductor Equipment", "slug": "semiconductor-equipment", "count": 1, "related": ["Process Control", "Foundries"]},
+  {"name": "Foundries", "slug": "foundries", "count": 1, "related": ["Semiconductor Equipment", "Process Control"]},
+  {"name": "Process Control", "slug": "process-control", "count": 1, "related": ["Semiconductor Equipment", "Foundries"]},
+  {"name": "Memory", "slug": "memory", "count": 0, "related": ["Semiconductor Equipment"]},
+  {"name": "Turnarounds", "slug": "turnarounds", "count": 1, "related": ["Semiconductor Equipment"]}
 ]

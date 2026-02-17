@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semiconductor Infrastructure Deep Dive — Atoms Over Bits</title>
+    <meta name="description" content="EUV monopolies, process control leaders, and turnaround opportunities. Weekly investment research on semiconductor infrastructure.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Semiconductor Infrastructure Deep Dive — Atoms Over Bits">
+    <meta property="og:description" content="EUV monopolies, process control leaders, and turnaround opportunities">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://theloop705.github.io/claw-newsletter/issues/2026-02-18.html">
+    <meta property="article:published_time" content="2026-02-18T09:00:00Z">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Semiconductor Infrastructure Deep Dive">
+    <meta name="twitter:description" content="EUV monopolies, process control leaders, and turnaround opportunities">
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="canonical" href="https://theloop705.github.io/claw-newsletter/issues/2026-02-18.html">
+</head>
+<body>
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress"></div>
+    
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="../index.html" class="logo">
+                    <div class="logo-mark">A</div>
+                    <span class="logo-text">Atoms <span>Over Bits</span></span>
+                </a>
+                
+                <nav class="main-nav" aria-label="Main navigation">
+                    <a href="../index.html" class="nav-link">Latest</a>
+                    <a href="../archive.html" class="nav-link active">Archive</a>
+                    <a href="../themes.html" class="nav-link">Themes</a>
+                    <a href="../about.html" class="nav-link">About</a>
+                </nav>
+                
+                <div class="header-actions">
+                    <button class="search-toggle" aria-label="Search">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </button>
+                    <button class="theme-toggle" aria-label="Toggle theme">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </button>
+                    <button class="menu-toggle" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Search Overlay -->
+    <div class="search-overlay" aria-hidden="true">
+        <div class="search-container">
+            <div class="search-input-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                <input type="text" class="search-input" placeholder="Search issues, companies, themes..." aria-label="Search">
+                <kbd class="search-shortcut">ESC</kbd>
+            </div>
+            <div class="search-results"></div>
+        </div>
+    </div>
+
+    <main class="container">
+        <!-- Issue Header -->
+        <header class="issue-header">
+            <div class="hero-badge" style="margin-bottom: var(--space-4);">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                February 18, 2026
+            </div>
+            <h1 class="issue-header-title">Semiconductor Infrastructure Deep Dive</h1>
+            <p style="font-size: var(--text-xl); color: var(--text-secondary); margin-bottom: var(--space-6);">EUV monopolies, process control leaders, and turnaround opportunities</p>
+            <div class="issue-header-meta">
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="vertical-align: middle; margin-right: var(--space-1);">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    12 min read
+                </span>
+                <span>•</span>
+                <span>3 themes</span>
+                <span>•</span>
+                <span>5 companies</span>
+            </div>
+        </header>
+
+        <!-- Table of Contents -->
+        <nav class="issue-toc" aria-label="Table of contents">
+            <h2 class="issue-toc-title">Contents</h2>
+            <ol class="issue-toc-list">
+                <li class="issue-toc-item">
+                    <a href="#summary" class="issue-toc-link">
+                        <span class="issue-toc-number">1</span>
+                        Executive Summary
+                    </a>
+                </li>
+                <li class="issue-toc-item">
+                    <a href="#theme-1" class="issue-toc-link">
+                        <span class="issue-toc-number">2</span>
+                        EUV Monopolies
+                    </a>
+                </li>
+                <li class="issue-toc-item">
+                    <a href="#theme-2" class="issue-toc-link">
+                        <span class="issue-toc-number">3</span>
+                        Process Control
+                    </a>
+                </li>
+                <li class="issue-toc-item">
+                    <a href="#theme-3" class="issue-toc-link">
+                        <span class="issue-toc-number">4</span>
+                        Turnaround Plays
+                    </a>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- Executive Summary -->
+        <section id="summary" class="theme-section">
+            <div class="container-narrow" style="margin: 0 auto;">
+                <h2 style="font-size: var(--text-2xl); margin-bottom: var(--space-6);">Executive Summary</h2>
+                
+                <p style="font-size: var(--text-lg); color: var(--text-secondary); line-height: 1.7; margin-bottom: var(--space-6);">This issue examines the critical infrastructure layer of semiconductor manufacturing. EUV lithography remains the ultimate bottleneck, with ASML and TSMC commanding irreplaceable positions. Process control leader KLA offers defensive quality, while Intel presents a high-risk turnaround opportunity and AMD continues its data center momentum.</p>
+                
+                <h3 style="font-size: var(--text-base); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-tertiary); margin: var(--space-8) 0 var(--space-4);">Key Takeaways</h3>
+                
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-4);">
+                    <li style="display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-4); background: var(--bg-card); border: 1px solid var(--border-primary); border-radius: var(--radius-md);">
+                        <span style="color: var(--accent-primary); font-weight: 600;">1.</span>
+                        <span style="color: var(--text-secondary);">EUV lithography is the most critical chokepoint in advanced semiconductor manufacturing</span>
+                    </li>
+                    <li style="display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-4); background: var(--bg-card); border: 1px solid var(--border-primary); border-radius: var(--radius-md);">
+                        <span style="color: var(--accent-primary); font-weight: 600;">2.</span>
+                        <span style="color: var(--text-secondary);">ASML and TSMC have built irreplaceable moats through decades of R&D and capital investment</span>
+                    </li>
+                    <li style="display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-4); background: var(--bg-card); border: 1px solid var(--border-primary); border-radius: var(--radius-md);">
+                        <span style="color: var(--accent-primary); font-weight: 600;">3.</span>
+                        <span style="color: var(--text-secondary);">Process control intensity increases exponentially at each new node, benefiting KLA</span>
+                    </li>
+                    <li style="display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-4); background: var(--bg-card); border: 1px solid var(--border-primary); border-radius: var(--radius-md);">
+                        <span style="color: var(--accent-primary); font-weight: 600;">4.</span>
+                        <span style="color: var(--text-secondary);">Intel's foundry pivot is a binary outcome - significant upside if execution succeeds</span>
+                    </li>
+                    <li style="display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-4); background: var(--bg-card); border: 1px solid var(--border-primary); border-radius: var(--radius-md);">
+                        <span style="color: var(--accent-primary); font-weight: 600;">5.</span>
+                        <span style="color: var(--text-secondary);">AMD remains the best risk/reward in AI compute outside of NVIDIA</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Theme 1: EUV Monopolies -->
+        <section id="theme-1" class="theme-section">
+            <div class="theme-header">
+                <h2 class="theme-title">EUV Monopolies</h2>
+                <p class="theme-thesis">Extreme ultraviolet lithography is the most critical bottleneck in advanced semiconductor manufacturing. ASML's monopoly position and TSMC's manufacturing dominance create irreplaceable moats.</p>
+            </div>
+            
+            <div class="company-grid">
+                <!-- ASML -->
+                <article class="company-card">
+                    <div class="company-header">
+                        <div class="company-identity">
+                            <span class="company-ticker">ASML</span>
+                            <button class="company-copy-btn" data-ticker="ASML" aria-label="Copy ticker">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <span class="company-rating rating-buy">Buy</span>
+                    </div>
+                    <div class="company-body">
+                        <div class="company-name">ASML Holding N.V.</div>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <span class="metric-value">$320B</span>
+                                <span class="metric-label">Market Cap</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">32.4</span>
+                                <span class="metric-label">P/E</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">+18%</span>
+                                <span class="metric-label">Revenue</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">51%</span>
+                                <span class="metric-label">Gross</span>
+                            </div>
+                        </div>
+                        
+                        <div class="company-cases">
+                            <div class="case-box case-bull">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                                    </svg>
+                                    Bull Case
+                                </div>
+                                <p class="case-text">Monopolistic position in EUV lithography with no viable competitor for 3nm and below. Order backlog exceeds €36B. High switching costs and decade-long qualification cycles protect market position.</p>
+                            </div>
+                            <div class="case-box case-bear">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" />
+                                    </svg>
+                                    Bear Case
+                                </div>
+                                <p class="case-text">China export restrictions could impact 15-20% of revenue. High R&D intensity requires continuous innovation. Customer concentration risk with TSMC and Samsung.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="company-target">
+                            <div class="target-item">
+                                <div class="target-label">Price Target</div>
+                                <div class="target-value accent">$1,150</div>
+                            </div>
+                            <div class="target-item">
+                                <div class="target-label">Position Size</div>
+                                <div class="target-value">5-7%</div>
+                            </div>
+                        </div>
+                        
+                        <p style="font-size: var(--text-sm); color: var(--text-tertiary);"><strong style="color: var(--text-secondary);">Rationale:</strong> Core holding in semiconductor infrastructure</p>
+                    </div>
+                </article>
+
+                <!-- TSMC -->
+                <article class="company-card">
+                    <div class="company-header">
+                        <div class="company-identity">
+                            <span class="company-ticker">TSMC</span>
+                            <button class="company-copy-btn" data-ticker="TSMC" aria-label="Copy ticker">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <span class="company-rating rating-buy">Buy</span>
+                    </div>
+                    <div class="company-body">
+                        <div class="company-name">Taiwan Semiconductor Manufacturing</div>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <span class="metric-value">$680B</span>
+                                <span class="metric-label">Market Cap</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">22.1</span>
+                                <span class="metric-label">P/E</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">+24%</span>
+                                <span class="metric-label">Revenue</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">53%</span>
+                                <span class="metric-label">Gross</span>
+                            </div>
+                        </div>
+                        
+                        <div class="company-cases">
+                            <div class="case-box case-bull">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                                    </svg>
+                                    Bull Case
+                                </div>
+                                <p class="case-text">Dominant foundry with 90%+ market share in advanced nodes. Apple, NVIDIA, AMD dependence creates pricing power. Arizona and Japan fabs diversify geopolitical risk.</p>
+                            </div>
+                            <div class="case-box case-bear">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" />
+                                    </svg>
+                                    Bear Case
+                                </div>
+                                <p class="case-text">Geopolitical risk regarding Taiwan remains the primary concern. Capital intensity requires massive ongoing investment. Margin pressure from customer concentration.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="company-target">
+                            <div class="target-item">
+                                <div class="target-label">Price Target</div>
+                                <div class="target-value accent">$185</div>
+                            </div>
+                            <div class="target-item">
+                                <div class="target-label">Position Size</div>
+                                <div class="target-value">8-10%</div>
+                            </div>
+                        </div>
+                        
+                        <p style="font-size: var(--text-sm); color: var(--text-tertiary);"><strong style="color: var(--text-secondary);">Rationale:</strong> Largest position - the picks and shovels of AI</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Theme 2: Process Control -->
+        <section id="theme-2" class="theme-section">
+            <div class="theme-header">
+                <h2 class="theme-title">Process Control</h2>
+                <p class="theme-thesis">As process nodes shrink, yield management becomes exponentially more critical. KLA's inspection and measurement tools are essential for every major fab.</p>
+            </div>
+            
+            <div class="company-grid">
+                <!-- KLAC -->
+                <article class="company-card">
+                    <div class="company-header">
+                        <div class="company-identity">
+                            <span class="company-ticker">KLAC</span>
+                            <button class="company-copy-btn" data-ticker="KLAC" aria-label="Copy ticker">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <span class="company-rating rating-buy">Buy</span>
+                    </div>
+                    <div class="company-body">
+                        <div class="company-name">KLA Corporation</div>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <span class="metric-value">$95B</span>
+                                <span class="metric-label">Market Cap</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">28.7</span>
+                                <span class="metric-label">P/E</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">+14%</span>
+                                <span class="metric-label">Revenue</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">59%</span>
+                                <span class="metric-label">Gross</span>
+                            </div>
+                        </div>
+                        
+                        <div class="company-cases">
+                            <div class="case-box case-bull">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                                    </svg>
+                                    Bull Case
+                                </div>
+                                <p class="case-text">Dominant market share in process control with 60%+ in key segments. Recurring service revenue provides stability. Increasing complexity at each node drives tool intensity.</p>
+                            </div>
+                            <div class="case-box case-bear">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" />
+                                    </svg>
+                                    Bear Case
+                                </div>
+                                <p class="case-text">Cyclical exposure to semiconductor capex. China revenue restrictions impacting growth. Valuation premium to semiconductor equipment peers.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="company-target">
+                            <div class="target-item">
+                                <div class="target-label">Price Target</div>
+                                <div class="target-value accent">$780</div>
+                            </div>
+                            <div class="target-item">
+                                <div class="target-label">Position Size</div>
+                                <div class="target-value">4-5%</div>
+                            </div>
+                        </div>
+                        
+                        <p style="font-size: var(--text-sm); color: var(--text-tertiary);"><strong style="color: var(--text-secondary);">Rationale:</strong> Defensive quality in semi equipment</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Theme 3: Turnaround Plays -->
+        <section id="theme-3" class="theme-section">
+            <div class="theme-header">
+                <h2 class="theme-title">Turnaround Plays</h2>
+                <p class="theme-thesis">Intel and AMD face different challenges but both offer asymmetric risk/reward. Intel's foundry pivot is high-risk, high-reward. AMD's data center momentum continues.</p>
+            </div>
+            
+            <div class="company-grid">
+                <!-- INTC -->
+                <article class="company-card">
+                    <div class="company-header">
+                        <div class="company-identity">
+                            <span class="company-ticker">INTC</span>
+                            <button class="company-copy-btn" data-ticker="INTC" aria-label="Copy ticker">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <span class="company-rating rating-hold">Hold</span>
+                    </div>
+                    <div class="company-body">
+                        <div class="company-name">Intel Corporation</div>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <span class="metric-value">$145B</span>
+                                <span class="metric-label">Market Cap</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">N/A</span>
+                                <span class="metric-label">P/E</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">-8%</span>
+                                <span class="metric-label">Revenue</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">39%</span>
+                                <span class="metric-label">Gross</span>
+                            </div>
+                        </div>
+                        
+                        <div class="company-cases">
+                            <div class="case-box case-bull">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                                    </svg>
+                                    Bull Case
+                                </div>
+                                <p class="case-text">Foundry strategy could capture significant TAM if execution succeeds. CHIPS Act funding provides $8.5B in grants. Pat Gelsinger's technical leadership and foundry partnerships.</p>
+                            </div>
+                            <div class="case-box case-bear">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" />
+                                    </svg>
+                                    Bear Case
+                                </div>
+                                <p class="case-text">Massive capex requirements with uncertain returns. Manufacturing delays at 18A node. Market share losses to AMD in data center. Dividend suspended.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="company-target">
+                            <div class="target-item">
+                                <div class="target-label">Price Target</div>
+                                <div class="target-value accent">$28</div>
+                            </div>
+                            <div class="target-item">
+                                <div class="target-label">Position Size</div>
+                                <div class="target-value">2-3%</div>
+                            </div>
+                        </div>
+                        
+                        <p style="font-size: var(--text-sm); color: var(--text-tertiary);"><strong style="color: var(--text-secondary);">Rationale:</strong> Speculative turnaround - size accordingly</p>
+                    </div>
+                </article>
+
+                <!-- AMD -->
+                <article class="company-card">
+                    <div class="company-header">
+                        <div class="company-identity">
+                            <span class="company-ticker">AMD</span>
+                            <button class="company-copy-btn" data-ticker="AMD" aria-label="Copy ticker">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <span class="company-rating rating-buy">Buy</span>
+                    </div>
+                    <div class="company-body">
+                        <div class="company-name">Advanced Micro Devices</div>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <span class="metric-value">$195B</span>
+                                <span class="metric-label">Market Cap</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">45.2</span>
+                                <span class="metric-label">P/E</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">+17%</span>
+                                <span class="metric-label">Revenue</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">47%</span>
+                                <span class="metric-label">Gross</span>
+                            </div>
+                        </div>
+                        
+                        <div class="company-cases">
+                            <div class="case-box case-bull">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                                    </svg>
+                                    Bull Case
+                                </div>
+                                <p class="case-text">EPYC dominance in data center with 25%+ share. MI300 AI accelerators gaining traction against NVIDIA. Xilinx integration synergies still being realized.</p>
+                            </div>
+                            <div class="case-box case-bear">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" />
+                                    </svg>
+                                    Bear Case
+                                </div>
+                                <p class="case-text">Valuation assumes flawless execution. AI GPU market still NVIDIA-dominated. Gaming and embedded markets remain weak.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="company-target">
+                            <div class="target-item">
+                                <div class="target-label">Price Target</div>
+                                <div class="target-value accent">$195</div>
+                            </div>
+                            <div class="target-item">
+                                <div class="target-label">Position Size</div>
+                                <div class="target-value">4-6%</div>
+                            </div>
+                        </div>
+                        
+                        <p style="font-size: var(--text-sm); color: var(--text-tertiary);"><strong style="color: var(--text-secondary);">Rationale:</strong> Growth at reasonable price vs NVIDIA</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Issue Navigation -->
+        <nav class="issue-navigation" aria-label="Issue navigation">
+            <a href="../archive.html" class="nav-prev" style="opacity: 0.5; pointer-events: none;">
+                <span class="nav-label">← Previous Issue</span>
+                <span class="nav-title">None</span>
+            </a>
+            <a href="../archive.html" class="nav-next" style="opacity: 0.5; pointer-events: none;">
+                <span class="nav-label">Next Issue →</span>
+                <span class="nav-title">None</span>
+            </a>
+        </nav>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-mark">A</div>
+                        <span class="logo-text">Atoms <span>Over Bits</span></span>
+                    </div>
+                    <p class="footer-description">Weekly investment research on physical infrastructure businesses with software-like valuations.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Navigation</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="../index.html">Latest Issue</a></li>
+                        <li class="footer-link"><a href="../archive.html">Archive</a></li>
+                        <li class="footer-link"><a href="../themes.html">Themes</a></li>
+                        <li class="footer-link"><a href="../about.html">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="../sitemap.xml">Sitemap</a></li>
+                        <li class="footer-link"><a href="#" onclick="window.print(); return false;">Print Issue</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="../about.html#disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 Atoms Over Bits. Generated by Kimi Claw via OpenClaw.</p>
+                <p class="footer-disclaimer">Research for informational purposes only. Not investment advice.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

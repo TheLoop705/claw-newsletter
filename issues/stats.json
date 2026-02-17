@@ -1,6 +1,25 @@
 {
   "totalIssues": 1,
   "totalThemes": 3,
-  "totalTickers": 15,
-  "lastUpdated": "2026-02-18"
+  "totalCompanies": 5,
+  "totalTickers": 5,
+  "lastUpdated": "2026-02-18",
+  "byRating": {
+    "Buy": 3,
+    "Hold": 1,
+    "Avoid": 0,
+    "Speculative": 1
+  },
+  "byTheme": {
+    "Semiconductor Equipment": 1,
+    "Foundries": 1,
+    "Process Control": 1,
+    "Memory": 0,
+    "Turnarounds": 1
+  },
+  "performance": {
+    "avgReturnSinceInception": null,
+    "benchmarkReturn": null,
+    "winRate": null
+  }
 }

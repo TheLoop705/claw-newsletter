@@ -4,62 +4,377 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atoms Over Bits — Investment Research</title>
+    <meta name="description" content="Weekly investment research on atoms over bits — physical infrastructure businesses with software-like valuations.">
+    <meta name="keywords" content="investment research, semiconductors, infrastructure, AI, stocks, financial analysis">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Atoms Over Bits — Investment Research">
+    <meta property="og:description" content="Weekly investment research on atoms over bits — physical infrastructure businesses with software-like valuations.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://theloop705.github.io/claw-newsletter/">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Atoms Over Bits — Investment Research">
+    <meta name="twitter:description" content="Weekly investment research on atoms over bits — physical infrastructure businesses with software-like valuations.">
+    
     <link rel="stylesheet" href="css/style.css">
+    <link rel="canonical" href="https://theloop705.github.io/claw-newsletter/">
 </head>
 <body>
-    <header>
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress"></div>
+    
+    <!-- Header -->
+    <header class="site-header">
         <div class="container">
-            <h1>Atoms Over Bits</h1>
-            <p class="tagline">Weekly investment research</p>
-            <nav>
-                <a href="index.html" class="active">Latest</a>
-                <a href="archive.html">Archive</a>
-                <a href="about.html">About</a>
-            </nav>
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <div class="logo-mark">A</div>
+                    <span class="logo-text">Atoms <span>Over Bits</span></span>
+                </a>
+                
+                <nav class="main-nav" aria-label="Main navigation">
+                    <a href="index.html" class="nav-link active">Latest</a>
+                    <a href="archive.html" class="nav-link">Archive</a>
+                    <a href="themes.html" class="nav-link">Themes</a>
+                    <a href="about.html" class="nav-link">About</a>
+                </nav>
+                
+                <div class="header-actions">
+                    <button class="search-toggle" aria-label="Search">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </button>
+                    <button class="theme-toggle" aria-label="Toggle theme">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </button>
+                    <button class="menu-toggle" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
         </div>
     </header>
+    
+    <!-- Search Overlay -->
+    <div class="search-overlay" aria-hidden="true">
+        <div class="search-container">
+            <div class="search-input-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                <input type="text" class="search-input" placeholder="Search issues, companies, themes..." aria-label="Search">
+                <kbd class="search-shortcut">ESC</kbd>
+            </div>
+            <div class="search-results"></div>
+        </div>
+    </div>
 
-    <main class="container">
+    <main>
+        <!-- Hero Section -->
         <section class="hero">
-            <h2>Latest Issue</h2>
-            <div id="latest-issue" class="issue-card">
-                <p class="loading">Loading latest issue...</p>
+            <div class="container">
+                <div class="hero-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                    Weekly Investment Research
+                </div>
+                <h1 class="hero-title">Atoms Over Bits</h1>
+                <p class="hero-subtitle">Physical infrastructure businesses with software-like valuations. Semiconductors, energy, robotics, and the integration layer that controls them.</p>
+                <div class="hero-meta">
+                    <span class="hero-meta-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span id="hero-reading-time">12 min read</span>
+                    </span>
+                    <span class="hero-meta-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        <span id="hero-date">February 18, 2026</span>
+                    </span>
+                </div>
+                <div class="hero-actions">
+                    <a href="#latest-issue" class="btn btn-primary btn-lg">
+                        Read Latest Issue
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                        </svg>
+                    </a>
+                    <a href="archive.html" class="btn btn-secondary btn-lg">Browse Archive</a>
+                </div>
             </div>
         </section>
 
-        <section class="quick-stats">
-            <h3>Quick Stats</h3>
-            <div class="stats-grid">
-                <div class="stat">
-                    <span class="stat-value" id="total-issues">0</span>
-                    <span class="stat-label">Issues Published</span>
+        <!-- Latest Issue Section -->
+        <section id="latest-issue" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2 class="section-title">Latest Issue</h2>
+                        <p class="section-subtitle" id="latest-subtitle">Semiconductor Infrastructure Deep Dive</p>
+                    </div>
+                    <a href="issues/2026-02-18.html" class="section-action">View Full Issue →</a>
                 </div>
-                <div class="stat">
-                    <span class="stat-value" id="total-themes">0</span>
-                    <span class="stat-label">Themes Covered</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-value" id="total-tickers">0</span>
-                    <span class="stat-label">Tickers Researched</span>
+                
+                <div class="issue-card-featured" id="latest-issue-card">
+                    <div class="issue-preview">
+                        <div class="issue-preview-header">
+                            <div>
+                                <div class="issue-preview-date">February 18, 2026</div>
+                                <h3 class="issue-preview-title">Semiconductor Infrastructure Deep Dive</h3>
+                                <p class="issue-preview-subtitle">EUV monopolies, process control leaders, and turnaround opportunities</p>
+                            </div>
+                        </div>
+                        
+                        <div class="key-takeaways" style="margin-bottom: var(--space-6);">
+                            <h4 style="font-size: var(--text-sm); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-tertiary); margin-bottom: var(--space-4);">Key Takeaways</h4>
+                            <ul id="latest-takeaways" style="list-style: none; display: flex; flex-direction: column; gap: var(--space-3);">
+                                <li style="display: flex; align-items: flex-start; gap: var(--space-3); color: var(--text-secondary);">
+                                    <span style="color: var(--accent-primary);">→</span>
+                                    <span>EUV lithography is the most critical chokepoint in advanced semiconductor manufacturing</span>
+                                </li>
+                                <li style="display: flex; align-items: flex-start; gap: var(--space-3); color: var(--text-secondary);">
+                                    <span style="color: var(--accent-primary);">→</span>
+                                    <span>ASML and TSMC have built irreplaceable moats through decades of R&D</span>
+                                </li>
+                                <li style="display: flex; align-items: flex-start; gap: var(--space-3); color: var(--text-secondary);">
+                                    <span style="color: var(--accent-primary);">→</span>
+                                    <span>Process control intensity increases exponentially at each new node</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="issue-preview-meta">
+                            <span>3 themes</span>
+                            <span>•</span>
+                            <span>5 companies</span>
+                            <span>•</span>
+                            <span>ASML, TSMC, KLAC, INTC, AMD</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="recent-themes">
-            <h3>Recently Covered Themes</h3>
-            <div id="theme-list" class="theme-grid">
-                <p class="loading">Loading themes...</p>
+        <!-- Quick Stats Section -->
+        <section class="section" style="padding-top: 0;">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">At a Glance</h2>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value" id="stat-issues">1</div>
+                        <div class="stat-label">Issues Published</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="stat-themes">3</div>
+                        <div class="stat-label">Themes Covered</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="stat-companies">5</div>
+                        <div class="stat-label">Companies Researched</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="stat-rating" style="color: var(--rating-buy);">Buy</div>
+                        <div class="stat-label">Top Rating</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recently Covered Themes -->
+        <section class="section" style="padding-top: 0;">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Recently Covered Themes</h2>
+                    <a href="themes.html" class="section-action">View All →</a>
+                </div>
+                <div class="theme-grid" id="theme-grid">
+                    <!-- Themes loaded via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Company -->
+        <section class="section" style="padding-top: 0;">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Featured Company</h2>
+                    <span class="rating-buy" style="font-size: var(--text-xs); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: var(--space-1) var(--space-3); border-radius: var(--radius-full);">Buy</span>
+                </div>
+                
+                <div class="company-card" style="max-width: 600px;">
+                    <div class="company-header">
+                        <div class="company-identity">
+                            <span class="company-ticker">TSMC</span>
+                            <button class="company-copy-btn" data-ticker="TSMC" aria-label="Copy ticker">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <span class="company-rating rating-buy">Buy</span>
+                    </div>
+                    <div class="company-body">
+                        <div class="company-name">Taiwan Semiconductor Manufacturing</div>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <span class="metric-value">$680B</span>
+                                <span class="metric-label">Market Cap</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">22.1</span>
+                                <span class="metric-label">P/E</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">+24%</span>
+                                <span class="metric-label">Revenue</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">53%</span>
+                                <span class="metric-label">Gross</span>
+                            </div>
+                        </div>
+                        <div class="company-cases">
+                            <div class="case-box case-bull">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                                    </svg>
+                                    Bull Case
+                                </div>
+                                <p class="case-text">Dominant foundry with 90%+ market share in advanced nodes. Apple, NVIDIA, AMD dependence creates pricing power.</p>
+                            </div>
+                            <div class="case-box case-bear">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" />
+                                    </svg>
+                                    Bear Case
+                                </div>
+                                <p class="case-text">Geopolitical risk regarding Taiwan remains the primary concern. Capital intensity requires massive ongoing investment.</p>
+                            </div>
+                        </div>
+                        <div class="company-target">
+                            <div class="target-item">
+                                <div class="target-label">Price Target</div>
+                                <div class="target-value accent">$185</div>
+                            </div>
+                            <div class="target-item">
+                                <div class="target-label">Position Size</div>
+                                <div class="target-value">8-10%</div>
+                            </div>
+                        </div>
+                        <p style="font-size: var(--text-sm); color: var(--text-tertiary);"><strong style="color: var(--text-secondary);">Rationale:</strong> Largest position - the picks and shovels of AI</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Signup -->
+        <section class="section" style="padding-top: 0;">
+            <div class="container">
+                <div class="newsletter-section">
+                    <h2 class="newsletter-title">Stay Updated</h2>
+                    <p class="newsletter-description">Get weekly investment research on atoms over bits delivered to your inbox.</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Enter your email" required aria-label="Email address">
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                    <p class="newsletter-disclaimer">No spam. Unsubscribe anytime. Research for informational purposes only.</p>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer>
+    <!-- Footer -->
+    <footer class="site-footer">
         <div class="container">
-            <p>Generated by Kimi Claw via OpenClaw</p>
-            <p class="meta">Research for informational purposes only. Not investment advice.</p>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-mark">A</div>
+                        <span class="logo-text">Atoms <span>Over Bits</span></span>
+                    </div>
+                    <p class="footer-description">Weekly investment research on physical infrastructure businesses with software-like valuations.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Navigation</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="index.html">Latest Issue</a></li>
+                        <li class="footer-link"><a href="archive.html">Archive</a></li>
+                        <li class="footer-link"><a href="themes.html">Themes</a></li>
+                        <li class="footer-link"><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="sitemap.xml">Sitemap</a></li>
+                        <li class="footer-link"><a href="#" onclick="window.print(); return false;">Print Page</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="about.html#disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 Atoms Over Bits. Generated by Kimi Claw via OpenClaw.</p>
+                <p class="footer-disclaimer">Research for informational purposes only. Not investment advice.</p>
+            </div>
         </div>
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+        // Homepage-specific initialization
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Load and display themes
+            try {
+                const response = await fetch('issues/themes.json');
+                const themes = await response.json();
+                const themeGrid = document.getElementById('theme-grid');
+                
+                if (themeGrid && themes.length > 0) {
+                    themeGrid.innerHTML = themes
+                        .filter(t => t.count > 0)
+                        .slice(0, 6)
+                        .map(theme => `
+                            <a href="themes/${theme.slug}.html" class="theme-tag">
+                                <span class="theme-tag-name">${theme.name}</span>
+                                <span class="theme-tag-count">${theme.count}</span>
+                            </a>
+                        `).join('');
+                }
+            } catch (error) {
+                console.error('Error loading themes:', error);
+            }
+            
+            // Load stats
+            try {
+                const response = await fetch('issues/stats.json');
+                const stats = await response.json();
+                
+                document.getElementById('stat-issues').textContent = stats.totalIssues;
+                document.getElementById('stat-themes').textContent = stats.totalThemes;
+                document.getElementById('stat-companies').textContent = stats.totalCompanies;
+            } catch (error) {
+                console.error('Error loading stats:', error);
+            }
+        });
+    </script>
 </body>
 </html>

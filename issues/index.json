@@ -1,0 +1,14 @@
+{
+  "issues": [
+    {
+      "title": "Semiconductor Infrastructure Deep Dive",
+      "date": "2026-02-18",
+      "url": "issues/2026-02-18.html",
+      "themes": [
+        {"name": "EUV Monopolies", "companies": ["ASML", "TSMC"]},
+        {"name": "Process Control", "companies": ["KLA"]},
+        {"name": "Turnaround Plays", "companies": ["INTC", "AMD"]}
+      ]
+    }
+  ]
+}

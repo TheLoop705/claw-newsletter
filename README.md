@@ -1,53 +1,31 @@
-# Atoms Over Bits — Investment Research Newsletter
+# Claw Newsletter
 
-A daily investment research newsletter focused on physical infrastructure businesses commanding software-like valuations.
+A weekly investment research newsletter.
 
 ## About
 
-The "atoms over bits" thesis posits that companies owning irreplaceable physical infrastructure (semiconductor equipment, energy, robotics, advanced materials) are seeing margin expansion and scarcity premiums traditionally reserved for software.
-
-## Website
-
-This repository contains the static site generator for the newsletter. The site is:
-- **Dark mode by default** — easy on the eyes for morning reading
-- **Mobile responsive** — read on any device
-- **Fast** — static HTML, no tracking, no bloat
-- **Searchable archive** — browse past issues by theme
+Each issue covers 3-5 investment themes with deep research on public companies.
 
 ## Structure
 
-```
-.
-├── index.html          # Latest issue
-├── archive.html        # Issue archive
-├── about.html          # About page
-├── css/style.css       # Dark theme styles
-├── js/                 # Client-side JavaScript
-└── issues/             # Generated issue files
-    ├── index.json      # Issue index
-    ├── stats.json      # Aggregate statistics
-    ├── themes.json     # Theme index
-    └── YYYY-MM-DD.html # Individual issues
-```
+- **Theme 1:** Investment thesis + 2-3 company deep dives
+- **Theme 2:** Investment thesis + 2-3 company deep dives
+- **Theme 3+:** Additional opportunities
 
-## Deployment
+Each company card includes:
+- Ticker and rating (Buy/Hold/Avoid)
+- Valuation metrics (P/E, margins, etc.)
+- Bull/bear case
+- Position sizing guidance
 
-The site automatically deploys to GitHub Pages via GitHub Actions:
-- **On push to main**
-- **Daily at 8:30 AM** (picks up new issues before 9 AM newsletter)
-- **Manual trigger** via workflow_dispatch
+## Schedule
 
-## Local Development
+- **Published:** Fridays at 3:00 PM Europe/Berlin
+- **Read:** Before market close, for weekend analysis
 
-```bash
-cd newsletter-site
-python -m http.server 8000
-# Open http://localhost:8000
-```
+## Archive
 
-## License
-
-Research for informational purposes only. Not investment advice.
+All past issues are browseable by date and theme.
 
 ---
 

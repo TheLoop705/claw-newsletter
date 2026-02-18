@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Digest — Atoms Over Bits</title>
+    <meta name="description" content="Daily news digest covering AI, markets, tech policy, and infrastructure.">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="canonical" href="https://theloop705.github.io/claw-newsletter/daily.html">
+</head>
+<body>
+    <div class="reading-progress"></div>
+    
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <div class="logo-mark">A</div>
+                    <span class="logo-text">Atoms <span>Over Bits</span></span>
+                </a>
+                
+                <nav class="main-nav" aria-label="Main navigation">
+                    <a href="index.html" class="nav-link">Latest</a>
+                    <a href="daily.html" class="nav-link active">Daily</a>
+                    <a href="archive.html" class="nav-link">Archive</a>
+                    <a href="themes.html" class="nav-link">Themes</a>
+                    <a href="about.html" class="nav-link">About</a>
+                </nav>
+                
+                <div class="header-actions">
+                    <button class="search-toggle" aria-label="Search">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </button>
+                    <button class="theme-toggle" aria-label="Toggle theme">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </button>
+                    <button class="menu-toggle" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="search-overlay" aria-hidden="true">
+        <div class="search-container">
+            <div class="search-input-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                <input type="text" class="search-input" placeholder="Search issues, companies, themes..." aria-label="Search">
+                <kbd class="search-shortcut">ESC</kbd>
+            </div>
+            <div class="search-results"></div>
+        </div>
+    </div>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h1 class="section-title">Daily Digest</h1>
+                        <p class="section-subtitle" id="page-subtitle">Curated news from 20+ sources</p>
+                    </div>
+                </div>
+                
+                <div id="digest-content">
+                    <!-- Full digest content loaded here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-mark">A</div>
+                        <span class="logo-text">Atoms <span>Over Bits</span></span>
+                    </div>
+                    <p class="footer-description">Weekly investment research on physical infrastructure businesses with software-like valuations.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Navigation</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="index.html">Latest Issue</a></li>
+                        <li class="footer-link"><a href="daily.html">Daily Digest</a></li>
+                        <li class="footer-link"><a href="archive.html">Archive</a></li>
+                        <li class="footer-link"><a href="themes.html">Themes</a></li>
+                        <li class="footer-link"><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="sitemap.xml">Sitemap</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="about.html#disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 Atoms Over Bits. Generated by Kimi Claw via OpenClaw.</p>
+                <p class="footer-disclaimer">Research for informational purposes only. Not investment advice.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadFullDigest();
+        });
+        
+        async function loadFullDigest() {
+            const contentEl = document.getElementById('digest-content');
+            if (!contentEl) return;
+            
+            try {
+                // Try yesterday first, then today
+                const yesterday = new Date();
+                yesterday.setDate(yesterday.getDate() - 1);
+                const dateStr = yesterday.toISOString().split('T')[0];
+                
+                let response = await fetch(`daily-digest-${dateStr}.md`);
+                let displayDate = yesterday;
+                
+                if (!response.ok) {
+                    const today = new Date();
+                    const todayStr = today.toISOString().split('T')[0];
+                    response = await fetch(`daily-digest-${todayStr}.md`);
+                    displayDate = today;
+                }
+                
+                if (!response.ok) {
+                    contentEl.innerHTML = '<p style="text-align: center; color: var(--text-tertiary); padding: var(--space-16);">No digest available for today.</p>';
+                    return;
+                }
+                
+                const content = await response.text();
+                const formattedDate = displayDate.toLocaleDateString('en-US', { 
+                    weekday: 'long',
+                    month: 'long', 
+                    day: 'numeric', 
+                    year: 'numeric' 
+                });
+                
+                document.getElementById('page-subtitle').textContent = formattedDate;
+                contentEl.innerHTML = renderDigestMarkdown(content);
+                
+            } catch (error) {
+                console.error('Error loading digest:', error);
+                contentEl.innerHTML = '<p style="text-align: center; color: var(--text-tertiary); padding: var(--space-16);">Failed to load digest.</p>';
+            }
+        }
+        
+        function renderDigestMarkdown(content) {
+            // Simple markdown to HTML conversion
+            let html = content
+                .replace(/^# (.+)$/gm, '<h1>$1</h1>')
+                .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+                .replace(/^### (.+)$/gm, '<h3>$1</h3>')
+                .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\*(.+?)\*/g, '<em>$1</em>')
+                .replace(/`(.+?)`/g, '<code>$1</code>')
+                .replace(/^\* (.+)$/gm, '<li>$1</li>')
+                .replace(/\n\n/g, '</p><p>')
+                .replace(/^([^<].+)$/gm, '<p>$1</p>');
+            
+            // Wrap lists
+            html = html.replace(/(<li>.+<\/li>\s*)+/g, '<ul>$&</ul>');
+            
+            return `<div class="digest-full-content">${html}</div>`;
+        }
+    </script>
+</body>
+</html>

@@ -36,6 +36,7 @@
                 
                 <nav class="main-nav" aria-label="Main navigation">
                     <a href="index.html" class="nav-link active">Latest</a>
+                    <a href="daily.html" class="nav-link">Daily</a>
                     <a href="archive.html" class="nav-link">Archive</a>
                     <a href="themes.html" class="nav-link">Themes</a>
                     <a href="about.html" class="nav-link">About</a>
@@ -110,6 +111,50 @@
                         </svg>
                     </a>
                     <a href="archive.html" class="btn btn-secondary btn-lg">Browse Archive</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Daily Digest Section -->
+        <section id="daily-digest" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2 class="section-title">Daily Digest</h2>
+                        <p class="section-subtitle" id="digest-subtitle">Yesterday's essential news, distilled</p>
+                    </div>
+                    <a href="#" id="digest-archive-link" class="section-action">Browse Archive →</a>
+                </div>
+                
+                <div class="digest-card" id="daily-digest-card">
+                    <div class="digest-header">
+                        <div class="digest-date-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            <span id="digest-date">February 18, 2026</span>
+                        </div>
+                        <div class="digest-source-count">
+                            <span id="digest-sources">20 sources</span>
+                        </div>
+                    </div>
+                    
+                    <div class="digest-categories" id="digest-categories">
+                        <!-- Categories loaded via JS -->
+                    </div>
+                    
+                    <div class="digest-preview" id="digest-preview">
+                        <!-- Top stories preview loaded via JS -->
+                    </div>
+                    
+                    <div class="digest-actions">
+                        <a href="#" id="digest-full-link" class="btn btn-primary">
+                            Read Full Digest
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -374,7 +419,129 @@
             } catch (error) {
                 console.error('Error loading stats:', error);
             }
+            
+            // Load daily digest
+            await loadDailyDigest();
         });
+        
+        // Daily Digest Loader
+        async function loadDailyDigest() {
+            try {
+                // Get yesterday's date
+                const yesterday = new Date();
+                yesterday.setDate(yesterday.getDate() - 1);
+                const dateStr = yesterday.toISOString().split('T')[0];
+                const formattedDate = yesterday.toLocaleDateString('en-US', { 
+                    month: 'long', 
+                    day: 'numeric', 
+                    year: 'numeric' 
+                });
+                
+                // Update date display
+                const dateEl = document.getElementById('digest-date');
+                if (dateEl) dateEl.textContent = formattedDate;
+                
+                // Try to load the digest file
+                const digestFile = `daily-digest-${dateStr}.md`;
+                const response = await fetch(digestFile);
+                
+                if (!response.ok) {
+                    // Try current date if yesterday doesn't exist
+                    const today = new Date().toISOString().split('T')[0];
+                    const todayResponse = await fetch(`daily-digest-${today}.md`);
+                    if (todayResponse.ok) {
+                        const content = await todayResponse.text();
+                        parseAndDisplayDigest(content);
+                        document.getElementById('digest-date').textContent = new Date().toLocaleDateString('en-US', { 
+                            month: 'long', 
+                            day: 'numeric', 
+                            year: 'numeric' 
+                        });
+                    } else {
+                        // Show fallback message
+                        showDigestFallback();
+                    }
+                } else {
+                    const content = await response.text();
+                    parseAndDisplayDigest(content);
+                }
+            } catch (error) {
+                console.error('Error loading daily digest:', error);
+                showDigestFallback();
+            }
+        }
+        
+        function parseAndDisplayDigest(content) {
+            // Extract categories
+            const categories = [];
+            const categoryRegex = /##\s+([^\n]+)/g;
+            let match;
+            while ((match = categoryRegex.exec(content)) !== null) {
+                const cat = match[1].trim();
+                if (cat !== 'TABLE OF CONTENTS') {
+                    categories.push(cat);
+                }
+            }
+            
+            // Display categories
+            const categoriesEl = document.getElementById('digest-categories');
+            if (categoriesEl) {
+                categoriesEl.innerHTML = categories.slice(0, 8).map(cat => 
+                    `<span class="digest-category">${cat}</span>`
+                ).join('');
+            }
+            
+            // Extract top stories (first 3)
+            const stories = [];
+            const storyRegex = /###\s+([^\n]+)\n+\*\*Source:\*\*\s+([^\n]+)\n+\*\*URL:\*\*\s+[^\n]+\n+\*\*Summary:\*\*\s+([^\n]+)/g;
+            let storyMatch;
+            while ((storyMatch = storyRegex.exec(content)) !== null && stories.length < 3) {
+                stories.push({
+                    title: storyMatch[1].trim(),
+                    source: storyMatch[2].trim(),
+                    summary: storyMatch[3].trim()
+                });
+            }
+            
+            // Display stories
+            const previewEl = document.getElementById('digest-preview');
+            if (previewEl && stories.length > 0) {
+                previewEl.innerHTML = stories.map(story => `
+                    <div class="digest-story">
+                        <div class="digest-story-header">
+                            <span class="digest-story-source">${escapeHtml(story.source)}</span>
+                        </div>
+                        <h4 class="digest-story-title">${escapeHtml(story.title)}</h4>
+                        <p class="digest-story-summary">${escapeHtml(story.summary)}</p>
+                    </div>
+                `).join('');
+            }
+            
+            // Update source count
+            const sourceMatch = content.match(/Compiled from (\d+) sources/);
+            if (sourceMatch) {
+                const sourcesEl = document.getElementById('digest-sources');
+                if (sourcesEl) sourcesEl.textContent = `${sourceMatch[1]} sources`;
+            }
+        }
+        
+        function showDigestFallback() {
+            const categoriesEl = document.getElementById('digest-categories');
+            const previewEl = document.getElementById('digest-preview');
+            
+            if (categoriesEl) {
+                categoriesEl.innerHTML = '<span class="digest-category">No digest available</span>';
+            }
+            if (previewEl) {
+                previewEl.innerHTML = '<p style="color: var(--text-tertiary); text-align: center; padding: var(--space-8);">Daily digest will appear here when available.</p>';
+            }
+        }
+        
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
     </script>
 </body>
 </html>

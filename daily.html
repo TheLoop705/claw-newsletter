@@ -176,13 +176,26 @@
             // Convert bare URLs to clickable links (but not inside existing anchor tags)
             html = html.replace(/(?<!["'=])https?:\/\/[^\s<>)]+/g, '<a href="$&" target="_blank" rel="noopener">$&</a>');
             
-            // Headers with IDs for anchor links
-            html = html.replace(/^# (.+)$/gm, '<h1 id="$1">$1</h1>');
+            // Headers with IDs for anchor links (GitHub-style: lowercase, spaces -> -, special chars removed)
+            function generateAnchorId(text) {
+                return text.toLowerCase()
+                    .replace(/[^a-z0-9\s-]/g, '')  // Remove special chars except spaces and dashes
+                    .replace(/\s+/g, '-')           // Replace spaces with single dash
+                    .replace(/^-+|-+$/g, '');       // Trim leading/trailing dashes
+            }
+            
+            html = html.replace(/^# (.+)$/gm, (match, text) => {
+                const id = generateAnchorId(text);
+                return `<h1 id="${id}">${text}</h1>`;
+            });
             html = html.replace(/^## (.+)$/gm, (match, text) => {
-                const id = text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+                const id = generateAnchorId(text);
                 return `<h2 id="${id}">${text}</h2>`;
             });
-            html = html.replace(/^### (.+)$/gm, '<h3>$1</h3>');
+            html = html.replace(/^### (.+)$/gm, (match, text) => {
+                const id = generateAnchorId(text);
+                return `<h3 id="${id}">${text}</h3>`;
+            });
             
             // Bold and italic
             html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');

@@ -130,19 +130,19 @@
             if (!contentEl) return;
             
             try {
-                // Try yesterday first, then today
-                const yesterday = new Date();
-                yesterday.setDate(yesterday.getDate() - 1);
-                const dateStr = yesterday.toISOString().split('T')[0];
+                // Try today first, then yesterday
+                const today = new Date();
+                const todayStr = today.toISOString().split('T')[0];
                 
-                let response = await fetch(`daily-digest-${dateStr}.md`);
-                let displayDate = yesterday;
+                let response = await fetch(`daily-digest-${todayStr}.md`);
+                let displayDate = today;
                 
                 if (!response.ok) {
-                    const today = new Date();
-                    const todayStr = today.toISOString().split('T')[0];
-                    response = await fetch(`daily-digest-${todayStr}.md`);
-                    displayDate = today;
+                    const yesterday = new Date();
+                    yesterday.setDate(yesterday.getDate() - 1);
+                    const dateStr = yesterday.toISOString().split('T')[0];
+                    response = await fetch(`daily-digest-${dateStr}.md`);
+                    displayDate = yesterday;
                 }
                 
                 if (!response.ok) {

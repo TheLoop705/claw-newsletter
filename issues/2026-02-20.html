@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Follow the Money: AI Infrastructure, Nuclear Renaissance & The Obesity Revolution</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            padding: 48px 32px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+        .header .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            font-weight: 400;
+        }
+        .header .date {
+            margin-top: 16px;
+            font-size: 0.9rem;
+            opacity: 0.6;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .content {
+            padding: 40px 32px;
+        }
+        .executive-summary {
+            background: #f8f9fa;
+            border-left: 4px solid #2563eb;
+            padding: 24px;
+            margin-bottom: 40px;
+            border-radius: 0 8px 8px 0;
+        }
+        .executive-summary h2 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            color: #1a1a2e;
+        }
+        .executive-summary p {
+            color: #4b5563;
+            font-size: 0.95rem;
+        }
+        .theme {
+            margin-bottom: 48px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .theme:last-of-type {
+            border-bottom: none;
+        }
+        .theme-header {
+            margin-bottom: 24px;
+        }
+        .theme-number {
+            display: inline-block;
+            background: #2563eb;
+            color: #fff;
+            width: 32px;
+            height: 32px;
+            line-height: 32px;
+            text-align: center;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+        .theme h2 {
+            font-size: 1.6rem;
+            color: #1a1a2e;
+            margin-bottom: 8px;
+        }
+        .theme-thesis {
+            font-size: 1.05rem;
+            color: #374151;
+            font-style: italic;
+            margin-bottom: 24px;
+            padding: 16px;
+            background: #f3f4f6;
+            border-radius: 6px;
+        }
+        .company {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .company-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .company-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+        .company-ticker {
+            display: inline-block;
+            background: #1a1a2e;
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+        .rating {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .rating-buy { background: #dcfce7; color: #166534; }
+        .rating-hold { background: #fef3c7; color: #92400e; }
+        .rating-speculative { background: #fee2e2; color: #991b1b; }
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 12px;
+            margin-bottom: 16px;
+            padding: 16px;
+            background: #f9fafb;
+            border-radius: 6px;
+        }
+        .metric {
+            text-align: center;
+        }
+        .metric-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+        .metric-label {
+            font-size: 0.75rem;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .case {
+            margin-bottom: 12px;
+        }
+        .case-label {
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 4px;
+        }
+        .case-bull { color: #166534; }
+        .case-bear { color: #991b1b; }
+        .case p {
+            font-size: 0.9rem;
+            color: #4b5563;
+        }
+        .positioning {
+            display: flex;
+            gap: 16px;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #e5e7eb;
+            flex-wrap: wrap;
+        }
+        .position-box {
+            flex: 1;
+            min-width: 140px;
+        }
+        .position-label {
+            font-size: 0.75rem;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+        .position-value {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+        .risks {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 6px;
+            padding: 16px;
+            margin-top: 24px;
+        }
+        .risks h4 {
+            color: #991b1b;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+        .risks ul {
+            margin-left: 16px;
+            font-size: 0.9rem;
+            color: #7f1d1d;
+        }
+        .risks li {
+            margin-bottom: 4px;
+        }
+        .contrarian {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 6px;
+            padding: 16px;
+            margin-top: 16px;
+        }
+        .contrarian h4 {
+            color: #1e40af;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+        .contrarian p {
+            font-size: 0.9rem;
+            color: #1e3a8a;
+        }
+        .key-takeaways {
+            background: #1a1a2e;
+            color: #fff;
+            padding: 32px;
+            margin-top: 40px;
+            border-radius: 8px;
+        }
+        .key-takeaways h2 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+        .key-takeaways ul {
+            list-style: none;
+        }
+        .key-takeaways li {
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+        .key-takeaways li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #60a5fa;
+        }
+        .footer {
+            text-align: center;
+            padding: 24px;
+            color: #6b7280;
+            font-size: 0.85rem;
+            border-top: 1px solid #e5e7eb;
+        }
+        @media (max-width: 600px) {
+            .header { padding: 32px 20px; }
+            .header h1 { font-size: 1.6rem; }
+            .content { padding: 24px 20px; }
+            .metrics { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Follow the Money</h1>
+            <p class="subtitle">AI Infrastructure, Nuclear Renaissance & The Obesity Revolution</p>
+            <p class="date">February 20, 2026</p>
+        </header>
+
+        <div class="content">
+            <div class="executive-summary">
+                <h2>Executive Summary</h2>
+                <p>The market is rotating from software speculation to physical infrastructure. Three themes dominate: AI data center real estate (the picks-and-shovels play on compute demand), nuclear energy (the only scalable baseload solution for AI power requirements), and GLP-1 obesity drugs (a $100B+ market with expanding indications). Each theme offers asymmetric upside, but timing and position sizing matter—much of the easy money has been made.</p>
+            </div>
+
+            <!-- Theme 1: AI Infrastructure / Data Center REITs -->
+            <div class="theme">
+                <div class="theme-header">
+                    <span class="theme-number">1</span>
+                    <h2>AI Infrastructure: The Physical Layer</h2>
+                </div>
+                <div class="theme-thesis">
+                    Hyperscaler AI capex will exceed $500B in 2026. The bottleneck isn't GPUs—it's data center capacity and power. REITs with prime land, existing infrastructure, and utility relationships are the asymmetric play.
+                </div>
+
+                <div class="company">
+                    <div class="company-header">
+                        <div>
+                            <span class="company-name">Digital Realty Trust</span>
+                            <span class="company-ticker">DLR</span>
+                        </div>
+                        <span class="rating rating-buy">Buy</span>
+                    </div>
+                    <div class="metrics">
+                        <div class="metric">
+                            <div class="metric-value">$165B</div>
+                            <div class="metric-label">Market Cap</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">24x</div>
+                            <div class="metric-label">P/E 2026E</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">9.6x</div>
+                            <div class="metric-label">P/S</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">2.5x</div>
+                            <div class="metric-label">P/B</div>
+                        </div>
+                    </div>
+                    <div class="case">
+                        <div class="case-label case-bull">Bull Case</div>
+                        <p>Core FFO guidance raised to $7.15-7.25/share. AI demand driving 25%+ leasing spreads on hyperscale deployments. 300+ data centers globally with interconnection density that competitors can't replicate. 90% payout ratio provides 3.2% dividend yield while retaining growth capital.</p>
+                    </div>
+                    <div class="case">
+                        <div class="case-label case-bear">Bear Case</div>
+                        <p>Valuation stretched at 24x P/E vs. 18x historical average. Rising interest rates pressure REIT multiples. Supply response from private developers could compress yields. 15% of revenue from hyperscalers creates concentration risk if AI capex cycle turns.</p>
+                    </div>
+                    <div class="positioning">
+                        <div class="position-box">
+                            <div class="position-label">Price Target</div>
+                            <div class="position-value">$195</div>
+                        </div>
+                        <div class="position-box">
+                            <div class="position-label">Position Size</div>
+                            <div class="position-value">4-6%</div>
+                        </div>
+                        <div class="position-box">
+                            <div class="position-label">Rationale</div>
+                            <div class="position-value">Core infrastructure holding</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="company">
+                    <div class="company-header">
+                        <div>
+                            <span class="company-name">Equinix</span>
+                            <span class="company-ticker">EQIX</span>
+                        </div>
+                        <span class="rating rating-buy">Buy</span>
+                    </div>
+                    <div class="metrics">
+                        <div class="metric">
+                            <div class="metric-value">$95B</div>
+                            <div class="metric-label">Market Cap</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">28x</div>
+                            <div class="metric-label">P/FFO</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">8.2x</div>
+                            <div class="metric-label">P/S</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">6.5%</div>
+                            <div class="metric-label">Rev Growth</div>
+                        </div>
+                    </div>
+                    <div class="case">
+                        <div class="case-label case-bull">Bull Case</div>
+                        <p>Premier interconnection platform with 10,000+ customers. Network effects create sticky revenue—customers come for the ecosystem, not just space. AI inferencing workloads favor distributed edge locations where Equinix dominates. xScale JV with GIC captures hyperscale growth without balance sheet strain.</p>
+                    </div>
+                    <div class="case">
+                        <div class="case-label case-bear">Bear Case</div>
+                        <p>Premium valuation leaves little room for error. Slower AI leasing velocity than pure hyperscale plays. European exposure (~35% revenue) faces regulatory and energy cost headwinds. REIT structure limits operational flexibility compared to C-corp competitors.</p>
+                    </div>
+                    <div class="positioning">
+                        <div class="position-box">
+                            <div class="position-label">Price Target</div>
+                            <div class="position-value">$1,015</div>
+                        </div>
+                        <div class="position-box">
+                            <div class="position-label">Position Size</div>
+                            <div class="position-value">3-5%</div>
+                        </div>
+                        <div class="position-box">
+                            <div class="position-label">Rationale</div>
+                            <div class="position-value">Quality compounder</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="risks">
+                    <h4>Key Risks</h4>
+                    <ul>
+                        <li>AI capex cycle could peak in 2027-2028, leaving overcapacity</li>
+                        <li>Rising rates environment historically compresses REIT multiples</li>
+                        <li>Power constraints in key markets (Northern Virginia, Phoenix) limit growth</li>
+                    </ul>
+                </div>
+                <div class="contrarian">
+                    <h4>Contrarian Angle</h4>
+                    <p>The market is pricing data center REITs as if AI demand is infinite. Reality: most AI training clusters are being built by hyperscalers on their own land. The REIT opportunity is in inferencing, edge, and hybrid cloud—smaller TAM than headlines suggest. DLR and EQIX are still buys, but expectations need calibration.</p>
+                </div>
+            </div>
+
+            <!-- Theme 2: Nuclear Renaissance -->
+            <div class="theme">
+                <div class="theme-header">
+                    <span class="theme-number">2</span>
+                    <h2>Nuclear Renaissance: Powering AI</h2>
+                </div>
+                <div class="theme-thesis">
+                    Data centers will consume 8% of US electricity by 2030, up from 4% today. The grid can't scale with renewables alone. Nuclear provides 24/7 baseload carbon-free power—exactly what AI clusters need. We're in the early innings of a multi-decade upcycle.
+                </div>
+
+                <div class="company">
+                    <div class="company-header">
+                        <div>
+                            <span class="company-name">Cameco Corporation</span>
+                            <span class="company-ticker">CCJ</span>
+                        </div>
+                        <span class="rating rating-buy">Buy</span>
+                    </div>
+                    <div class="metrics">
+                        <div class="metric">
+                            <div class="metric-value">$58B</div>
+                            <div class="metric-label">Market Cap</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">45x</div>
+                            <div class="metric-label">P/E 2026E</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">18x</div>
+                            <div class="metric-label">P/S</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">+35%</div>
+                            <div class="metric-label">1Y Return</div>
+                        </div>
+                    </div>
+                    <div class="case">
+                        <div class="case-label case-bull">Bull Case</div>
+                        <p>World's largest publicly traded uranium producer with tier-one assets in Canada. Long-term contracting cycle just beginning—utilities are under-contracted for 2028+. Westinghouse acquisition adds nuclear services revenue stream. Uranium prices above $80/lb drive massive cash flow inflection.</p>
+                    </div>
+                    <div class="case">
+                        <div class="case-label case-bear">Bear Case</div>
+                        <p>Valuation assumes sustained high uranium prices. Secondary supply (recycling, inventory drawdowns) could delay deficit. Production ramp at Cigar Lake and McArthur River carries execution risk. Political risk in Kazakhstan (40% of global supply) could disrupt market dynamics.</p>
+                    </div>
+                    <div class="positioning">
+                        <div class="position-box">
+                            <div class="position-label">Price Target</div>
+                            <div class="position-value">$160</div>
+                        </div>
+                        <div class="position-box">
+                            <div class="position-label">Position Size</div>
+                            <div class="position-value">3-4%</div>
+                        </div>
+                        <div class="position-box">
+                            <div class="position-label">Rationale</div>
+                            <div class="position-value">Uranium pure-play</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="company">
+                    <div class="company-header">
+                        <div>
+                            <span class="company-name">Constellation Energy</span>
+                            <span class="company-ticker">CEG</span>
+                        </div>
+                        <span class="rating rating-buy">Buy</span>
+                    </div>
+                    <div class="metrics">
+                        <div class="metric">
+                            <div class="metric-value">$95B</div>
+                            <div class="metric-label">Market Cap</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">35x</div>
+                            <div class="metric-label">P/E 2026E</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">4.2x</div>
+                            <div class="metric-label">P/S</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">21 GW</div>
+                            <div class="metric-label">Nuclear Capacity</div>
+                        </div>
+                    </div>
+                    <div class="case">
+                        <div class="case-label case-bull">Bull Case</div>
+                        <p>Largest nuclear fleet in the US with 21 GW of carbon-free baseload power. Data center power purchase agreements (PPAs) at 2-3x utility rates driving margin expansion. Three Mile Island restart and potential SMR deployments create optionality. Regulatory support (IRA tax credits) provides 10-year visibility.</p>
+                    </div>
+                    <div class="case">
+                        <div class="case-label case-bear">Bear Case</div>
+                        <p>Stock has tripled since 2023—much of the good news priced in. Regulatory intervention on data center pricing could limit upside. Nuclear relicensing and maintenance capex are ongoing costs. Competition from natural gas and renewables in certain markets.</p>
+                    </div>
+                    <div class="positioning">
+                        <div class="position-box">
+                            <div class="position-label">Price Target</div>
+                            <div class="position-value">$380</div>
+                        </div>
+                        <div class="position-box">
+                            <div class="position-label">Position Size</div>
+                            <div class="position-value">3-5%</div>
+                        </div>
+                        <div class="position-box">
+                            <div class="position-label">Rationale</div>
+                            <div class="position-value">Nuclear utility exposure</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="risks">
+                    <h4>Key Risks</h4>
+                    <ul>
+                        <li>Nuclear accidents (however unlikely) would derail the entire investment case</li>
+                        <li>SMR technology is unproven at scale—deployment timeline uncertain</li>
+                        <li>Geopolitical supply chain risks for uranium (Kazakhstan, Russia, Niger)</li>
+                    </ul>
+                </div>
+                <div class="contrarian">
+                    <h4>Contrarian Angle</h4>
+                    <p>The nuclear trade is crowded. Everyone knows about AI power demand. What's underappreciated: the lead time. New nuclear capacity takes 5-10 years. In the interim, data centers will rely on natural gas and grid interconnection. The real near-term winner may be gas turbine manufacturers (GE Vernova, Siemens Energy) rather than nuclear pure-plays.</p>
+                </div>
+            </div>
+
+            <!-- Theme 3: GLP-1 Obesity Drugs -->
+            <div class="theme">
+                <div class="theme-header">
+                    <span class="theme-number">3</span>
+                    <h2>GLP-1 Revolution: Beyond Weight Loss</h2>
+                </div>
+                <div class="theme-thesis">
+                    The obesity drug market is projected to reach $100B by 2030. 2026 is the year of oral formulations, cardiovascular indications, and market expansion beyond diabetes. First-movers have insurmountable moats; the question is valuation and competitive dynamics.
+                </div>
+
+                <div class="company">
+                    <div class="company-header">
+                        <div>
+                            <span class="company-name">Eli Lilly</span>
+                            <span class="company-ticker">LLY</span>
+                        </div>
+                        <span class="rating rating-buy">Buy</span>
+                    </div>
+                    <div class="metrics">
+                        <div class="metric">
+                            <div class="metric-value">$965B</div>
+                            <div class="metric-label">Market Cap</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">29x</div>
+                            <div class="metric-label">P/E 2026E</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">$81B</div>
+                            <div class="metric-label">2026E Revenue</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">+28%</div>
+                            <div class="metric-label">Rev Growth</div>
+                        </div>
+                    </div>
+                    <div class="case">
+                        <div class="case-label case-bull">Bull Case</div>
+                        <p>Zepbound and Mounjaro driving $30B+ in annual revenue. Orforglipron (oral GLP-1) Phase 3 data shows non-inferior efficacy to injectables—could expand addressable market by 3x. Retatrutide (triple G) in Phase 3 with best-in-class weight loss data. Manufacturing scale advantage is a moat competitors can't cross.</p>
+                    </div>
+                    <div class="case">
+                        <div class="case-label case-bear">Bear Case</div>
+                        <p>Trading at 29x earnings with execution risk on multiple pipeline assets. Medicare price negotiation and international reference pricing could compress margins. Competition from Novo Nordisk and oral formulations from Viking/Madrigal creates pricing pressure. Any safety signal would be catastrophic given valuation.</p>
+                    </div>
+                    <div class="positioning">
+                        <div class="position-box">
+                            <div class="position-label">Price Target</div>
+                            <div class="position-value">$1,150</div>
+                        </div>
+                        <div class="position-box">
+                            <div class="position-label">Position Size</div>
+                            <div class="position-value">5-7%</div>
+                        </div>
+                        <div class="position-box">
+                            <div class="position-label">Rationale</div>
+                            <div class="position-value">Obesity leader</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="company">
+                    <div class="company-header">
+                        <div>
+                            <span class="company-name">Viking Therapeutics</span>
+                            <span class="company-ticker">VKTX</span>
+                        </div>
+                        <span class="rating rating-speculative">Speculative Buy</span>
+                    </div>
+                    <div class="metrics">
+                        <div class="metric">
+                            <div class="metric-value">$8.5B</div>
+                            <div class="metric-label">Market Cap</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">N/A</div>
+                            <div class="metric-label">P/E</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">$0</div>
+                            <div class="metric-label">Revenue</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">Phase 3</div>
+                            <div class="metric-label">VK2735</div>
+                        </div>
+                    </div>
+                    <div class="case">
+                        <div class="case-label case-bull">Bull Case</div>
+                        <p>VK2735 (injectable) and VK2809 (oral) both in Phase 3 for obesity. Phase 2 data showed competitive efficacy with clean safety profile. Oral formulation could be best-in-class if approved. $1.5B cash provides runway through 2027. Logical acquisition target for Big Pharma (Pfizer, Roche, AstraZeneca) lacking GLP-1 presence.</p>
+                    </div>
+                    <div class="case">
+                        <div class="case-label case-bear">Bear Case</div>
+                        <p>Zero revenue, burning $300M+ annually. Phase 3 trials are high-risk—many obesity drugs fail at this stage. Lilly and Novo have manufacturing and commercial scale that Viking can't match even if approved. Dilution risk if acquisition doesn't materialize.</p>
+                    </div>
+                    <div class="positioning">
+                        <div class="position-box">
+                            <div class="position-label">Price Target</div>
+                            <div class="position-value">$90</div>
+                        </div>
+                        <div class="position-box">
+                            <div class="position-label">Position Size</div>
+                            <div class="position-value">1-2%</div>
+                        </div>
+                        <div class="position-box">
+                            <div class="position-label">Rationale</div>
+                            <div class="position-value">Lottery ticket biotech</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="risks">
+                    <h4>Key Risks</h4>
+                    <ul>
+                        <li>Long-term safety data (5+ years) is unknown—cardiovascular benefits are promising but not definitive</li>
+                        <li>Reimbursement risk: payers may restrict access as costs balloon</li>
+                        <li>Competition from next-gen mechanisms (amylin agonists, gene therapy) could obsolete current drugs</li>
+                    </ul>
+                </div>
+                <div class="contrarian">
+                    <h4>Contrarian Angle</h4>
+                    <p>The GLP-1 market is priced for perfection. Lilly trades at 29x earnings—rarefied air for a pharma company. The real opportunity may be in the second-order effects: medical device companies (fewer bariatric surgeries), food companies (reduced caloric intake), and insurers (lower diabetes costs). These are underexplored relative to the drugmakers themselves.</p>
+                </div>
+            </div>
+
+            <!-- Theme 4: Warehouse Automation -->
+            <div class="theme">
+                <div class="theme-header">
+                    <span class="theme-number">4</span>
+                    <h2>Warehouse Automation: The Robot Economy</h2>
+                </div>
+                <div class="theme-thesis">
+                    Labor shortages, rising wages, and e-commerce growth are forcing logistics operators to automate. The inflection point is here—robotics is moving from pilot programs to scaled deployment. Companies with proven installations and recurring revenue models will win.
+                </div>
+
+                <div class="company">
+                    <div class="company-header">
+                        <div>
+                            <span class="company-name">Symbotic</span>
+                            <span class="company-ticker">SYM</span>
+                        </div>
+                        <span class="rating rating-buy">Buy</span>
+                    </div>
+                    <div class="metrics">
+                        <div class="metric">
+                            <div class="metric-value">$32B</div>
+                            <div class="metric-label">Market Cap</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">85x</div>
+                            <div class="metric-label">P/E 2026E</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">$2.8B</div>
+                            <div class="metric-label">Backlog</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">+20%</div>
+                            <div class="metric-label">Rev Growth</div>
+                        </div>
+                    </div>
+                    <div class="case">
+                        <div class="case-label case-bull">Bull Case</div>
+                        <p>$22.3B backlog provides 8+ years of revenue visibility. GreenBox JV with SoftBank creates recurring SaaS revenue from SMB market. First profitable quarter (Q1 2026) validates unit economics. Walmart relationship (majority owner) provides reference customer and distribution channel. AI-powered optimization software creates switching costs.</p>
+                    </div>
+                    <div class="case">
+                        <div class="case-label case-bear">Bear Case</div>
+                        <p>Valuation assumes flawless execution for years. Heavy dependence on Walmart—loss of this customer would be catastrophic. Implementation delays and cost overruns are common in warehouse automation. Competition from AutoStore, Ocado, and emerging Chinese players could compress margins.</p>
+                    </div>
+                    <div class="positioning">
+                        <div class="position-box">
+                            <div class="position-label">Price Target</div>
+                            <div class="position-value">$65</div>
+                        </div>
+                        <div class="position-box">
+                            <div class="position-label">Position Size</div>
+                            <div class="position-value">2-3%</div>
+                        </div>
+                        <div class="position-box">
+                            <div class="position-label">Rationale</div>
+                            <div class="position-value">Pure-play robotics</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="risks">
+                    <h4>Key Risks</h4>
+                    <ul>
+                        <li>Capital intensity—each deployment requires significant upfront investment</li>
+                        <li>Economic downturn could delay automation capex decisions</li>
+                        <li>Technology risk—new approaches (mobile robots, humanoid workers) could disrupt fixed automation</li>
+                    </ul>
+                </div>
+                <div class="contrarian">
+                    <h4>Contrarian Angle</h4>
+                    <p>Symbotic's GreenBox JV is underappreciated. The addressable market for SMB warehouse automation is 10x the enterprise market Symbotic currently serves. If GreenBox achieves scale, SYM could be a $100B+ company. The market is focused on near-term profitability; the real story is the platform potential.</p>
+                </div>
+            </div>
+
+            <div class="key-takeaways">
+                <h2>Key Takeaways</h2>
+                <ul>
+                    <li>AI infrastructure is shifting from GPUs to physical real estate—data center REITs offer defensive exposure with growth optionality</li>
+                    <li>Nuclear energy is the only scalable solution for AI power demand—uranium miners and nuclear utilities are asymmetric plays on a multi-decade cycle</li>
+                    <li>GLP-1 drugs are creating a $100B+ market—Lilly is the quality play, Viking is the speculative option</li>
+                    <li>Warehouse automation is at an inflection point—Symbotic's backlog provides visibility, GreenBox provides optionality</li>
+                    <li>Position sizing matters: these themes are consensus trades. Size for participation, not home runs</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>Investment Newsletter • February 20, 2026</p>
+            <p style="margin-top: 8px; font-size: 0.8rem;">This newsletter is for informational purposes only and does not constitute investment advice.</p>
+        </footer>
+    </div>
+</body>
+</html>

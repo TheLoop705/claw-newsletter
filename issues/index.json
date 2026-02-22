@@ -1,6 +1,91 @@
 {
   "issues": [
     {
+      "id": "2026-02-22",
+      "slug": "ai-infrastructure-deep-dive",
+      "title": "AI Infrastructure Deep Dive: The $3 Trillion Buildout",
+      "subtitle": "20-agent parallel research on the full AI infrastructure stack",
+      "date": "2026-02-22",
+      "publishedAt": "2026-02-22T18:00:00Z",
+      "url": "issues/2026-02-22-ai-infrastructure-deep-dive.html",
+      "readingTime": 45,
+      "themeCount": 8,
+      "companyCount": 15,
+      "themes": [
+        {
+          "name": "AI Infrastructure",
+          "slug": "ai-infrastructure",
+          "thesis": "AI infrastructure is experiencing a generational investment supercycle with $3 trillion in total sector investment expected by 2030. The market is growing from $135.8B (2024) to $394.5B (2030) at 19.4% CAGR.",
+          "companies": [
+            {
+              "ticker": "NVDA",
+              "name": "NVIDIA Corporation",
+              "rating": "Buy",
+              "marketCap": "$3.0T",
+              "pe": "30x fwd",
+              "revenueGrowth": "+60%",
+              "grossMargin": "73%",
+              "bull": "Dominant platform with $500B+ demand visibility. Blackwell ramp accelerating. Ecosystem moat intact through 2027.",
+              "bear": "Software moat narrowing as ROCm/Triton gain traction. Customer concentration risk. High expectations priced in.",
+              "priceTarget": "$850",
+              "positionSize": "8-12%",
+              "positionRationale": "Core AI infrastructure holding"
+            },
+            {
+              "ticker": "000660.KS",
+              "name": "SK Hynix",
+              "rating": "Strong Buy",
+              "marketCap": "$120B",
+              "pe": "8x fwd",
+              "revenueGrowth": "+47%",
+              "grossMargin": "50%",
+              "bull": "HBM market leader with supply-constrained pricing power. Margins exceeding TSMC. Trading at deep discount to peers.",
+              "bear": "Memory cyclicality. Samsung catching up on HBM3E. Korea geopolitical risk.",
+              "priceTarget": "KRW 280,000",
+              "positionSize": "6-8%",
+              "positionRationale": "Best risk/reward in semiconductors"
+            },
+            {
+              "ticker": "VRT",
+              "name": "Vertiv Holdings",
+              "rating": "Buy",
+              "marketCap": "$45B",
+              "pe": "35x fwd",
+              "revenueGrowth": "+26%",
+              "grossMargin": "35%",
+              "bull": "Pure-play AI infrastructure. 23.5% cooling market share. Liquid cooling transition mandatory for AI workloads.",
+              "bear": "Premium valuation. Cyclical exposure. Competition from JCI/Carrier.",
+              "priceTarget": "$95",
+              "positionSize": "4-6%",
+              "positionRationale": "Pure-play AI infrastructure exposure"
+            },
+            {
+              "ticker": "CEG",
+              "name": "Constellation Energy",
+              "rating": "Buy",
+              "marketCap": "$75B",
+              "pe": "22x fwd",
+              "revenueGrowth": "+22%",
+              "grossMargin": "45%",
+              "bull": "Largest U.S. nuclear fleet. Microsoft 20-year deal. Meta partnership. 24/7 carbon-free power demand surging.",
+              "bear": "Regulatory risks. Nuclear waste concerns. SMR deployment timeline uncertainty.",
+              "priceTarget": "$285",
+              "positionSize": "3-5%",
+              "positionRationale": "Nuclear renaissance play"
+            }
+          ]
+        }
+      ],
+      "summary": "Comprehensive 20-agent parallel research analysis of the AI infrastructure investment opportunity. Covers semiconductors, data center real estate, power & energy, cooling, networking, edge AI, software orchestration, and competitive dynamics. Identifies SK Hynix as best risk/reward, NVIDIA as core holding, and Vertiv as pure-play infrastructure exposure.",
+      "keyTakeaways": [
+        "AI infrastructure TAM growing from $135.8B (2024) to $394.5B (2030) at 19.4% CAGR",
+        "Power is the new bottleneck - grid queues exceed 4 years; nuclear SMRs and fuel cells emerging",
+        "NVIDIA maintains 86% AI data center share with widening hardware moat but narrowing software moat",
+        "SK Hynix trading at ~8x forward P/E despite HBM leadership - best risk/reward in semiconductors",
+        "4-5 hyperscalers represent 65-70% of demand with $405B+ combined 2025 capex"
+      ]
+    },
+    {
       "id": "2025-01-31",
       "slug": "macro-outlook",
       "title": "The Macro Crossroads: Four Decades of Economic Cycles and What Comes Next",
@@ -149,9 +234,9 @@
   ],
   "meta": {
     "version": "2.0",
-    "lastUpdated": "2026-02-18T09:00:00Z",
-    "totalIssues": 2,
-    "totalThemes": 4,
-    "totalCompanies": 5
+    "lastUpdated": "2026-02-22T18:00:00Z",
+    "totalIssues": 3,
+    "totalThemes": 9,
+    "totalCompanies": 19
   }
 }

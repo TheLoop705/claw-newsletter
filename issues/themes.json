@@ -3,5 +3,9 @@
   {"name": "Foundries", "slug": "foundries", "count": 1, "related": ["Semiconductor Equipment", "Process Control"]},
   {"name": "Process Control", "slug": "process-control", "count": 1, "related": ["Semiconductor Equipment", "Foundries"]},
   {"name": "Memory", "slug": "memory", "count": 0, "related": ["Semiconductor Equipment"]},
-  {"name": "Turnarounds", "slug": "turnarounds", "count": 1, "related": ["Semiconductor Equipment"]}
+  {"name": "Turnarounds", "slug": "turnarounds", "count": 1, "related": ["Semiconductor Equipment"]},
+  {"name": "Nuclear Energy", "slug": "nuclear-energy", "count": 1, "related": ["Uranium", "Clean Energy", "Power Generation"]},
+  {"name": "Uranium", "slug": "uranium", "count": 1, "related": ["Nuclear Energy", "Commodities"]},
+  {"name": "Power Generation", "slug": "power-generation", "count": 1, "related": ["Nuclear Energy", "Clean Energy", "Data Centers"]},
+  {"name": "Next-Gen Reactors", "slug": "next-gen-reactors", "count": 1, "related": ["Nuclear Energy", "Clean Energy"]}
 ]

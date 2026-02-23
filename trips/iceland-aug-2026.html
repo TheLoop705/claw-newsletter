@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🇮🇸 Iceland Trip — August 2026</title>
+<title>🇮🇸 Island Reise — August 2026</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
@@ -25,24 +25,14 @@
   html { scroll-behavior: smooth; }
   body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
 
-  /* Hero */
   .hero {
-    position: relative;
-    height: 100vh;
-    min-height: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    overflow: hidden;
+    position: relative; height: 100vh; min-height: 600px;
+    display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden;
   }
   .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
+    content: ''; position: absolute; inset: 0;
     background: url('https://images.unsplash.com/photo-1504829857797-ddff29c27927?w=1920&q=80') center/cover;
-    filter: brightness(0.35);
-    z-index: 0;
+    filter: brightness(0.35); z-index: 0;
   }
   .hero-content { position: relative; z-index: 1; padding: 2rem; }
   .hero h1 { font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 800; letter-spacing: -2px; margin-bottom: 0.5rem; }
@@ -52,42 +42,30 @@
   .hero .crew { margin-top: 1.5rem; font-size: 1rem; color: var(--text2); }
   .hero .crew span { color: var(--accent2); font-weight: 500; }
 
-  /* Nav */
   .nav {
     position: sticky; top: 0; z-index: 100;
     background: rgba(10,10,15,0.95); backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255,255,255,0.05);
-    padding: 1rem 2rem;
-    display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;
+    padding: 1rem 2rem; display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;
   }
   .nav a { color: var(--text2); text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; transition: color 0.2s; }
   .nav a:hover { color: var(--accent); }
 
-  /* Sections */
   section { max-width: 1000px; margin: 0 auto; padding: 4rem 2rem; }
   section h2 { font-size: 2rem; font-weight: 700; margin-bottom: 2rem; color: #fff; }
   section h2 .emoji { margin-right: 0.5rem; }
   section h3 { font-size: 1.3rem; font-weight: 600; margin: 2rem 0 1rem; color: var(--accent2); }
 
-  /* Cards */
   .card {
-    background: var(--bg2);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 16px;
-    padding: 2rem;
-    margin-bottom: 1.5rem;
-    transition: transform 0.2s;
+    background: var(--bg2); border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px; padding: 2rem; margin-bottom: 1.5rem; transition: transform 0.2s;
   }
   .card:hover { transform: translateY(-2px); }
   .card h4 { font-size: 1.1rem; color: var(--accent); margin-bottom: 0.75rem; }
 
-  /* Day cards */
   .day-card {
-    background: var(--bg2);
-    border-left: 4px solid var(--accent);
-    border-radius: 0 16px 16px 0;
-    padding: 2rem;
-    margin-bottom: 1.5rem;
+    background: var(--bg2); border-left: 4px solid var(--accent);
+    border-radius: 0 16px 16px 0; padding: 2rem; margin-bottom: 1.5rem;
   }
   .day-card .day-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
   .day-card .day-num { font-size: 2rem; font-weight: 800; color: var(--accent); min-width: 80px; }
@@ -97,7 +75,6 @@
   .day-card li { margin-bottom: 0.5rem; color: var(--text); }
   .day-card .drive-time { display: inline-block; background: var(--bg3); color: var(--gold); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-top: 0.5rem; }
 
-  /* Tables */
   table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
   th, td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.06); }
   th { color: var(--accent); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
@@ -105,38 +82,27 @@
   .budget { color: var(--green); font-weight: 600; }
   .mid { color: var(--gold); font-weight: 600; }
   .premium { color: var(--orange); font-weight: 600; }
-
-  /* Total row */
   tr.total td { border-top: 2px solid var(--accent); font-weight: 700; font-size: 1.05rem; color: #fff; }
 
-  /* Activity grid */
   .activity-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
-  .activity-item {
-    background: var(--bg3);
-    border-radius: 12px;
-    padding: 1.5rem;
-  }
+  .activity-item { background: var(--bg3); border-radius: 12px; padding: 1.5rem; }
   .activity-item .price { color: var(--gold); font-weight: 600; font-size: 0.9rem; margin-top: 0.5rem; }
   .activity-item h4 { color: #fff; font-size: 1rem; margin-bottom: 0.5rem; }
   .activity-item p { color: var(--text2); font-size: 0.9rem; }
 
-  /* Packing list */
   .pack-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
   .pack-cat { background: var(--bg3); border-radius: 12px; padding: 1.5rem; }
   .pack-cat h4 { color: var(--accent); margin-bottom: 0.75rem; font-size: 0.95rem; }
   .pack-cat li { list-style: none; padding: 0.2rem 0; font-size: 0.9rem; color: var(--text2); }
   .pack-cat li::before { content: '✓ '; color: var(--green); font-weight: 600; }
 
-  /* Tips */
   .tip { background: rgba(79,195,247,0.08); border-left: 3px solid var(--accent); padding: 1rem 1.5rem; border-radius: 0 8px 8px 0; margin: 1rem 0; font-size: 0.95rem; }
   .tip strong { color: var(--accent); }
   .warning { background: rgba(255,167,38,0.08); border-left: 3px solid var(--orange); }
   .warning strong { color: var(--orange); }
 
-  /* Footer */
   .footer { text-align: center; padding: 3rem; color: var(--text2); font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.05); }
 
-  /* Scroll arrow */
   .scroll-arrow { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); z-index: 1; animation: bounce 2s infinite; }
   .scroll-arrow a { color: var(--text2); text-decoration: none; font-size: 2rem; }
   @keyframes bounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(10px); } }
@@ -153,89 +119,89 @@
 
 <div class="hero">
   <div class="hero-content">
-    <h1>🇮🇸 <span>Iceland</span></h1>
-    <p class="subtitle">Fire, Ice & Midnight Sun</p>
-    <p class="dates">AUGUST 24 – 29, 2026</p>
-    <p class="crew">👥 <span>Sultan + 2 Friends</span> · 5 Days · South Coast & Golden Circle</p>
+    <h1>🇮🇸 <span>Island</span></h1>
+    <p class="subtitle">Feuer, Eis & Mitternachtssonne</p>
+    <p class="dates">24. – 29. AUGUST 2026</p>
+    <p class="crew">👥 <span>Sultan + 2 Freunde</span> · 5 Tage · Südküste & Golden Circle</p>
   </div>
-  <div class="scroll-arrow"><a href="#flights">↓</a></div>
+  <div class="scroll-arrow"><a href="#fluege">↓</a></div>
 </div>
 
 <nav class="nav">
-  <a href="#flights">Flights</a>
+  <a href="#fluege">Flüge</a>
   <a href="#budget">Budget</a>
-  <a href="#itinerary">Itinerary</a>
-  <a href="#activities">Activities</a>
-  <a href="#practical">Practical</a>
-  <a href="#packing">Packing</a>
-  <a href="#accommodation">Stay</a>
-  <a href="#map">Map</a>
-  <a href="#todo">To-Do</a>
+  <a href="#reiseplan">Reiseplan</a>
+  <a href="#aktivitaeten">Aktivitäten</a>
+  <a href="#praktisch">Praktisches</a>
+  <a href="#packliste">Packliste</a>
+  <a href="#unterkunft">Unterkunft</a>
+  <a href="#karte">Karte</a>
+  <a href="#checkliste">Checkliste</a>
 </nav>
 
-<!-- FLIGHTS -->
-<section id="flights">
-  <h2><span class="emoji">✈️</span>Flights</h2>
+<!-- FLÜGE -->
+<section id="fluege">
+  <h2><span class="emoji">✈️</span>Flüge</h2>
   <div class="card">
     <h4>Frankfurt (FRA) → Reykjavik Keflavik (KEF)</h4>
-    <p>Flight time: <strong>~4 hours direct</strong></p>
+    <p>Flugzeit: <strong>~4 Stunden direkt</strong></p>
     <table>
-      <tr><th>Airline</th><th>Type</th><th>Price (return)</th><th>Notes</th></tr>
-      <tr><td>Icelandair</td><td>Direct</td><td class="mid">€350–500</td><td>Best option, most frequent</td></tr>
-      <tr><td>Lufthansa</td><td>Direct</td><td class="mid">€300–450</td><td>7x weekly from FRA</td></tr>
-      <tr><td>PLAY</td><td>Direct</td><td class="budget">€200–350</td><td>Budget carrier, bags extra</td></tr>
-      <tr><td>WizzAir / Others</td><td>1 stop</td><td class="budget">€180–300</td><td>Longer travel time</td></tr>
+      <tr><th>Airline</th><th>Typ</th><th>Preis (Hin & Rück)</th><th>Hinweise</th></tr>
+      <tr><td>Icelandair</td><td>Direkt</td><td class="mid">€350–500</td><td>Beste Option, am häufigsten</td></tr>
+      <tr><td>Lufthansa</td><td>Direkt</td><td class="mid">€300–450</td><td>7x wöchentlich ab FRA</td></tr>
+      <tr><td>PLAY</td><td>Direkt</td><td class="budget">€200–350</td><td>Billigflieger, Gepäck extra</td></tr>
+      <tr><td>WizzAir / Andere</td><td>1 Stopp</td><td class="budget">€180–300</td><td>Längere Reisezeit</td></tr>
     </table>
     <div class="tip">
-      <strong>💡 Pro Tip:</strong> Book 3–4 months ahead (April/May) for best August prices. Icelandair allows a free stopover — useful if extending the trip.
+      <strong>💡 Tipp:</strong> 3–4 Monate vorher buchen (April/Mai) für die besten August-Preise. Icelandair erlaubt einen kostenlosen Stopover — praktisch wenn man die Reise verlängern will.
     </div>
-    <p style="margin-top:1rem;color:var(--text2)"><strong>Estimated per person:</strong> €300–400 (return) · <strong>Total for 3:</strong> €900–1,200</p>
+    <p style="margin-top:1rem;color:var(--text2)"><strong>Geschätzt pro Person:</strong> €300–400 (Hin & Rück) · <strong>Gesamt für 3:</strong> €900–1.200</p>
   </div>
 </section>
 
 <!-- BUDGET -->
 <section id="budget">
-  <h2><span class="emoji">💰</span>Budget Breakdown</h2>
-  <p style="color:var(--text2);margin-bottom:1.5rem">Iceland is expensive — no sugarcoating it. But splitting 3 ways helps a lot. All estimates for 5 days / 4 nights.</p>
+  <h2><span class="emoji">💰</span>Kostenübersicht</h2>
+  <p style="color:var(--text2);margin-bottom:1.5rem">Island ist teuer — da gibt's nichts zu beschönigen. Aber zu dritt teilen hilft enorm. Alle Schätzungen für 5 Tage / 4 Nächte.</p>
 
   <table>
-    <tr><th>Expense</th><th class="budget">Budget</th><th class="mid">Mid-Range</th><th class="premium">Premium</th></tr>
-    <tr><td>✈️ Flights (return)</td><td class="budget">€200</td><td class="mid">€350</td><td class="premium">€500</td></tr>
-    <tr><td>🏨 Accommodation (4 nights)</td><td class="budget">€200</td><td class="mid">€400</td><td class="premium">€700</td></tr>
-    <tr><td>🚗 Car rental (split 3 ways)</td><td class="budget">€100</td><td class="mid">€180</td><td class="premium">€300</td></tr>
-    <tr><td>⛽ Fuel (~1000km)</td><td class="budget">€50</td><td class="mid">€60</td><td class="premium">€80</td></tr>
-    <tr><td>🍔 Food & Drinks</td><td class="budget">€150</td><td class="mid">€300</td><td class="premium">€500</td></tr>
-    <tr><td>🎯 Activities</td><td class="budget">€100</td><td class="mid">€250</td><td class="premium">€500</td></tr>
-    <tr class="total"><td>TOTAL PER PERSON</td><td class="budget">~€800</td><td class="mid">~€1,540</td><td class="premium">~€2,580</td></tr>
-    <tr class="total"><td>TOTAL FOR 3</td><td class="budget">~€2,400</td><td class="mid">~€4,620</td><td class="premium">~€7,740</td></tr>
+    <tr><th>Ausgabe</th><th class="budget">Günstig</th><th class="mid">Mittelklasse</th><th class="premium">Premium</th></tr>
+    <tr><td>✈️ Flüge (Hin & Rück)</td><td class="budget">€200</td><td class="mid">€350</td><td class="premium">€500</td></tr>
+    <tr><td>🏨 Unterkunft (4 Nächte)</td><td class="budget">€200</td><td class="mid">€400</td><td class="premium">€700</td></tr>
+    <tr><td>🚗 Mietwagen (geteilt durch 3)</td><td class="budget">€100</td><td class="mid">€180</td><td class="premium">€300</td></tr>
+    <tr><td>⛽ Sprit (~1000km)</td><td class="budget">€50</td><td class="mid">€60</td><td class="premium">€80</td></tr>
+    <tr><td>🍔 Essen & Trinken</td><td class="budget">€150</td><td class="mid">€300</td><td class="premium">€500</td></tr>
+    <tr><td>🎯 Aktivitäten</td><td class="budget">€100</td><td class="mid">€250</td><td class="premium">€500</td></tr>
+    <tr class="total"><td>GESAMT PRO PERSON</td><td class="budget">~€800</td><td class="mid">~€1.540</td><td class="premium">~€2.580</td></tr>
+    <tr class="total"><td>GESAMT FÜR 3</td><td class="budget">~€2.400</td><td class="mid">~€4.620</td><td class="premium">~€7.740</td></tr>
   </table>
 
   <div class="tip warning">
-    <strong>⚠️ Reality Check:</strong> A beer at a bar costs €8–12. A burger is €18–25. Groceries from Bónus supermarket are your best friend. Buy alcohol at duty-free on arrival — it's 50%+ cheaper than Vínbúðin (state liquor stores).
+    <strong>⚠️ Realitäts-Check:</strong> Ein Bier in der Bar kostet €8–12. Ein Burger €18–25. Der Bónus-Supermarkt ist euer bester Freund. Alkohol am Duty Free bei Ankunft kaufen — das ist 50%+ günstiger als Vínbúðin (staatliche Spirituosenläden).
   </div>
 </section>
 
-<!-- ITINERARY -->
-<section id="itinerary">
-  <h2><span class="emoji">🗺️</span>Day-by-Day Itinerary</h2>
-  <p style="color:var(--text2);margin-bottom:2rem">South Coast focus — the most scenic bang-for-buck with 5 days. Full Ring Road needs 7–10 days.</p>
+<!-- REISEPLAN -->
+<section id="reiseplan">
+  <h2><span class="emoji">🗺️</span>Tag-für-Tag Reiseplan</h2>
+  <p style="color:var(--text2);margin-bottom:2rem">Fokus Südküste — das meiste fürs Geld in 5 Tagen. Für die komplette Ringstraße braucht man 7–10 Tage.</p>
 
   <div class="day-card">
     <div class="day-header">
       <div class="day-num">01</div>
       <div>
-        <div class="day-title">Arrival & Reykjavik</div>
-        <div class="day-date">Monday, August 24</div>
+        <div class="day-title">Ankunft & Reykjavik</div>
+        <div class="day-date">Montag, 24. August</div>
       </div>
     </div>
     <ul>
-      <li>🛬 Land at Keflavik (KEF) — pick up rental car at airport</li>
-      <li>🛒 Stop at duty-free for alcohol, then <strong>Bónus supermarket</strong> for road trip snacks & groceries</li>
-      <li>♨️ <strong>Sky Lagoon</strong> (more local vibe) or <strong>Blue Lagoon</strong> (iconic, book ahead!) — perfect jet-lag cure</li>
-      <li>🌃 Explore Reykjavik: <strong>Hallgrímskirkja</strong>, Laugavegur street, harbour area</li>
-      <li>🍺 Dinner & drinks downtown — check out Skúli Craft Bar or Mikkeller</li>
+      <li>🛬 Landung in Keflavik (KEF) — Mietwagen am Flughafen abholen</li>
+      <li>🛒 Stopp am Duty Free für Alkohol, dann <strong>Bónus Supermarkt</strong> für Roadtrip-Snacks & Lebensmittel</li>
+      <li>♨️ <strong>Sky Lagoon</strong> (lokaler Vibe) oder <strong>Blue Lagoon</strong> (ikonisch, vorher buchen!) — perfekt gegen Jetlag</li>
+      <li>🌃 Reykjavik erkunden: <strong>Hallgrímskirkja</strong>, Laugavegur-Straße, Hafengebiet</li>
+      <li>🍺 Abendessen & Drinks in der Innenstadt — Skúli Craft Bar oder Mikkeller</li>
     </ul>
-    <span class="drive-time">🚗 KEF → Reykjavik: 45 min</span>
+    <span class="drive-time">🚗 KEF → Reykjavik: 45 Min</span>
   </div>
 
   <div class="day-card">
@@ -243,310 +209,310 @@
       <div class="day-num">02</div>
       <div>
         <div class="day-title">Golden Circle</div>
-        <div class="day-date">Tuesday, August 25</div>
+        <div class="day-date">Dienstag, 25. August</div>
       </div>
     </div>
     <ul>
-      <li>🌋 <strong>Þingvellir National Park</strong> — UNESCO site, walk between tectonic plates</li>
-      <li>🤿 <strong>Silfra Snorkeling</strong> — crystal clear glacial water between continents (book ahead!)</li>
-      <li>💨 <strong>Geysir Geothermal Area</strong> — watch Strokkur erupt every 5–10 min</li>
-      <li>💧 <strong>Gullfoss Waterfall</strong> — massive two-tiered waterfall, one of Iceland's most powerful</li>
-      <li>♨️ <strong>Secret Lagoon</strong> in Flúðir — natural hot spring, less touristy than Blue Lagoon</li>
-      <li>🌙 Drive to Selfoss or Hella for overnight</li>
+      <li>🌋 <strong>Þingvellir Nationalpark</strong> — UNESCO-Welterbe, zwischen tektonischen Platten laufen</li>
+      <li>🤿 <strong>Silfra Schnorcheln</strong> — kristallklares Gletscherwasser zwischen Kontinenten (vorher buchen!)</li>
+      <li>💨 <strong>Geysir Geothermalgebiet</strong> — Strokkur bricht alle 5–10 Min aus</li>
+      <li>💧 <strong>Gullfoss Wasserfall</strong> — gewaltiger zweistufiger Wasserfall, einer der mächtigsten Islands</li>
+      <li>♨️ <strong>Secret Lagoon</strong> in Flúðir — natürliche heiße Quelle, weniger touristisch als Blue Lagoon</li>
+      <li>🌙 Weiterfahrt nach Selfoss oder Hella zur Übernachtung</li>
     </ul>
-    <span class="drive-time">🚗 Total: ~230 km loop, 3.5 hours driving</span>
+    <span class="drive-time">🚗 Gesamt: ~230 km Rundfahrt, 3,5 Stunden Fahrzeit</span>
   </div>
 
   <div class="day-card">
     <div class="day-header">
       <div class="day-num">03</div>
       <div>
-        <div class="day-title">South Coast — Waterfalls & Black Sand</div>
-        <div class="day-date">Wednesday, August 26</div>
+        <div class="day-title">Südküste — Wasserfälle & Schwarzer Sand</div>
+        <div class="day-date">Mittwoch, 26. August</div>
       </div>
     </div>
     <ul>
-      <li>💧 <strong>Seljalandsfoss</strong> — walk behind the waterfall (bring rain gear!)</li>
-      <li>💧 <strong>Skógafoss</strong> — epic 60m waterfall, climb the stairs for top view</li>
-      <li>🏖️ <strong>Reynisfjara Black Sand Beach</strong> — basalt columns, sea stacks, huge waves (stay back from the water!)</li>
-      <li>🏘️ Explore <strong>Vík</strong> — charming village, lunch stop</li>
-      <li>🌿 <strong>Fjaðrárgljúfur Canyon</strong> — stunning 100m deep moss-covered canyon</li>
-      <li>🌙 Stay near Kirkjubæjarklaustur or Höfn</li>
+      <li>💧 <strong>Seljalandsfoss</strong> — hinter dem Wasserfall durchlaufen (Regenjacke mitnehmen!)</li>
+      <li>💧 <strong>Skógafoss</strong> — epischer 60m Wasserfall, Treppe nach oben für den Ausblick</li>
+      <li>🏖️ <strong>Reynisfjara Schwarzer Sandstrand</strong> — Basaltsäulen, Felsnadeln, riesige Wellen (Abstand halten!)</li>
+      <li>🏘️ <strong>Vík</strong> erkunden — charmantes Dorf, Mittagspause</li>
+      <li>🌿 <strong>Fjaðrárgljúfur Canyon</strong> — atemberaubende 100m tiefe, moosbewachsene Schlucht</li>
+      <li>🌙 Übernachtung bei Kirkjubæjarklaustur oder Höfn</li>
     </ul>
-    <span class="drive-time">🚗 Selfoss → Vík → Kirkjubæjarklaustur: ~250 km, 3 hours</span>
+    <span class="drive-time">🚗 Selfoss → Vík → Kirkjubæjarklaustur: ~250 km, 3 Stunden</span>
   </div>
 
   <div class="day-card">
     <div class="day-header">
       <div class="day-num">04</div>
       <div>
-        <div class="day-title">Glaciers & Ice Lagoon</div>
-        <div class="day-date">Thursday, August 27</div>
+        <div class="day-title">Gletscher & Eislagune</div>
+        <div class="day-date">Donnerstag, 27. August</div>
       </div>
     </div>
     <ul>
-      <li>🏔️ <strong>Skaftafell / Vatnajökull National Park</strong> — glacier hiking tour on Europe's largest glacier</li>
-      <li>🧊 <strong>Jökulsárlón Glacier Lagoon</strong> — floating icebergs, zodiac boat tour</li>
-      <li>💎 <strong>Diamond Beach</strong> — ice chunks washed up on black sand, incredible photos</li>
-      <li>🐋 Optional: <strong>Whale watching</strong> from Höfn (humpback whales, dolphins)</li>
-      <li>🌙 Stay in Höfn (lobster capital!) — treat yourselves to langoustine dinner</li>
+      <li>🏔️ <strong>Skaftafell / Vatnajökull Nationalpark</strong> — Gletscherwanderung auf Europas größtem Gletscher</li>
+      <li>🧊 <strong>Jökulsárlón Gletscherlagune</strong> — schwimmende Eisberge, Zodiac-Bootstour</li>
+      <li>💎 <strong>Diamond Beach</strong> — Eisbrocken auf schwarzem Sand, unglaubliche Fotos</li>
+      <li>🐋 Optional: <strong>Walbeobachtung</strong> ab Höfn (Buckelwale, Delfine)</li>
+      <li>🌙 Übernachtung in Höfn (Hummer-Hauptstadt!) — gönnt euch Langoustine-Dinner</li>
     </ul>
-    <span class="drive-time">🚗 Kirkjubæjarklaustur → Jökulsárlón → Höfn: ~200 km, 2.5 hours</span>
+    <span class="drive-time">🚗 Kirkjubæjarklaustur → Jökulsárlón → Höfn: ~200 km, 2,5 Stunden</span>
   </div>
 
   <div class="day-card">
     <div class="day-header">
       <div class="day-num">05</div>
       <div>
-        <div class="day-title">Return & Departure</div>
-        <div class="day-date">Friday, August 29 (or Saturday Aug 29)</div>
+        <div class="day-title">Rückfahrt & Abflug</div>
+        <div class="day-date">Freitag, 29. August</div>
       </div>
     </div>
     <ul>
-      <li>🚗 Drive back to Reykjavik (long drive — leave early!)</li>
-      <li>🛍️ Last-minute shopping: Laugavegur for souvenirs, Icelandic wool sweaters</li>
-      <li>🍔 Bæjarins Beztu — famous Reykjavik hot dog stand (a must)</li>
-      <li>♨️ Optional: quick dip at Reykjavik public pool (Vesturbæjarlaug)</li>
-      <li>🛫 Drop off car, fly home to Frankfurt</li>
+      <li>🚗 Rückfahrt nach Reykjavik (lange Fahrt — früh losfahren!)</li>
+      <li>🛍️ Last-Minute-Shopping: Laugavegur für Souvenirs, Islandwolle-Pullover</li>
+      <li>🍔 Bæjarins Beztu — berühmter Hotdog-Stand in Reykjavik (Pflicht!)</li>
+      <li>♨️ Optional: kurzer Abstecher ins Reykjavik Schwimmbad (Vesturbæjarlaug)</li>
+      <li>🛫 Auto abgeben, Heimflug nach Frankfurt</li>
     </ul>
-    <span class="drive-time">🚗 Höfn → KEF Airport: ~460 km, 5.5 hours (start early!)</span>
+    <span class="drive-time">🚗 Höfn → KEF Flughafen: ~460 km, 5,5 Stunden (früh losfahren!)</span>
     <div class="tip" style="margin-top:1rem">
-      <strong>💡 Alternative:</strong> If the return drive feels too long, break Day 4 earlier and sleep near Vík on the way back. Or book a late flight.
+      <strong>💡 Alternative:</strong> Wenn die Rückfahrt zu lang ist, Tag 4 früher beenden und auf dem Rückweg bei Vík übernachten. Oder Spätflug buchen.
     </div>
   </div>
 
   <div class="card" style="text-align:center;margin-top:2rem">
-    <h4>📍 Route Map</h4>
-    <p style="margin-bottom:1rem;color:var(--text2)">Total driving distance: ~1,100 km</p>
-    <a href="https://www.google.com/maps/dir/Keflavik+Airport/Reykjavik/Thingvellir+National+Park/Geysir/Gullfoss/Seljalandsfoss/Vik/Jokulsarlon/Hofn/Keflavik+Airport" target="_blank" style="color:var(--accent);font-weight:600;text-decoration:none;">🗺️ Open Route in Google Maps →</a>
+    <h4>📍 Routenkarte</h4>
+    <p style="margin-bottom:1rem;color:var(--text2)">Gesamte Fahrstrecke: ~1.100 km</p>
+    <a href="https://www.google.com/maps/dir/Keflavik+Airport/Reykjavik/Thingvellir+National+Park/Geysir/Gullfoss/Seljalandsfoss/Vik/Jokulsarlon/Hofn/Keflavik+Airport" target="_blank" style="color:var(--accent);font-weight:600;text-decoration:none;">🗺️ Route in Google Maps öffnen →</a>
   </div>
 </section>
 
-<!-- ACTIVITIES -->
-<section id="activities">
-  <h2><span class="emoji">🎯</span>Must-Do Activities</h2>
+<!-- AKTIVITÄTEN -->
+<section id="aktivitaeten">
+  <h2><span class="emoji">🎯</span>Must-Do Aktivitäten</h2>
   <div class="activity-grid">
     <div class="activity-item">
-      <h4>🏔️ Glacier Hiking</h4>
-      <p>Walk on Sólheimajökull or Skaftafell glacier with crampons. Guided only. 3–4 hour tours.</p>
-      <div class="price">~€80–120 per person</div>
+      <h4>🏔️ Gletscherwanderung</h4>
+      <p>Auf dem Sólheimajökull oder Skaftafell-Gletscher mit Steigeisen wandern. Nur geführt. 3–4 Stunden.</p>
+      <div class="price">~€80–120 pro Person</div>
     </div>
     <div class="activity-item">
-      <h4>🤿 Silfra Snorkeling</h4>
-      <p>Snorkel between tectonic plates in crystal clear 2°C water. Dry suit provided. Bucket list stuff.</p>
-      <div class="price">~€120–150 per person</div>
+      <h4>🤿 Silfra Schnorcheln</h4>
+      <p>Zwischen tektonischen Platten in kristallklarem 2°C Wasser schnorcheln. Trockenanzug wird gestellt. Bucket-List-Material.</p>
+      <div class="price">~€120–150 pro Person</div>
     </div>
     <div class="activity-item">
-      <h4>🐋 Whale Watching</h4>
-      <p>Humpback whales, minke whales, dolphins. Best from Húsavík or Reykjavik. August = peak season.</p>
-      <div class="price">~€80–100 per person</div>
+      <h4>🐋 Walbeobachtung</h4>
+      <p>Buckelwale, Zwergwale, Delfine. Am besten ab Húsavík oder Reykjavik. August = Hauptsaison.</p>
+      <div class="price">~€80–100 pro Person</div>
     </div>
     <div class="activity-item">
       <h4>♨️ Blue Lagoon / Sky Lagoon</h4>
-      <p>Geothermal spa in milky blue water. Sky Lagoon is newer, less crowded, ocean views.</p>
-      <div class="price">€60–90 per person</div>
+      <p>Geothermales Spa in milchig-blauem Wasser. Sky Lagoon ist neuer, weniger überlaufen, Meerblick.</p>
+      <div class="price">€60–90 pro Person</div>
     </div>
     <div class="activity-item">
-      <h4>🧊 Jökulsárlón Boat Tour</h4>
-      <p>Zodiac boat ride among floating icebergs. Get up close. ~1 hour tour.</p>
-      <div class="price">~€45–65 per person</div>
+      <h4>🧊 Jökulsárlón Bootstour</h4>
+      <p>Zodiac-Bootsfahrt zwischen schwimmenden Eisbergen. Hautnah dabei. ~1 Stunde.</p>
+      <div class="price">~€45–65 pro Person</div>
     </div>
     <div class="activity-item">
-      <h4>🌋 Volcano / Lava Field Hike</h4>
-      <p>Recent eruptions on Reykjanes Peninsula. Guided tours to fresh lava fields.</p>
-      <div class="price">~€60–100 per person</div>
+      <h4>🌋 Vulkan / Lavafeld-Wanderung</h4>
+      <p>Jüngste Eruptionen auf der Reykjanes-Halbinsel. Geführte Touren zu frischen Lavafeldern.</p>
+      <div class="price">~€60–100 pro Person</div>
     </div>
     <div class="activity-item">
-      <h4>🐴 Icelandic Horse Riding</h4>
-      <p>Ride the unique five-gaited Icelandic horse through lava fields. No experience needed.</p>
-      <div class="price">~€70–100 per person</div>
+      <h4>🐴 Islandpferd Reiten</h4>
+      <p>Die einzigartigen fünfgängigen Islandpferde durch Lavafelder reiten. Keine Erfahrung nötig.</p>
+      <div class="price">~€70–100 pro Person</div>
     </div>
     <div class="activity-item">
       <h4>🌊 Secret Lagoon</h4>
-      <p>Natural hot spring in Flúðir. Cheaper and more authentic than Blue Lagoon.</p>
-      <div class="price">~€25 per person</div>
+      <p>Natürliche heiße Quelle in Flúðir. Günstiger und authentischer als Blue Lagoon.</p>
+      <div class="price">~€25 pro Person</div>
     </div>
   </div>
 
   <div class="tip" style="margin-top:1.5rem">
-    <strong>🌌 Northern Lights?</strong> Late August is borderline — it starts getting dark enough around Aug 25–30. You might catch a faint display if you're lucky and far from city lights. Don't count on it, but keep an eye on the aurora forecast!
+    <strong>🌌 Nordlichter?</strong> Ende August ist grenzwertig — es wird ab dem 25.–30. August dunkel genug. Mit Glück und fernab der Stadtlichter kann man ein schwaches Display sehen. Nicht fest einplanen, aber den Aurora-Forecast im Auge behalten!
   </div>
 </section>
 
-<!-- PRACTICAL -->
-<section id="practical">
-  <h2><span class="emoji">📋</span>Practical Info</h2>
+<!-- PRAKTISCH -->
+<section id="praktisch">
+  <h2><span class="emoji">📋</span>Praktische Infos</h2>
 
   <div class="card">
-    <h4>💳 Money & Payment</h4>
+    <h4>💳 Geld & Bezahlung</h4>
     <ul>
-      <li>Currency: <strong>Icelandic Króna (ISK)</strong> — 1 EUR ≈ 150 ISK</li>
-      <li><strong>Cards accepted literally everywhere</strong> — even hot dog stands and remote gas stations</li>
-      <li>No need to carry cash at all</li>
-      <li>Tipping is not expected in Iceland</li>
+      <li>Währung: <strong>Isländische Krone (ISK)</strong> — 1 EUR ≈ 150 ISK</li>
+      <li><strong>Karten werden wirklich überall akzeptiert</strong> — sogar am Hotdog-Stand und an abgelegenen Tankstellen</li>
+      <li>Bargeld ist komplett unnötig</li>
+      <li>Trinkgeld ist in Island nicht üblich</li>
     </ul>
   </div>
 
   <div class="card">
-    <h4>🚗 Driving Tips</h4>
+    <h4>🚗 Fahrtipps</h4>
     <ul>
-      <li><strong>Speed limit:</strong> 90 km/h on highways, 80 on gravel, 50 in towns</li>
-      <li><strong>Speed cameras everywhere</strong> — fines are brutal (€150+)</li>
-      <li><strong>F-roads</strong> (highland roads) require a 4x4. Regular cars = insurance void</li>
-      <li>Fuel stations can be 100+ km apart — fill up when you can</li>
-      <li>Use <strong>N1 fuel card</strong> or credit card with PIN at unmanned stations</li>
-      <li>Single-lane bridges are common — first to arrive has right of way</li>
-      <li>Watch for sheep on roads! They roam free in summer</li>
-      <li><strong>Wind:</strong> Open car doors carefully — wind can rip them off (yes, really)</li>
+      <li><strong>Tempolimit:</strong> 90 km/h auf Highways, 80 auf Schotter, 50 in Ortschaften</li>
+      <li><strong>Blitzer überall</strong> — Bußgelder sind heftig (€150+)</li>
+      <li><strong>F-Straßen</strong> (Hochlandstraßen) erfordern einen 4x4. Normalautos = Versicherung ungültig</li>
+      <li>Tankstellen können 100+ km auseinander liegen — tanken wenn es geht</li>
+      <li><strong>N1 Tankkarte</strong> oder Kreditkarte mit PIN an unbemannten Stationen nutzen</li>
+      <li>Einspurige Brücken sind häufig — wer zuerst da ist, hat Vorfahrt</li>
+      <li>Achtung Schafe auf der Straße! Die laufen im Sommer frei herum</li>
+      <li><strong>Wind:</strong> Autotüren vorsichtig öffnen — der Wind kann sie abreißen (kein Witz)</li>
     </ul>
   </div>
 
   <div class="card">
-    <h4>📱 Apps & Connectivity</h4>
+    <h4>📱 Apps & Verbindung</h4>
     <ul>
-      <li><strong>Vedur</strong> — official weather app (weather changes hourly)</li>
-      <li><strong>Road.is</strong> (Vegagerðin) — road conditions, closures, webcams</li>
-      <li><strong>Google Maps</strong> works great — download Iceland offline map before going</li>
-      <li><strong>Mobile data:</strong> Buy a Siminn or Vodafone tourist SIM at KEF airport (~€20 for 10GB)</li>
-      <li>Good 4G coverage on Ring Road, patchy in highlands</li>
+      <li><strong>Vedur</strong> — offizielle Wetter-App (Wetter ändert sich stündlich)</li>
+      <li><strong>Road.is</strong> (Vegagerðin) — Straßenverhältnisse, Sperrungen, Webcams</li>
+      <li><strong>Google Maps</strong> funktioniert super — Island Offline-Karte vorher runterladen</li>
+      <li><strong>Mobile Daten:</strong> Siminn oder Vodafone Touristen-SIM am KEF-Flughafen kaufen (~€20 für 10GB)</li>
+      <li>Gutes 4G auf der Ringstraße, lückenhaft im Hochland</li>
     </ul>
   </div>
 
   <div class="card">
-    <h4>🍺 Alcohol in Iceland</h4>
+    <h4>🍺 Alkohol in Island</h4>
     <ul>
-      <li>Alcohol is <strong>only sold at Vínbúðin</strong> (state liquor stores) — not in supermarkets</li>
-      <li>Vínbúðin has limited hours (closed Sundays in many places)</li>
-      <li><strong>BUY AT DUTY FREE ON ARRIVAL AT KEF</strong> — this is not optional, it's survival</li>
-      <li>A beer at a bar: €8–12. A bottle of wine at Vínbúðin: €15–25</li>
+      <li>Alkohol gibt es <strong>nur bei Vínbúðin</strong> (staatliche Spirituosenläden) — nicht im Supermarkt</li>
+      <li>Vínbúðin hat eingeschränkte Öffnungszeiten (sonntags oft geschlossen)</li>
+      <li><strong>AM DUTY FREE BEI ANKUNFT IN KEF KAUFEN</strong> — das ist keine Option, das ist Überlebensstrategie</li>
+      <li>Ein Bier in der Bar: €8–12. Eine Flasche Wein bei Vínbúðin: €15–25</li>
     </ul>
   </div>
 
   <div class="card">
-    <h4>🌤️ August Weather</h4>
+    <h4>🌤️ Wetter im August</h4>
     <ul>
-      <li>Temperature: <strong>10–15°C</strong> (can feel colder with wind)</li>
-      <li>Daylight: ~17–19 hours (sunrise ~5 AM, sunset ~9:30 PM)</li>
-      <li>Rain is frequent but usually light — expect all four seasons in one day</li>
-      <li>Late August: starting to get dark at night → slight chance of northern lights!</li>
+      <li>Temperatur: <strong>10–15°C</strong> (kann sich mit Wind kälter anfühlen)</li>
+      <li>Tageslicht: ~17–19 Stunden (Sonnenaufgang ~5 Uhr, Sonnenuntergang ~21:30)</li>
+      <li>Regen ist häufig aber meist leicht — erwartet alle vier Jahreszeiten an einem Tag</li>
+      <li>Ende August: wird abends langsam dunkel → leichte Chance auf Nordlichter!</li>
     </ul>
   </div>
 
   <div class="card">
-    <h4>🚙 Car Rental</h4>
+    <h4>🚙 Mietwagen</h4>
     <ul>
-      <li>Book a <strong>4x4 SUV</strong> if you want to explore F-roads or feel safe on gravel</li>
-      <li>A regular car is fine if sticking to Ring Road (Route 1)</li>
-      <li>Best companies: <strong>Lotus, Blue Car, Hertz Iceland</strong></li>
-      <li>Get <strong>gravel protection + sand/ash protection</strong> insurance — worth it</li>
-      <li>Estimated cost: <strong>€300–550 for 5 days</strong> (4x4 SUV, split 3 ways = €100–180 each)</li>
+      <li>Einen <strong>4x4 SUV</strong> buchen wenn ihr F-Straßen erkunden wollt oder euch auf Schotter sicher fühlen wollt</li>
+      <li>Ein normales Auto reicht wenn ihr auf der Ringstraße (Route 1) bleibt</li>
+      <li>Beste Anbieter: <strong>Lotus, Blue Car, Hertz Iceland</strong></li>
+      <li><strong>Schotterschutz + Sand-/Ascheschutz</strong> Versicherung holen — lohnt sich</li>
+      <li>Geschätzte Kosten: <strong>€300–550 für 5 Tage</strong> (4x4 SUV, geteilt durch 3 = €100–180 pro Person)</li>
     </ul>
   </div>
 </section>
 
-<!-- PACKING -->
-<section id="packing">
-  <h2><span class="emoji">🎒</span>Packing List</h2>
-  <p style="color:var(--text2);margin-bottom:1.5rem">Layer everything. Iceland weather changes every hour. Forget the umbrella — it's useless in wind.</p>
+<!-- PACKLISTE -->
+<section id="packliste">
+  <h2><span class="emoji">🎒</span>Packliste</h2>
+  <p style="color:var(--text2);margin-bottom:1.5rem">Alles in Schichten anziehen. Islands Wetter ändert sich stündlich. Regenschirm vergessen — nutzlos bei Wind.</p>
 
   <div class="pack-grid">
     <div class="pack-cat">
-      <h4>🧥 Clothing</h4>
+      <h4>🧥 Kleidung</h4>
       <ul>
-        <li>Waterproof outer shell jacket</li>
-        <li>Fleece or down mid-layer</li>
-        <li>Merino wool base layers</li>
-        <li>Waterproof pants</li>
-        <li>Warm hat & buff/neck gaiter</li>
-        <li>Gloves (windproof)</li>
-        <li>Shorts & t-shirt (sunny days exist!)</li>
-        <li>Swimsuit (hot springs!)</li>
+        <li>Wasserdichte Außenjacke</li>
+        <li>Fleece oder Daunenjacke als Zwischenschicht</li>
+        <li>Merino-Unterwäsche</li>
+        <li>Wasserdichte Hose</li>
+        <li>Warme Mütze & Buff/Halstuch</li>
+        <li>Handschuhe (winddicht)</li>
+        <li>Shorts & T-Shirt (es gibt auch Sonnentage!)</li>
+        <li>Badehose (heiße Quellen!)</li>
       </ul>
     </div>
     <div class="pack-cat">
-      <h4>👟 Footwear</h4>
+      <h4>👟 Schuhe</h4>
       <ul>
-        <li>Waterproof hiking boots (broken in!)</li>
-        <li>Casual shoes for Reykjavik</li>
-        <li>Wool socks (3-4 pairs)</li>
+        <li>Wasserdichte Wanderschuhe (eingelaufen!)</li>
+        <li>Lässige Schuhe für Reykjavik</li>
+        <li>Wollsocken (3–4 Paar)</li>
       </ul>
     </div>
     <div class="pack-cat">
-      <h4>📷 Gear</h4>
+      <h4>📷 Ausrüstung</h4>
       <ul>
-        <li>Camera + extra batteries (cold drains them)</li>
-        <li>Power bank</li>
-        <li>Travel adapter (Type C, Europlug — same as Germany ✓)</li>
-        <li>Sunglasses</li>
-        <li>Reusable water bottle (tap water is pristine)</li>
+        <li>Kamera + Ersatzbatterien (Kälte zieht sie leer)</li>
+        <li>Powerbank</li>
+        <li>Reiseadapter (Typ C, Eurostecker — wie in Deutschland ✓)</li>
+        <li>Sonnenbrille</li>
+        <li>Trinkflasche (Leitungswasser ist top)</li>
       </ul>
     </div>
     <div class="pack-cat">
-      <h4>📱 Essentials</h4>
+      <h4>📱 Wichtiges</h4>
       <ul>
-        <li>Passport / ID</li>
-        <li>Credit card with PIN</li>
-        <li>Tourist SIM or roaming plan</li>
-        <li>Offline Google Maps downloaded</li>
-        <li>Booking confirmations (printed backup)</li>
-        <li>Sunscreen SPF30+ (yes, even in Iceland)</li>
+        <li>Reisepass / Personalausweis</li>
+        <li>Kreditkarte mit PIN</li>
+        <li>Touristen-SIM oder Roaming-Tarif</li>
+        <li>Google Maps offline heruntergeladen</li>
+        <li>Buchungsbestätigungen (Ausdruck als Backup)</li>
+        <li>Sonnencreme LSF30+ (ja, auch in Island)</li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- ACCOMMODATION -->
-<section id="accommodation">
-  <h2><span class="emoji">🏨</span>Where to Stay</h2>
+<!-- UNTERKUNFT -->
+<section id="unterkunft">
+  <h2><span class="emoji">🏨</span>Übernachtungen</h2>
 
   <div class="card">
-    <h4>Night 1 — Reykjavik (Aug 24)</h4>
-    <p>Stay downtown near Laugavegur for walkability. Guesthouses or Airbnb work great for 3 people.</p>
+    <h4>Nacht 1 — Reykjavik (24. Aug)</h4>
+    <p>Zentral in der Nähe der Laugavegur-Straße übernachten. Gästehäuser oder Airbnb ideal für 3 Personen.</p>
     <ul>
-      <li><strong>Budget:</strong> KEX Hostel, Bus Hostel — from €40/person</li>
-      <li><strong>Mid:</strong> Airbnb apartment (split 3 ways) — €50–80/person</li>
-      <li><strong>Premium:</strong> Hotel Borg, Canopy by Hilton — from €120/person</li>
+      <li><strong>Günstig:</strong> KEX Hostel, Bus Hostel — ab €40/Person</li>
+      <li><strong>Mittel:</strong> Airbnb Apartment (geteilt durch 3) — €50–80/Person</li>
+      <li><strong>Premium:</strong> Hotel Borg, Canopy by Hilton — ab €120/Person</li>
     </ul>
   </div>
 
   <div class="card">
-    <h4>Night 2 — Selfoss / Hella area (Aug 25)</h4>
-    <p>After Golden Circle, base yourself in the south for early start next day.</p>
+    <h4>Nacht 2 — Selfoss / Hella Gegend (25. Aug)</h4>
+    <p>Nach dem Golden Circle im Süden übernachten für einen frühen Start am nächsten Tag.</p>
     <ul>
-      <li><strong>Guesthouse Bitra B&B</strong> — cozy, affordable</li>
-      <li><strong>Hotel Rangá</strong> — premium, great for northern lights spotting</li>
-      <li>Airbnb cottages near Hella — great value for groups</li>
+      <li><strong>Guesthouse Bitra B&B</strong> — gemütlich, erschwinglich</li>
+      <li><strong>Hotel Rangá</strong> — Premium, super für Nordlichter-Spotting</li>
+      <li>Airbnb Hütten bei Hella — super Preis-Leistung für Gruppen</li>
     </ul>
   </div>
 
   <div class="card">
-    <h4>Night 3 — Vík / Kirkjubæjarklaustur (Aug 26)</h4>
-    <p>Small towns — book early, limited options in August.</p>
+    <h4>Nacht 3 — Vík / Kirkjubæjarklaustur (26. Aug)</h4>
+    <p>Kleine Orte — frühzeitig buchen, begrenzte Auswahl im August.</p>
     <ul>
-      <li><strong>Puffin Hotel Vík</strong> — budget-friendly</li>
-      <li><strong>Hotel Klaustur</strong> — reliable mid-range</li>
-      <li>Guesthouses and farm stays along Route 1</li>
+      <li><strong>Puffin Hotel Vík</strong> — budgetfreundlich</li>
+      <li><strong>Hotel Klaustur</strong> — solide Mittelklasse</li>
+      <li>Gästehäuser und Bauernhöfe entlang Route 1</li>
     </ul>
   </div>
 
   <div class="card">
-    <h4>Night 4 — Höfn (Aug 27)</h4>
-    <p>Gateway to Vatnajökull. Famous for langoustine restaurants.</p>
+    <h4>Nacht 4 — Höfn (27. Aug)</h4>
+    <p>Tor zum Vatnajökull. Berühmt für Langousten-Restaurants.</p>
     <ul>
-      <li><strong>Milk Factory</strong> — converted dairy, boutique vibe</li>
-      <li><strong>Hotel Höfn</strong> — solid mid-range, glacier views</li>
-      <li>🦞 Dinner at <strong>Pakkhús</strong> — best langoustine in Iceland</li>
+      <li><strong>Milk Factory</strong> — umgebaute Molkerei, Boutique-Vibe</li>
+      <li><strong>Hotel Höfn</strong> — solide Mittelklasse, Gletscherblick</li>
+      <li>🦞 Abendessen im <strong>Pakkhús</strong> — beste Langoustine Islands</li>
     </ul>
   </div>
 
   <div class="tip">
-    <strong>💡 Book NOW for August.</strong> Iceland accommodation fills up months in advance for peak summer. Airbnb is often the best value for 3 people — look for 2-bedroom apartments or cottages.
+    <strong>💡 JETZT für August buchen.</strong> Island-Unterkünfte sind Monate im Voraus für den Hochsommer ausgebucht. Airbnb ist oft das beste Preis-Leistungs-Verhältnis für 3 Personen — nach 2-Zimmer-Apartments oder Hütten schauen.
   </div>
 </section>
 
-<!-- MAP -->
-<section id="map">
-  <h2><span class="emoji">🗺️</span>Route Map</h2>
+<!-- KARTE -->
+<section id="karte">
+  <h2><span class="emoji">🗺️</span>Routenkarte</h2>
   <div class="card" style="padding:0;overflow:hidden;border-radius:16px;">
     <div id="mapContainer" style="height:500px;width:100%;background:var(--bg3);position:relative;">
       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -560,21 +526,21 @@
           }).addTo(map);
 
           var stops = [
-            { lat: 63.9850, lng: -22.6056, name: "✈️ Keflavik Airport", desc: "Day 1: Arrival, pick up car", day: 1 },
-            { lat: 64.1466, lng: -21.9426, name: "🌃 Reykjavik", desc: "Day 1: Explore downtown, Hallgrímskirkja", day: 1 },
-            { lat: 63.8803, lng: -22.4496, name: "♨️ Blue Lagoon", desc: "Day 1: Geothermal spa (or Sky Lagoon in Reykjavik)", day: 1 },
-            { lat: 64.2559, lng: -21.1290, name: "🏛️ Þingvellir", desc: "Day 2: UNESCO site, tectonic plates, Silfra snorkeling", day: 2 },
-            { lat: 64.3104, lng: -20.3024, name: "💨 Geysir", desc: "Day 2: Strokkur erupts every 5-10 min", day: 2 },
-            { lat: 64.3271, lng: -20.1199, name: "💧 Gullfoss", desc: "Day 2: Iceland's most iconic waterfall", day: 2 },
-            { lat: 64.1367, lng: -20.3117, name: "♨️ Secret Lagoon", desc: "Day 2: Natural hot spring in Flúðir", day: 2 },
-            { lat: 63.6156, lng: -19.9886, name: "💧 Seljalandsfoss", desc: "Day 3: Walk behind the waterfall", day: 3 },
-            { lat: 63.5321, lng: -19.5113, name: "💧 Skógafoss", desc: "Day 3: 60m waterfall, climb to the top", day: 3 },
-            { lat: 63.4053, lng: -19.0713, name: "🏖️ Reynisfjara", desc: "Day 3: Black sand beach, basalt columns", day: 3 },
-            { lat: 63.4186, lng: -19.0060, name: "🏘️ Vík", desc: "Day 3: Charming village, lunch stop", day: 3 },
-            { lat: 63.7711, lng: -18.1300, name: "🏔️ Skaftafell", desc: "Day 4: Glacier hiking on Vatnajökull", day: 4 },
-            { lat: 64.0784, lng: -16.2306, name: "🧊 Jökulsárlón", desc: "Day 4: Glacier lagoon, zodiac boat tour", day: 4 },
-            { lat: 64.0741, lng: -16.1769, name: "💎 Diamond Beach", desc: "Day 4: Ice on black sand", day: 4 },
-            { lat: 64.2539, lng: -15.2082, name: "🦞 Höfn", desc: "Day 4: Langoustine dinner at Pakkhús", day: 4 }
+            { lat: 63.9850, lng: -22.6056, name: "✈️ Flughafen Keflavik", desc: "Tag 1: Ankunft, Mietwagen abholen", day: 1 },
+            { lat: 64.1466, lng: -21.9426, name: "🌃 Reykjavik", desc: "Tag 1: Innenstadt erkunden, Hallgrímskirkja", day: 1 },
+            { lat: 63.8803, lng: -22.4496, name: "♨️ Blue Lagoon", desc: "Tag 1: Geothermales Spa (oder Sky Lagoon)", day: 1 },
+            { lat: 64.2559, lng: -21.1290, name: "🏛️ Þingvellir", desc: "Tag 2: UNESCO-Welterbe, Tektonische Platten, Silfra", day: 2 },
+            { lat: 64.3104, lng: -20.3024, name: "💨 Geysir", desc: "Tag 2: Strokkur bricht alle 5–10 Min aus", day: 2 },
+            { lat: 64.3271, lng: -20.1199, name: "💧 Gullfoss", desc: "Tag 2: Islands berühmtester Wasserfall", day: 2 },
+            { lat: 64.1367, lng: -20.3117, name: "♨️ Secret Lagoon", desc: "Tag 2: Natürliche heiße Quelle in Flúðir", day: 2 },
+            { lat: 63.6156, lng: -19.9886, name: "💧 Seljalandsfoss", desc: "Tag 3: Hinter dem Wasserfall durchlaufen", day: 3 },
+            { lat: 63.5321, lng: -19.5113, name: "💧 Skógafoss", desc: "Tag 3: 60m Wasserfall, Treppe nach oben", day: 3 },
+            { lat: 63.4053, lng: -19.0713, name: "🏖️ Reynisfjara", desc: "Tag 3: Schwarzer Sandstrand, Basaltsäulen", day: 3 },
+            { lat: 63.4186, lng: -19.0060, name: "🏘️ Vík", desc: "Tag 3: Charmantes Dorf, Mittagspause", day: 3 },
+            { lat: 63.7711, lng: -18.1300, name: "🏔️ Skaftafell", desc: "Tag 4: Gletscherwanderung auf dem Vatnajökull", day: 4 },
+            { lat: 64.0784, lng: -16.2306, name: "🧊 Jökulsárlón", desc: "Tag 4: Gletscherlagune, Zodiac-Bootstour", day: 4 },
+            { lat: 64.0741, lng: -16.1769, name: "💎 Diamond Beach", desc: "Tag 4: Eis auf schwarzem Sand", day: 4 },
+            { lat: 64.2539, lng: -15.2082, name: "🦞 Höfn", desc: "Tag 4: Langoustine-Dinner im Pakkhús", day: 4 }
           ];
 
           var dayColors = { 1: '#4fc3f7', 2: '#66bb6a', 3: '#ffa726', 4: '#ef5350', 5: '#ce93d8' };
@@ -589,20 +555,18 @@
             routeCoords.push([stop.lat, stop.lng]);
           });
 
-          // Draw route line
           L.polyline(routeCoords, { color: '#4fc3f7', weight: 2, opacity: 0.5, dashArray: '8,8' }).addTo(map);
 
-          // Legend
           var legend = L.control({ position: 'bottomright' });
           legend.onAdd = function() {
             var div = L.DomUtil.create('div');
             div.style.cssText = 'background:rgba(10,10,15,0.9);padding:10px 14px;border-radius:8px;font-size:12px;color:#e0e0e0;line-height:1.8;';
             div.innerHTML = '<strong>Route</strong><br>' +
-              '<span style="color:#4fc3f7">●</span> Day 1: Arrival & Reykjavik<br>' +
-              '<span style="color:#66bb6a">●</span> Day 2: Golden Circle<br>' +
-              '<span style="color:#ffa726">●</span> Day 3: South Coast<br>' +
-              '<span style="color:#ef5350">●</span> Day 4: Glaciers & Höfn<br>' +
-              '<span style="color:#ce93d8">●</span> Day 5: Return';
+              '<span style="color:#4fc3f7">●</span> Tag 1: Ankunft & Reykjavik<br>' +
+              '<span style="color:#66bb6a">●</span> Tag 2: Golden Circle<br>' +
+              '<span style="color:#ffa726">●</span> Tag 3: Südküste<br>' +
+              '<span style="color:#ef5350">●</span> Tag 4: Gletscher & Höfn<br>' +
+              '<span style="color:#ce93d8">●</span> Tag 5: Rückfahrt';
             return div;
           };
           legend.addTo(map);
@@ -610,80 +574,80 @@
       </script>
     </div>
   </div>
-  <p style="color:var(--text2);margin-top:1rem;text-align:center;font-size:0.9rem;">Click markers for details · Scroll to zoom disabled (use +/- buttons)</p>
+  <p style="color:var(--text2);margin-top:1rem;text-align:center;font-size:0.9rem;">Marker anklicken für Details · Scrollen zum Zoomen deaktiviert (+/- Buttons nutzen)</p>
 </section>
 
-<!-- TODO / BOOKING CHECKLIST -->
-<section id="todo">
-  <h2><span class="emoji">✅</span>Booking Checklist</h2>
-  <p style="color:var(--text2);margin-bottom:1.5rem">August is peak season. Things sell out months ahead. Here's what to book and when.</p>
+<!-- CHECKLISTE -->
+<section id="checkliste">
+  <h2><span class="emoji">✅</span>Buchungs-Checkliste</h2>
+  <p style="color:var(--text2);margin-bottom:1.5rem">August ist Hauptsaison. Vieles ist Monate vorher ausgebucht. Hier ist was ihr wann buchen müsst.</p>
 
   <div class="card" style="border-left:4px solid var(--red);border-radius:0 16px 16px 0;">
-    <h4 style="color:var(--red);">🔴 Book NOW (6+ months ahead) — Sells out fast</h4>
+    <h4 style="color:var(--red);">🔴 JETZT buchen (6+ Monate vorher) — Schnell ausgebucht</h4>
     <table>
-      <tr><td>✈️ Flights FRA → KEF</td><td>3 return tickets</td><td class="mid">€900–1,200 total</td><td>☐</td></tr>
-      <tr><td>♨️ Blue Lagoon / Sky Lagoon</td><td>3 tickets, specific time slot</td><td class="mid">€180–270 total</td><td>☐</td></tr>
-      <tr><td>🏨 Accommodation all 4 nights</td><td>Airbnb/hotels fill up by May</td><td class="mid">€600–1,200 total</td><td>☐</td></tr>
-      <tr><td>🚗 4x4 Car Rental</td><td>Automatic SUV, 5 days</td><td class="mid">€300–550 total</td><td>☐</td></tr>
+      <tr><td>✈️ Flüge FRA → KEF</td><td>3 Hin- & Rückflüge</td><td class="mid">€900–1.200 gesamt</td><td>☐</td></tr>
+      <tr><td>♨️ Blue Lagoon / Sky Lagoon</td><td>3 Tickets, bestimmtes Zeitfenster</td><td class="mid">€180–270 gesamt</td><td>☐</td></tr>
+      <tr><td>🏨 Unterkünfte alle 4 Nächte</td><td>Airbnb/Hotels bis Mai ausgebucht</td><td class="mid">€600–1.200 gesamt</td><td>☐</td></tr>
+      <tr><td>🚗 4x4 Mietwagen</td><td>Automatik SUV, 5 Tage</td><td class="mid">€300–550 gesamt</td><td>☐</td></tr>
     </table>
   </div>
 
   <div class="card" style="border-left:4px solid var(--orange);border-radius:0 16px 16px 0;">
-    <h4 style="color:var(--orange);">🟠 Book 2–3 months ahead — Popular tours</h4>
+    <h4 style="color:var(--orange);">🟠 2–3 Monate vorher buchen — Beliebte Touren</h4>
     <table>
-      <tr><td>🤿 Silfra Snorkeling</td><td>3 spots, morning slot best</td><td class="mid">€360–450 total</td><td>☐</td></tr>
-      <tr><td>🏔️ Glacier Hiking Tour</td><td>Skaftafell, 3-4 hour tour</td><td class="mid">€240–360 total</td><td>☐</td></tr>
-      <tr><td>🧊 Jökulsárlón Zodiac Boat</td><td>3 tickets</td><td class="mid">€135–195 total</td><td>☐</td></tr>
-      <tr><td>🐋 Whale Watching</td><td>If doing it (Reykjavik or Höfn)</td><td class="mid">€240–300 total</td><td>☐</td></tr>
+      <tr><td>🤿 Silfra Schnorcheln</td><td>3 Plätze, Vormittags am besten</td><td class="mid">€360–450 gesamt</td><td>☐</td></tr>
+      <tr><td>🏔️ Gletscherwanderung</td><td>Skaftafell, 3–4 Stunden Tour</td><td class="mid">€240–360 gesamt</td><td>☐</td></tr>
+      <tr><td>🧊 Jökulsárlón Zodiac-Boot</td><td>3 Tickets</td><td class="mid">€135–195 gesamt</td><td>☐</td></tr>
+      <tr><td>🐋 Walbeobachtung</td><td>Falls gewünscht (Reykjavik oder Höfn)</td><td class="mid">€240–300 gesamt</td><td>☐</td></tr>
     </table>
   </div>
 
   <div class="card" style="border-left:4px solid var(--green);border-radius:0 16px 16px 0;">
-    <h4 style="color:var(--green);">🟢 Book 1 month ahead or on arrival — Flexible</h4>
+    <h4 style="color:var(--green);">🟢 1 Monat vorher oder vor Ort — Flexibel</h4>
     <table>
-      <tr><td>♨️ Secret Lagoon Flúðir</td><td>Usually available walk-in</td><td class="mid">€75 total</td><td>☐</td></tr>
-      <tr><td>🐴 Horse Riding Tour</td><td>Usually available</td><td class="mid">€210–300 total</td><td>☐</td></tr>
-      <tr><td>🌋 Lava Field / Volcano Hike</td><td>Depends on eruption activity</td><td class="mid">€180–300 total</td><td>☐</td></tr>
-      <tr><td>📱 Tourist SIM Card</td><td>Buy at KEF airport on arrival</td><td class="mid">€20 each</td><td>☐</td></tr>
+      <tr><td>♨️ Secret Lagoon Flúðir</td><td>Meist ohne Vorbuchung möglich</td><td class="mid">€75 gesamt</td><td>☐</td></tr>
+      <tr><td>🐴 Islandpferd Reiten</td><td>Meist verfügbar</td><td class="mid">€210–300 gesamt</td><td>☐</td></tr>
+      <tr><td>🌋 Lavafeld / Vulkanwanderung</td><td>Abhängig von Eruptionsaktivität</td><td class="mid">€180–300 gesamt</td><td>☐</td></tr>
+      <tr><td>📱 Touristen-SIM-Karte</td><td>Am KEF Flughafen bei Ankunft kaufen</td><td class="mid">€20 pro Person</td><td>☐</td></tr>
     </table>
   </div>
 
   <div class="card" style="border-left:4px solid var(--accent);border-radius:0 16px 16px 0;">
-    <h4 style="color:var(--accent);">🔵 Before departure — Prep tasks</h4>
+    <h4 style="color:var(--accent);">🔵 Vor Abflug — Vorbereitungen</h4>
     <table>
-      <tr><td>📋 Travel insurance</td><td>EU health card + travel insurance</td><td></td><td>☐</td></tr>
-      <tr><td>🗺️ Download offline maps</td><td>Google Maps → Iceland region</td><td></td><td>☐</td></tr>
-      <tr><td>📱 Install apps</td><td>Vedur (weather), Road.is (road conditions)</td><td></td><td>☐</td></tr>
-      <tr><td>🎒 Packing</td><td>Waterproof layers, hiking boots, swimsuit</td><td></td><td>☐</td></tr>
-      <tr><td>💳 Check card PIN</td><td>Needed for gas stations</td><td></td><td>☐</td></tr>
-      <tr><td>🍺 Duty-free list</td><td>Plan what alcohol to buy at KEF arrival</td><td></td><td>☐</td></tr>
+      <tr><td>📋 Reiseversicherung</td><td>EU-Gesundheitskarte + Reiseversicherung</td><td></td><td>☐</td></tr>
+      <tr><td>🗺️ Offline-Karten herunterladen</td><td>Google Maps → Island Region</td><td></td><td>☐</td></tr>
+      <tr><td>📱 Apps installieren</td><td>Vedur (Wetter), Road.is (Straßenzustand)</td><td></td><td>☐</td></tr>
+      <tr><td>🎒 Packen</td><td>Wasserdichte Schichten, Wanderschuhe, Badehose</td><td></td><td>☐</td></tr>
+      <tr><td>💳 Karten-PIN prüfen</td><td>Wird an Tankstellen benötigt</td><td></td><td>☐</td></tr>
+      <tr><td>🍺 Duty-Free-Liste</td><td>Planen was an Alkohol am KEF gekauft wird</td><td></td><td>☐</td></tr>
     </table>
   </div>
 
   <div class="tip warning">
-    <strong>⚠️ What WILL sell out for late August:</strong> Blue Lagoon time slots (weeks ahead), Airbnb/guesthouses in Vík and Höfn (months ahead), popular glacier hike slots, Silfra morning times. Don't wait until July — you'll pay 2x or miss out entirely.
+    <strong>⚠️ Was im August DEFINITIV ausgebucht sein wird:</strong> Blue Lagoon Zeitfenster (Wochen vorher), Airbnb/Gästehäuser in Vík und Höfn (Monate vorher), beliebte Gletscherwanderungs-Slots, Silfra Vormittagstermine. Nicht bis Juli warten — ihr zahlt das Doppelte oder geht leer aus.
   </div>
 </section>
 
-<!-- SUMMARY -->
+<!-- ZUSAMMENFASSUNG -->
 <section>
-  <h2><span class="emoji">🎯</span>TL;DR</h2>
+  <h2><span class="emoji">🎯</span>Zusammenfassung</h2>
   <div class="card" style="background: linear-gradient(135deg, var(--bg2), var(--bg3));">
     <table>
-      <tr><td>👥 Crew</td><td><strong>3 people</strong></td></tr>
-      <tr><td>📅 Dates</td><td><strong>Aug 24–29, 2026</strong> (5 days)</td></tr>
-      <tr><td>✈️ Flights</td><td>FRA → KEF, ~4h direct, <strong>€300–400/person</strong></td></tr>
-      <tr><td>💰 Total budget</td><td><strong>€800–1,500 per person</strong> (all-in)</td></tr>
-      <tr><td>🚗 Route</td><td>Reykjavik → Golden Circle → South Coast → Jökulsárlón → back</td></tr>
-      <tr><td>🌡️ Weather</td><td>10–15°C, long days, rain likely</td></tr>
-      <tr><td>📌 Book early</td><td>Flights, car, accommodation, Silfra, Blue Lagoon, glacier hike</td></tr>
+      <tr><td>👥 Crew</td><td><strong>3 Personen</strong></td></tr>
+      <tr><td>📅 Datum</td><td><strong>24.–29. August 2026</strong> (5 Tage)</td></tr>
+      <tr><td>✈️ Flüge</td><td>FRA → KEF, ~4h direkt, <strong>€300–400/Person</strong></td></tr>
+      <tr><td>💰 Gesamtbudget</td><td><strong>€800–1.500 pro Person</strong> (alles inklusive)</td></tr>
+      <tr><td>🚗 Route</td><td>Reykjavik → Golden Circle → Südküste → Jökulsárlón → zurück</td></tr>
+      <tr><td>🌡️ Wetter</td><td>10–15°C, lange Tage, Regen wahrscheinlich</td></tr>
+      <tr><td>📌 Früh buchen</td><td>Flüge, Auto, Unterkunft, Silfra, Blue Lagoon, Gletscherwanderung</td></tr>
     </table>
   </div>
 </section>
 
 <footer class="footer">
-  <p>Prepared by PAIA ⚡ for Sultan & friends · February 2026</p>
-  <p style="margin-top:0.5rem">Prices are estimates based on 2025/2026 data. Book early for best rates.</p>
+  <p>Erstellt von PAIA ⚡ für Sultan & Freunde · Februar 2026</p>
+  <p style="margin-top:0.5rem">Preise sind Schätzungen basierend auf 2025/2026 Daten. Frühzeitig buchen für die besten Preise.</p>
 </footer>
 
 </body>

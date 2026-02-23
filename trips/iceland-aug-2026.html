@@ -169,6 +169,8 @@
   <a href="#practical">Practical</a>
   <a href="#packing">Packing</a>
   <a href="#accommodation">Stay</a>
+  <a href="#map">Map</a>
+  <a href="#todo">To-Do</a>
 </nav>
 
 <!-- FLIGHTS -->
@@ -539,6 +541,127 @@
 
   <div class="tip">
     <strong>💡 Book NOW for August.</strong> Iceland accommodation fills up months in advance for peak summer. Airbnb is often the best value for 3 people — look for 2-bedroom apartments or cottages.
+  </div>
+</section>
+
+<!-- MAP -->
+<section id="map">
+  <h2><span class="emoji">🗺️</span>Route Map</h2>
+  <div class="card" style="padding:0;overflow:hidden;border-radius:16px;">
+    <div id="mapContainer" style="height:500px;width:100%;background:var(--bg3);position:relative;">
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          var map = L.map('mapContainer', { zoomControl: true, scrollWheelZoom: false }).setView([64.5, -19.0], 6);
+          L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            attribution: '© OpenStreetMap © CARTO',
+            maxZoom: 19
+          }).addTo(map);
+
+          var stops = [
+            { lat: 63.9850, lng: -22.6056, name: "✈️ Keflavik Airport", desc: "Day 1: Arrival, pick up car", day: 1 },
+            { lat: 64.1466, lng: -21.9426, name: "🌃 Reykjavik", desc: "Day 1: Explore downtown, Hallgrímskirkja", day: 1 },
+            { lat: 63.8803, lng: -22.4496, name: "♨️ Blue Lagoon", desc: "Day 1: Geothermal spa (or Sky Lagoon in Reykjavik)", day: 1 },
+            { lat: 64.2559, lng: -21.1290, name: "🏛️ Þingvellir", desc: "Day 2: UNESCO site, tectonic plates, Silfra snorkeling", day: 2 },
+            { lat: 64.3104, lng: -20.3024, name: "💨 Geysir", desc: "Day 2: Strokkur erupts every 5-10 min", day: 2 },
+            { lat: 64.3271, lng: -20.1199, name: "💧 Gullfoss", desc: "Day 2: Iceland's most iconic waterfall", day: 2 },
+            { lat: 64.1367, lng: -20.3117, name: "♨️ Secret Lagoon", desc: "Day 2: Natural hot spring in Flúðir", day: 2 },
+            { lat: 63.6156, lng: -19.9886, name: "💧 Seljalandsfoss", desc: "Day 3: Walk behind the waterfall", day: 3 },
+            { lat: 63.5321, lng: -19.5113, name: "💧 Skógafoss", desc: "Day 3: 60m waterfall, climb to the top", day: 3 },
+            { lat: 63.4053, lng: -19.0713, name: "🏖️ Reynisfjara", desc: "Day 3: Black sand beach, basalt columns", day: 3 },
+            { lat: 63.4186, lng: -19.0060, name: "🏘️ Vík", desc: "Day 3: Charming village, lunch stop", day: 3 },
+            { lat: 63.7711, lng: -18.1300, name: "🏔️ Skaftafell", desc: "Day 4: Glacier hiking on Vatnajökull", day: 4 },
+            { lat: 64.0784, lng: -16.2306, name: "🧊 Jökulsárlón", desc: "Day 4: Glacier lagoon, zodiac boat tour", day: 4 },
+            { lat: 64.0741, lng: -16.1769, name: "💎 Diamond Beach", desc: "Day 4: Ice on black sand", day: 4 },
+            { lat: 64.2539, lng: -15.2082, name: "🦞 Höfn", desc: "Day 4: Langoustine dinner at Pakkhús", day: 4 }
+          ];
+
+          var dayColors = { 1: '#4fc3f7', 2: '#66bb6a', 3: '#ffa726', 4: '#ef5350', 5: '#ce93d8' };
+          var routeCoords = [];
+
+          stops.forEach(function(stop) {
+            var color = dayColors[stop.day] || '#4fc3f7';
+            var marker = L.circleMarker([stop.lat, stop.lng], {
+              radius: 8, fillColor: color, color: '#fff', weight: 2, opacity: 1, fillOpacity: 0.9
+            }).addTo(map);
+            marker.bindPopup('<strong style="font-size:14px;">' + stop.name + '</strong><br><span style="color:#999;">' + stop.desc + '</span>');
+            routeCoords.push([stop.lat, stop.lng]);
+          });
+
+          // Draw route line
+          L.polyline(routeCoords, { color: '#4fc3f7', weight: 2, opacity: 0.5, dashArray: '8,8' }).addTo(map);
+
+          // Legend
+          var legend = L.control({ position: 'bottomright' });
+          legend.onAdd = function() {
+            var div = L.DomUtil.create('div');
+            div.style.cssText = 'background:rgba(10,10,15,0.9);padding:10px 14px;border-radius:8px;font-size:12px;color:#e0e0e0;line-height:1.8;';
+            div.innerHTML = '<strong>Route</strong><br>' +
+              '<span style="color:#4fc3f7">●</span> Day 1: Arrival & Reykjavik<br>' +
+              '<span style="color:#66bb6a">●</span> Day 2: Golden Circle<br>' +
+              '<span style="color:#ffa726">●</span> Day 3: South Coast<br>' +
+              '<span style="color:#ef5350">●</span> Day 4: Glaciers & Höfn<br>' +
+              '<span style="color:#ce93d8">●</span> Day 5: Return';
+            return div;
+          };
+          legend.addTo(map);
+        });
+      </script>
+    </div>
+  </div>
+  <p style="color:var(--text2);margin-top:1rem;text-align:center;font-size:0.9rem;">Click markers for details · Scroll to zoom disabled (use +/- buttons)</p>
+</section>
+
+<!-- TODO / BOOKING CHECKLIST -->
+<section id="todo">
+  <h2><span class="emoji">✅</span>Booking Checklist</h2>
+  <p style="color:var(--text2);margin-bottom:1.5rem">August is peak season. Things sell out months ahead. Here's what to book and when.</p>
+
+  <div class="card" style="border-left:4px solid var(--red);border-radius:0 16px 16px 0;">
+    <h4 style="color:var(--red);">🔴 Book NOW (6+ months ahead) — Sells out fast</h4>
+    <table>
+      <tr><td>✈️ Flights FRA → KEF</td><td>3 return tickets</td><td class="mid">€900–1,200 total</td><td>☐</td></tr>
+      <tr><td>♨️ Blue Lagoon / Sky Lagoon</td><td>3 tickets, specific time slot</td><td class="mid">€180–270 total</td><td>☐</td></tr>
+      <tr><td>🏨 Accommodation all 4 nights</td><td>Airbnb/hotels fill up by May</td><td class="mid">€600–1,200 total</td><td>☐</td></tr>
+      <tr><td>🚗 4x4 Car Rental</td><td>Automatic SUV, 5 days</td><td class="mid">€300–550 total</td><td>☐</td></tr>
+    </table>
+  </div>
+
+  <div class="card" style="border-left:4px solid var(--orange);border-radius:0 16px 16px 0;">
+    <h4 style="color:var(--orange);">🟠 Book 2–3 months ahead — Popular tours</h4>
+    <table>
+      <tr><td>🤿 Silfra Snorkeling</td><td>3 spots, morning slot best</td><td class="mid">€360–450 total</td><td>☐</td></tr>
+      <tr><td>🏔️ Glacier Hiking Tour</td><td>Skaftafell, 3-4 hour tour</td><td class="mid">€240–360 total</td><td>☐</td></tr>
+      <tr><td>🧊 Jökulsárlón Zodiac Boat</td><td>3 tickets</td><td class="mid">€135–195 total</td><td>☐</td></tr>
+      <tr><td>🐋 Whale Watching</td><td>If doing it (Reykjavik or Höfn)</td><td class="mid">€240–300 total</td><td>☐</td></tr>
+    </table>
+  </div>
+
+  <div class="card" style="border-left:4px solid var(--green);border-radius:0 16px 16px 0;">
+    <h4 style="color:var(--green);">🟢 Book 1 month ahead or on arrival — Flexible</h4>
+    <table>
+      <tr><td>♨️ Secret Lagoon Flúðir</td><td>Usually available walk-in</td><td class="mid">€75 total</td><td>☐</td></tr>
+      <tr><td>🐴 Horse Riding Tour</td><td>Usually available</td><td class="mid">€210–300 total</td><td>☐</td></tr>
+      <tr><td>🌋 Lava Field / Volcano Hike</td><td>Depends on eruption activity</td><td class="mid">€180–300 total</td><td>☐</td></tr>
+      <tr><td>📱 Tourist SIM Card</td><td>Buy at KEF airport on arrival</td><td class="mid">€20 each</td><td>☐</td></tr>
+    </table>
+  </div>
+
+  <div class="card" style="border-left:4px solid var(--accent);border-radius:0 16px 16px 0;">
+    <h4 style="color:var(--accent);">🔵 Before departure — Prep tasks</h4>
+    <table>
+      <tr><td>📋 Travel insurance</td><td>EU health card + travel insurance</td><td></td><td>☐</td></tr>
+      <tr><td>🗺️ Download offline maps</td><td>Google Maps → Iceland region</td><td></td><td>☐</td></tr>
+      <tr><td>📱 Install apps</td><td>Vedur (weather), Road.is (road conditions)</td><td></td><td>☐</td></tr>
+      <tr><td>🎒 Packing</td><td>Waterproof layers, hiking boots, swimsuit</td><td></td><td>☐</td></tr>
+      <tr><td>💳 Check card PIN</td><td>Needed for gas stations</td><td></td><td>☐</td></tr>
+      <tr><td>🍺 Duty-free list</td><td>Plan what alcohol to buy at KEF arrival</td><td></td><td>☐</td></tr>
+    </table>
+  </div>
+
+  <div class="tip warning">
+    <strong>⚠️ What WILL sell out for late August:</strong> Blue Lagoon time slots (weeks ahead), Airbnb/guesthouses in Vík and Höfn (months ahead), popular glacier hike slots, Silfra morning times. Don't wait until July — you'll pay 2x or miss out entirely.
   </div>
 </section>
 

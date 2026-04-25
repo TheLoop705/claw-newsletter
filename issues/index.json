@@ -24,7 +24,7 @@
         "The Fed has engineered a soft landing, but with limited ammunition for future downturns",
         "Debt-to-GDP at 124% constrains fiscal flexibility in ways not seen since WWII",
         "Structural headwinds (demographics, deglobalization) compete with AI-driven productivity tailwinds",
-        "The yield curve's 2022-2024 inversion was a 'false positive'\u2014recession risk remains but is not imminent",
+        "The yield curve's 2022-2024 inversion was a 'false positive'—recession risk remains but is not imminent",
         "Investors should prioritize quality, diversification, and flexibility in this late-cycle environment"
       ]
     },
@@ -54,7 +54,7 @@
               "revenueGrowth": "+18%",
               "grossMargin": "51%",
               "operatingMargin": "28%",
-              "bull": "Monopolistic position in EUV lithography with no viable competitor for 3nm and below. Order backlog exceeds \u20ac36B. High switching costs and decade-long qualification cycles protect market position.",
+              "bull": "Monopolistic position in EUV lithography with no viable competitor for 3nm and below. Order backlog exceeds €36B. High switching costs and decade-long qualification cycles protect market position.",
               "bear": "China export restrictions could impact 15-20% of revenue. High R&D intensity requires continuous innovation. Customer concentration risk with TSMC and Samsung.",
               "priceTarget": "$1,150",
               "positionSize": "5-7%",
@@ -257,11 +257,11 @@
       ],
       "summary": "Nuclear energy is experiencing a generational renaissance driven by AI data center power demand. Hyperscalers have moved from exploration to execution with landmark deals. This issue covers the full nuclear value chain: uranium supply (Cameco), fleet operators (Constellation Energy, Vistra), and next-gen reactors (NuScale, Oklo).",
       "keyTakeaways": [
-        "AI data center power demand is the primary catalyst \u2014 hyperscaler PPAs are validating nuclear as essential infrastructure",
-        "Uranium is in structural deficit with no quick supply fix \u2014 Cameco is the premier way to play this",
+        "AI data center power demand is the primary catalyst — hyperscaler PPAs are validating nuclear as essential infrastructure",
+        "Uranium is in structural deficit with no quick supply fix — Cameco is the premier way to play this",
         "Constellation Energy operates the largest US nuclear fleet and is the direct beneficiary of hyperscaler deals",
         "Next-gen reactors (SMR, OKLO) offer asymmetric upside but carry substantial execution and timeline risk",
-        "This is a 10-20 year structural cycle \u2014 position for duration, not momentum"
+        "This is a 10-20 year structural cycle — position for duration, not momentum"
       ]
     },
     {
@@ -323,18 +323,192 @@
       "summary": "Nuclear energy renaissance driven by AI data center power demand. Covers uranium supply, fleet operators, and next-gen reactors.",
       "keyTakeaways": [
         "AI data center power demand is the primary catalyst",
-        "Uranium is in structural deficit \u2014 Cameco is the premier play",
+        "Uranium is in structural deficit — Cameco is the premier play",
         "Constellation Energy is the direct beneficiary of hyperscaler deals",
         "Next-gen reactors offer asymmetric upside but carry execution risk",
         "This is a 10-20 year structural cycle"
+      ]
+    },
+    {
+      "id": "2026-04-25",
+      "slug": "nuclear-renaissance-smr-commercialization",
+      "title": "Nuclear Renaissance — The SMR Commercialization Trade",
+      "subtitle": "From hyperscaler PPAs to first commercial FIDs: who owns the bottlenecks",
+      "date": "2026-04-25",
+      "publishedAt": "2026-04-25T09:00:00Z",
+      "url": "issues/2026-04-25-nuclear-renaissance-smr-commercialization.html",
+      "readingTime": 14,
+      "themeCount": 3,
+      "companyCount": 10,
+      "themes": [
+        {
+          "name": "Cash-Flowing Operators",
+          "slug": "operators",
+          "thesis": "The existing US nuclear fleet is the scarcest commodity in the AI buildout. Behind-the-meter PPAs with hyperscalers are repricing 30-year-old assets at premium multiples. CEG and VST own the torque; regulated utilities offer the cleaner safety net.",
+          "companies": [
+            {
+              "ticker": "CEG",
+              "name": "Constellation Energy",
+              "rating": "Buy",
+              "marketCap": "$95B",
+              "pe": "27.5",
+              "revenueGrowth": "+22%",
+              "grossMargin": "32%",
+              "bull": "Largest US nuclear fleet (~32GW). TMI restart and Calpine acquisition closed Q1'26. Each PPA reset (Microsoft, Meta) steps earnings power higher. Multi-decade contracts at $100+/MWh provide unmatched cash flow visibility among power names.",
+              "bear": "Already re-rated from ~14x to ~28x fwd. Multiple compression risk if AI capex narrative breaks (DeepSeek-style efficiency shock, hyperscaler cuts). Execution risk on TMI restart timeline.",
+              "positionSize": "5-7%",
+              "positionRationale": "Best risk-adjusted core position in the theme — real cash flows, real PPAs, real torque"
+            },
+            {
+              "ticker": "VST",
+              "name": "Vistra Energy",
+              "rating": "Buy",
+              "marketCap": "$58B",
+              "pe": "24.0",
+              "revenueGrowth": "+18%",
+              "grossMargin": "29%",
+              "bull": "Comanche Peak + Energy Harbor fleet, Texas-heavy = ERCOT scarcity premium. More merchant exposure than CEG = higher torque to AI capex narrative. Strong FCF supports buybacks.",
+              "bear": "Higher beta cuts both ways. ERCOT regulatory risk. Coal exposure still a drag on ESG flows.",
+              "positionSize": "3-4%",
+              "positionRationale": "Higher-torque sibling to CEG; size smaller given beta"
+            },
+            {
+              "ticker": "D",
+              "name": "Dominion Energy",
+              "rating": "Hold",
+              "marketCap": "$48B",
+              "pe": "18.5",
+              "revenueGrowth": "+9%",
+              "grossMargin": "37%",
+              "bull": "Virginia data center alley = 26% of total load from data centers. 40 GW interconnect pipeline. Regulated returns provide downside protection.",
+              "bear": "Lower torque than merchant operators. Rate-case risk as data center load shifts cost-of-service. Capex burden compresses near-term FCF.",
+              "positionSize": "2-3%",
+              "positionRationale": "Defensive nuclear exposure for risk-averse sleeve"
+            }
+          ]
+        },
+        {
+          "name": "SMR Developers — Option Value",
+          "slug": "smr-developers",
+          "thesis": "First commercial FIDs in 2026-27 will re-rate the entire developer cohort. Pre-revenue today, but the optionality is massive if FOAK delivers on schedule. Size to survive a -50% drawdown.",
+          "companies": [
+            {
+              "ticker": "OKLO",
+              "name": "Oklo Inc.",
+              "rating": "Speculative",
+              "marketCap": "$12B",
+              "pe": "N/A",
+              "revenueGrowth": "N/A",
+              "grossMargin": "N/A",
+              "bull": "Aurora microreactor; DOE site at INL; 12GW Switch master agreement; Meta 1.2GW deal. Sam Altman halo and Big Tech relationships. First combined license submission expected 2026.",
+              "bear": "Pre-revenue, pre-NRC license. FOAK cost risk acute. Equity dilution likely before commercial deployment.",
+              "positionSize": "0.5-1.5%",
+              "positionRationale": "Lottery ticket — pure call option on SMR commercialization"
+            },
+            {
+              "ticker": "SMR",
+              "name": "NuScale Power",
+              "rating": "Speculative",
+              "marketCap": "$7B",
+              "pe": "N/A",
+              "revenueGrowth": "N/A",
+              "grossMargin": "N/A",
+              "bull": "Only SMR with US NRC design certification. Doosan and RoPower (Romania) commercial deals. TVA 6GW deployment agreement structure.",
+              "bear": "UAMPS cancellation in 2023 set the company back materially. Cash burn high. Execution credibility still rebuilding.",
+              "positionSize": "0.5-1%",
+              "positionRationale": "Smaller lottery position; certified design is the moat but commercialization unproven"
+            },
+            {
+              "ticker": "GEV",
+              "name": "GE Vernova",
+              "rating": "Buy",
+              "marketCap": "$135B",
+              "pe": "38.0",
+              "revenueGrowth": "+15%",
+              "grossMargin": "21%",
+              "bull": "BWRX-300 SMR with TVA Clinch River and OPG Darlington — closest to first commercial deployment. Gas turbine business funds the nuclear ramp (sold out to 2028). Double exposure to grid bottleneck + nuclear renaissance.",
+              "bear": "Multiple already stretched. Gas turbine cycle peak risk. SMR ramp won't move the needle on revenue until 2028+.",
+              "positionSize": "3-5%",
+              "positionRationale": "Quality way to play SMRs without pre-revenue risk; cross-references the grid bottleneck theme"
+            }
+          ]
+        },
+        {
+          "name": "Fuel Cycle — The Real Bottleneck",
+          "slug": "fuel-cycle",
+          "thesis": "You can announce an SMR; you cannot announce HALEU into existence. The under-discussed angle of the nuclear thesis is the fuel cycle: uranium production, conversion, and especially Western enrichment. This is where supply-demand math is tightest and policy tailwinds strongest.",
+          "companies": [
+            {
+              "ticker": "CCJ",
+              "name": "Cameco Corporation",
+              "rating": "Buy",
+              "marketCap": "$28B",
+              "pe": "42.0",
+              "revenueGrowth": "+28%",
+              "grossMargin": "26%",
+              "bull": "Largest Western uranium producer. 49% Westinghouse stake provides services + fuel + AP1000 exposure. Long-term contracts re-pricing into $80+ term market. Tier-1 jurisdiction (Canada/Australia/Kazakhstan).",
+              "bear": "Multiple already prices in much of the bull case. Cigar Lake/McArthur River operating risk. Uranium spot drawdowns of -25% are normal even in bull markets.",
+              "positionSize": "4-5%",
+              "positionRationale": "Cleanest single-name fuel-cycle compounder; pairs with CEG as the core trade"
+            },
+            {
+              "ticker": "LEU",
+              "name": "Centrus Energy",
+              "rating": "Buy",
+              "marketCap": "$2.5B",
+              "pe": "55.0",
+              "revenueGrowth": "+45%",
+              "grossMargin": "18%",
+              "bull": "Only US HALEU producer with operating cascade. Russian LEU Ban Act forced Western enrichment reshoring — Centrus is the policy beneficiary. DOE contracts funding capacity expansion. Pure-play exposure to enrichment chokepoint.",
+              "bear": "Highly volatile. Single-facility concentration risk (Piketon, OH). Capacity expansion timeline 5+ years. Capital structure thin.",
+              "positionSize": "1-2%",
+              "positionRationale": "Asymmetric pure-play on the HALEU bottleneck — size small but exposure is unique"
+            },
+            {
+              "ticker": "BWXT",
+              "name": "BWX Technologies",
+              "rating": "Buy",
+              "marketCap": "$11B",
+              "pe": "32.0",
+              "revenueGrowth": "+12%",
+              "grossMargin": "22%",
+              "bull": "Naval reactor monopoly + HALEU components + medical isotopes. Defense-adjacent earnings smooth out the uranium cycle. Sole-source US Navy reactor provider.",
+              "bear": "Defense contracting margins capped. Less torque than pure uranium plays. Multiple at high end of historical range.",
+              "positionSize": "2-3%",
+              "positionRationale": "Lower-volatility complement to CCJ and LEU"
+            },
+            {
+              "ticker": "URNM",
+              "name": "Sprott Uranium Miners ETF",
+              "rating": "Buy",
+              "marketCap": "$2.8B AUM",
+              "pe": "N/A",
+              "revenueGrowth": "N/A",
+              "grossMargin": "N/A",
+              "bull": "Diversified exposure to uranium miners and developers. Avoids single-name junior risk while capturing spot price torque. Sprott physical trust dynamics support spot.",
+              "bear": "ETF structure means -25% drawdowns on any uranium spot correction. Small-cap junior weighting amplifies volatility.",
+              "positionSize": "1-2%",
+              "positionRationale": "Basket alternative for those uncomfortable single-naming juniors"
+            }
+          ]
+        }
+      ],
+      "summary": "Three things converged in Q1 2026 that didn't exist 18 months ago: first commercial SMR FIDs landing, hyperscaler PPAs repricing the existing fleet, and a structural uranium deficit. The market is pricing operators as utilities-with-AI-optionality and developers as venture bets — both framings under-discount who actually owns the chokepoints. The under-discussed angle: the fuel cycle, not the reactors, is the real tightest link.",
+      "keyTakeaways": [
+        "First commercial SMR FIDs landing 2026-27 (TVA Clinch River, OPG Darlington) turn 'SMR' from a slide into a capex line item",
+        "CEG re-rated from utility multiple (~14x) to ~25-28x fwd on hyperscaler PPAs alone — and earnings power keeps stepping up as contracts reset",
+        "Uranium structural deficit: ~140Mlb primary supply vs ~190Mlb reactor demand, term price $80+ and rising",
+        "The under-discussed bottleneck is HALEU/enrichment, not reactors — Centrus is the only US producer with an operating cascade",
+        "Bipartisan ADVANCE Act + DOE $900M SMR funding + 50GW incremental US data center load by 2030 = rare clean policy alignment",
+        "FOAK cost overruns remain the single biggest bear case — Vogtle 3/4 ran $35B over budget; SMR modularity claims unproven until two units deliver on schedule"
       ]
     }
   ],
   "meta": {
     "version": "2.0",
-    "lastUpdated": "2026-02-22T09:00:00Z",
-    "totalIssues": 4,
-    "totalThemes": 7,
-    "totalCompanies": 10
+    "lastUpdated": "2026-04-25T09:00:00Z",
+    "totalIssues": 5,
+    "totalThemes": 10,
+    "totalCompanies": 25
   }
 }

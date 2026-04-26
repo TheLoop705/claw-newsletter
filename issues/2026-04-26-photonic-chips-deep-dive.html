@@ -1,0 +1,2175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silicon Photonics — The Light-Speed Pivot in Compute — Atoms Over Bits</title>
+    <meta name="description" content="Why electrical I/O hits a wall in 2026-27, and who owns the photons that replace it">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Silicon Photonics — The Light-Speed Pivot in Compute — Atoms Over Bits">
+    <meta property="og:description" content="Why electrical I/O hits a wall in 2026-27, and who owns the photons that replace it">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://theloop705.github.io/claw-newsletter/issues/2026-04-26-photonic-chips-deep-dive.html">
+    <meta property="article:published_time" content="2026-04-26T09:00:00Z">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Silicon Photonics — The Light-Speed Pivot in Compute">
+    <meta name="twitter:description" content="Why electrical I/O hits a wall in 2026-27, and who owns the photons that replace it">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="canonical" href="https://theloop705.github.io/claw-newsletter/issues/2026-04-26-photonic-chips-deep-dive.html">
+</head>
+<body>
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress"></div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="../index.html" class="logo">
+                    <div class="logo-mark">A</div>
+                    <span class="logo-text">Atoms <span>Over Bits</span></span>
+                </a>
+
+                <nav class="main-nav" aria-label="Main navigation">
+                    <a href="../index.html" class="nav-link">Latest</a>
+                    <a href="../archive.html" class="nav-link active">Archive</a>
+                    <a href="../themes.html" class="nav-link">Themes</a>
+                    <a href="../about.html" class="nav-link">About</a>
+                </nav>
+
+                <div class="header-actions">
+                    <button class="search-toggle" aria-label="Search">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </button>
+                    <button class="theme-toggle" aria-label="Toggle theme">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </button>
+                    <button class="menu-toggle" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" aria-hidden="true">
+        <div class="search-container">
+            <div class="search-input-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                <input type="text" class="search-input" placeholder="Search issues, companies, themes..." aria-label="Search">
+                <kbd class="search-shortcut">ESC</kbd>
+            </div>
+            <div class="search-results"></div>
+        </div>
+    </div>
+
+    <main class="container">
+        <!-- Issue Header -->
+        <header class="issue-header">
+            <div class="hero-badge" style="margin-bottom: var(--space-4);">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                April 26, 2026
+            </div>
+            <h1 class="issue-header-title">Silicon Photonics — The Light-Speed Pivot in Compute</h1>
+            <p style="font-size: var(--text-xl); color: var(--text-secondary); margin-bottom: var(--space-6);">Why electrical I/O hits a wall in 2026-27, and who owns the photons that replace it</p>
+            <div class="issue-header-meta">
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="vertical-align: middle; margin-right: var(--space-1);">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    22 min read
+                </span>
+                <span>•</span>
+                <span>6 themes</span>
+                <span>•</span>
+                <span>21 companies</span>
+            </div>
+        </header>
+
+        <!-- Table of Contents -->
+        <nav class="issue-toc" aria-label="Table of contents">
+            <h2 class="issue-toc-title">Contents</h2>
+            <ol class="issue-toc-list">
+
+                <li class="issue-toc-item">
+                    <a href="#summary" class="issue-toc-link">
+                        <span class="issue-toc-number">1</span>
+                        Executive Summary &amp; Key Takeaways
+                    </a>
+                </li>
+                <li class="issue-toc-item">
+                    <a href="#theme-1" class="issue-toc-link">
+                        <span class="issue-toc-number">2</span>
+                        EDA &amp; PIC Design Tooling
+                    </a>
+                </li>
+                <li class="issue-toc-item">
+                    <a href="#theme-2" class="issue-toc-link">
+                        <span class="issue-toc-number">3</span>
+                        PIC Foundries &amp; Process
+                    </a>
+                </li>
+                <li class="issue-toc-item">
+                    <a href="#theme-3" class="issue-toc-link">
+                        <span class="issue-toc-number">4</span>
+                        Lasers &amp; Light Sources
+                    </a>
+                </li>
+                <li class="issue-toc-item">
+                    <a href="#theme-4" class="issue-toc-link">
+                        <span class="issue-toc-number">5</span>
+                        DSP, SerDes &amp; Optical Networking Silicon
+                    </a>
+                </li>
+                <li class="issue-toc-item">
+                    <a href="#theme-5" class="issue-toc-link">
+                        <span class="issue-toc-number">6</span>
+                        Transceivers, Modules &amp; Packaging
+                    </a>
+                </li>
+                <li class="issue-toc-item">
+                    <a href="#theme-6" class="issue-toc-link">
+                        <span class="issue-toc-number">7</span>
+                        Pure-Play Photonic Compute &amp; Materials
+                    </a>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- Executive Summary -->
+        <section id="summary" class="theme-section">
+            <div class="container-narrow" style="margin: 0 auto;">
+                <h2 style="font-size: var(--text-2xl); margin-bottom: var(--space-6);">Executive Summary &amp; Key Takeaways</h2>
+
+                <div style="font-size: var(--text-base); color: var(--text-secondary); line-height: 1.7;">
+                    <blockquote>
+<p><strong>One-line thesis:</strong> Electrical I/O has hit a wall — the next 5 years of AI scale-out runs on photons. Own the BOM (lasers, foundries, DSP, packaging) before CPO ships in volume in H2&#39;26.</p>
+</blockquote>
+<h2>1. Why now — the thermodynamic wall</h2>
+<p>The story of compute since 1965 has been Moore&#39;s Law on transistors. The story of compute from 2025 onward is <strong>bandwidth, not gates</strong>. A modern AI training cluster is bottlenecked not by FLOPs but by how fast you can shuffle weights, activations, and gradients between accelerators. NVIDIA&#39;s GB200 NVL72 already burns ~120 kW per rack — and roughly <strong>30-40% of that power is electrical I/O and SerDes</strong>, not compute.</p>
+<p>Three independent walls are converging:</p>
+<ol>
+<li><strong>SerDes signal integrity.</strong> 224 Gbps PAM4 over copper is at the practical limit (~1m reach, ~10 dB loss budget). 448 Gbps electrical is signal-integrity hostile — you need either DSP-heavy retimers (AECs) or you go optical.</li>
+<li><strong>Power per bit.</strong> Pluggable optics (~15 pJ/bit at 800G) → CPO (~3-5 pJ/bit) → photonic compute (~0.1 pJ/bit). At 1M-GPU scale fabrics, this is the difference between a 200 MW and a 600 MW datacenter.</li>
+<li><strong>Reach.</strong> Copper dies at ~1m at 224G. AI clusters that scale beyond a single rack need fiber — and once you&#39;re on fiber, the laser/modulator BOM owns the economics.</li>
+</ol>
+<svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:800px;height:auto;background:#0e0e10;border-radius:8px;font-family:ui-sans-serif,system-ui;">
+  <text x="400" y="28" text-anchor="middle" fill="#e6e6e9" font-size="16" font-weight="600">Energy per Bit by Interconnect Generation (pJ/bit, log scale)</text>
+  <g stroke="#2a2a30" stroke-width="1">
+    <line x1="60" y1="60" x2="60" y2="310"/>
+    <line x1="60" y1="310" x2="760" y2="310"/>
+  </g>
+  <g fill="#9ca3af" font-size="11" text-anchor="end">
+    <text x="55" y="313">0.1</text><text x="55" y="248">1</text><text x="55" y="183">10</text><text x="55" y="118">100</text><text x="55" y="63">1000</text>
+  </g>
+  <g fill="#9ca3af" font-size="11" text-anchor="middle">
+    <text x="130" y="328">Cu DAC</text>
+    <text x="245" y="328">800G PSM</text>
+    <text x="360" y="328">1.6T LR</text>
+    <text x="475" y="328">CPO 3.2T</text>
+    <text x="590" y="328">CPO 6.4T</text>
+    <text x="705" y="328">Photonic ALU</text>
+  </g>
+  <g>
+    <rect x="100" y="200" width="60" height="110" fill="#6b7280"/>
+    <rect x="215" y="170" width="60" height="140" fill="#9ca3af"/>
+    <rect x="330" y="190" width="60" height="120" fill="#9ca3af"/>
+    <rect x="445" y="232" width="60" height="78" fill="#22d3ee"/>
+    <rect x="560" y="248" width="60" height="62" fill="#22d3ee"/>
+    <rect x="675" y="290" width="60" height="20" fill="#a78bfa"/>
+  </g>
+  <g fill="#fff" font-size="11" text-anchor="middle" font-weight="600">
+    <text x="130" y="195">~25</text>
+    <text x="245" y="165">~15</text>
+    <text x="360" y="185">~8</text>
+    <text x="475" y="227">~4</text>
+    <text x="590" y="243">~2</text>
+    <text x="705" y="285">~0.2</text>
+  </g>
+  <text x="400" y="350" text-anchor="middle" fill="#6b7280" font-size="11">Source: Dell'Oro, Lightmatter whitepaper, Marvell investor day 2026</text>
+</svg>
+
+<h2>2. Anatomy of a co-packaged-optics module</h2>
+<p>A CPO switch module = silicon-photonics interposer + 8-16 external lasers + driver/TIA ASICs + fiber-attach + hermetic package + electrical SerDes back to the switch ASIC. Every block has different vendors and different competitive dynamics:</p>
+<pre><code>┌──────────────────────────────────────────────────────────────┐
+│  CPO SWITCH MODULE (e.g. NVIDIA Quantum-X 144-port 200G/lane)│
+├──────────────────────────────────────────────────────────────┤
+│ ┌──────────────┐   ┌─────────────────────┐  ┌─────────────┐ │
+│ │ Switch ASIC  │◄─►│  PHOTONIC ENGINE     │◄►│ Fiber array │ │
+│ │ (AVGO TH6 /  │   │  (TSMC COUPE on      │  │ (1024 fibers│ │
+│ │  MRVL Aquila)│   │   silicon photonics) │  │  per module)│ │
+│ └──────────────┘   │  - Mach-Zehnder mods │  └─────────────┘ │
+│                    │  - Ge photodetectors │                   │
+│                    │  - Driver/TIA (MTSI) │  ┌─────────────┐ │
+│                    │  - DSP (MRVL/AVGO)   │◄►│ Ext. laser  │ │
+│                    └─────────────────────┘  │ source 8-16 │ │
+│                                              │ (COHR/LITE) │ │
+│                                              └─────────────┘ │
+│ Hermetic package + fiber attach: AMKR / ASE / FN              │
+└──────────────────────────────────────────────────────────────┘
+</code></pre>
+<p>This is why <strong>no single company captures all the value</strong> — and why a basket approach (foundry + laser + DSP + packaging) outperforms any single bet.</p>
+<h2>3. Supply-chain matrix: top 5 per layer</h2>
+<p>The matrix below ranks the listed top-5 by each layer&#39;s own scoring criteria (technology depth, scale, customer concentration, gross margin, optical-revenue purity). Bold = highest-conviction primary pick in that layer.</p>
+<div style="overflow-x:auto;">
+<table style="width:100%;border-collapse:collapse;font-size:14px;background:#161618;border-radius:8px;overflow:hidden;">
+<thead style="background:#1f1f24;">
+<tr>
+<th style="text-align:left;padding:10px;color:#22d3ee;">Layer</th>
+<th style="padding:10px;color:#22d3ee;">#1</th>
+<th style="padding:10px;color:#22d3ee;">#2</th>
+<th style="padding:10px;color:#22d3ee;">#3</th>
+<th style="padding:10px;color:#22d3ee;">#4</th>
+<th style="padding:10px;color:#22d3ee;">#5</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-top:1px solid #2a2a30;"><td style="padding:10px;color:#9ca3af;">EDA / Co-design</td><td style="padding:10px;text-align:center;"><b>SNPS</b></td><td style="padding:10px;text-align:center;">CDNS</td><td style="padding:10px;text-align:center;">KEYS</td><td style="padding:10px;text-align:center;">SMCI*</td><td style="padding:10px;text-align:center;">Luceda (priv)</td></tr>
+<tr style="border-top:1px solid #2a2a30;"><td style="padding:10px;color:#9ca3af;">PIC Foundry</td><td style="padding:10px;text-align:center;"><b>TSM</b></td><td style="padding:10px;text-align:center;">GFS</td><td style="padding:10px;text-align:center;">INTC</td><td style="padding:10px;text-align:center;">TSEM</td><td style="padding:10px;text-align:center;">SMART (priv)</td></tr>
+<tr style="border-top:1px solid #2a2a30;"><td style="padding:10px;color:#9ca3af;">Lasers (DFB / QD)</td><td style="padding:10px;text-align:center;"><b>COHR</b></td><td style="padding:10px;text-align:center;">LITE</td><td style="padding:10px;text-align:center;">IPGP</td><td style="padding:10px;text-align:center;">Sumitomo</td><td style="padding:10px;text-align:center;">Furukawa</td></tr>
+<tr style="border-top:1px solid #2a2a30;"><td style="padding:10px;color:#9ca3af;">Modulators / Materials</td><td style="padding:10px;text-align:center;"><b>COHR</b></td><td style="padding:10px;text-align:center;">LITE</td><td style="padding:10px;text-align:center;">LWLG</td><td style="padding:10px;text-align:center;">POET</td><td style="padding:10px;text-align:center;">HyperLight (priv)</td></tr>
+<tr style="border-top:1px solid #2a2a30;"><td style="padding:10px;color:#9ca3af;">DSP / SerDes</td><td style="padding:10px;text-align:center;"><b>AVGO</b></td><td style="padding:10px;text-align:center;">MRVL</td><td style="padding:10px;text-align:center;">CRDO</td><td style="padding:10px;text-align:center;">MTSI</td><td style="padding:10px;text-align:center;">SMTC</td></tr>
+<tr style="border-top:1px solid #2a2a30;"><td style="padding:10px;color:#9ca3af;">Transceiver Assembly</td><td style="padding:10px;text-align:center;"><b>FN</b></td><td style="padding:10px;text-align:center;">COHR</td><td style="padding:10px;text-align:center;">LITE</td><td style="padding:10px;text-align:center;">CIEN</td><td style="padding:10px;text-align:center;">Innolight (priv)</td></tr>
+<tr style="border-top:1px solid #2a2a30;"><td style="padding:10px;color:#9ca3af;">Advanced Packaging</td><td style="padding:10px;text-align:center;"><b>TSM</b></td><td style="padding:10px;text-align:center;">AMKR</td><td style="padding:10px;text-align:center;">ASX</td><td style="padding:10px;text-align:center;">FN</td><td style="padding:10px;text-align:center;">JCET (priv/HK)</td></tr>
+<tr style="border-top:1px solid #2a2a30;"><td style="padding:10px;color:#9ca3af;">Test &amp; Burn-in</td><td style="padding:10px;text-align:center;"><b>KEYS</b></td><td style="padding:10px;text-align:center;">AEHR</td><td style="padding:10px;text-align:center;">FORM</td><td style="padding:10px;text-align:center;">COHU</td><td style="padding:10px;text-align:center;">Anritsu</td></tr>
+<tr style="border-top:1px solid #2a2a30;"><td style="padding:10px;color:#9ca3af;">Photonic Compute (priv-heavy)</td><td style="padding:10px;text-align:center;"><b>Lightmatter</b></td><td style="padding:10px;text-align:center;">Ayar Labs</td><td style="padding:10px;text-align:center;">PsiQuantum</td><td style="padding:10px;text-align:center;">POET</td><td style="padding:10px;text-align:center;">LWLG</td></tr>
+</tbody>
+</table>
+</div>
+
+<p style="font-size:12px;color:#6b7280;margin-top:8px;">Listed-equity proxies in bold. Privates noted where the top-5 globally is not investable directly. *SMCI listed as integrator that absorbs photonic-design tooling cost.</p>
+
+<h2>4. TAM build — where the dollars actually go</h2>
+<p>LightCounting and Dell&#39;Oro&#39;s latest (Q1 2026) splits the $84B 2030 optical-comms TAM as follows. The chart shows the dollar growth concentration:</p>
+<svg viewBox="0 0 800 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:800px;height:auto;background:#0e0e10;border-radius:8px;font-family:ui-sans-serif,system-ui;">
+  <text x="400" y="26" text-anchor="middle" fill="#e6e6e9" font-size="16" font-weight="600">Optical Interconnect TAM by Year ($B, stacked)</text>
+  <g stroke="#2a2a30" stroke-width="1">
+    <line x1="70" y1="60" x2="70" y2="320"/>
+    <line x1="70" y1="320" x2="760" y2="320"/>
+  </g>
+  <g fill="#9ca3af" font-size="11" text-anchor="end">
+    <text x="65" y="323">0</text><text x="65" y="270">20</text><text x="65" y="220">40</text><text x="65" y="170">60</text><text x="65" y="120">80</text><text x="65" y="70">100</text>
+  </g>
+  <g fill="#9ca3af" font-size="11" text-anchor="middle">
+    <text x="120" y="338">2024</text><text x="230" y="338">2025</text><text x="340" y="338">2026E</text><text x="450" y="338">2027E</text><text x="560" y="338">2028E</text><text x="670" y="338">2030E</text>
+  </g>
+  <!-- bars: each year stacked: pluggable / CPO / coherent / photonic-compute -->
+  <!-- 2024: total 32 -->
+  <g><rect x="95" y="240" width="50" height="80" fill="#6b7280"/><rect x="95" y="237" width="50" height="3" fill="#22d3ee"/><rect x="95" y="217" width="50" height="20" fill="#a78bfa"/></g>
+  <!-- 2025: 42 -->
+  <g><rect x="205" y="220" width="50" height="100" fill="#6b7280"/><rect x="205" y="215" width="50" height="5" fill="#22d3ee"/><rect x="205" y="190" width="50" height="25" fill="#a78bfa"/></g>
+  <!-- 2026: 54 -->
+  <g><rect x="315" y="200" width="50" height="120" fill="#6b7280"/><rect x="315" y="187" width="50" height="13" fill="#22d3ee"/><rect x="315" y="160" width="50" height="27" fill="#a78bfa"/></g>
+  <!-- 2027: 65 -->
+  <g><rect x="425" y="180" width="50" height="140" fill="#6b7280"/><rect x="425" y="155" width="50" height="25" fill="#22d3ee"/><rect x="425" y="125" width="50" height="30" fill="#a78bfa"/></g>
+  <!-- 2028: 75 -->
+  <g><rect x="535" y="167" width="50" height="153" fill="#6b7280"/><rect x="535" y="125" width="50" height="42" fill="#22d3ee"/><rect x="535" y="90" width="50" height="35" fill="#a78bfa"/><rect x="535" y="83" width="50" height="7" fill="#f472b6"/></g>
+  <!-- 2030: 84+ -->
+  <g><rect x="645" y="160" width="50" height="160" fill="#6b7280"/><rect x="645" y="100" width="50" height="60" fill="#22d3ee"/><rect x="645" y="65" width="50" height="35" fill="#a78bfa"/><rect x="645" y="50" width="50" height="15" fill="#f472b6"/></g>
+  <!-- legend -->
+  <g font-size="11" fill="#e6e6e9">
+    <rect x="95" y="55" width="12" height="12" fill="#6b7280"/><text x="112" y="65">Pluggable transceivers</text>
+    <rect x="260" y="55" width="12" height="12" fill="#22d3ee"/><text x="277" y="65">CPO modules</text>
+    <rect x="380" y="55" width="12" height="12" fill="#a78bfa"/><text x="397" y="65">Coherent / DCI</text>
+    <rect x="510" y="55" width="12" height="12" fill="#f472b6"/><text x="527" y="65">Photonic compute</text>
+  </g>
+</svg>
+
+<p><strong>Read this chart carefully.</strong> The pluggable base is large and growing modestly (low-teens CAGR). The breakout segment is <strong>CPO</strong>, going from a rounding error in 2025 to ~$25B by 2030 — a &gt;50% CAGR concentrated in the names listed in the matrix above. Photonic compute is a rounding error today; it becomes interesting in 2028+.</p>
+<h2>5. Technical analysis on the listed names</h2>
+<p>This is not chart astrology — it&#39;s a structured read of where each name sits relative to its 200-day moving average, prior breakout/resistance levels, relative strength vs SOX, and a 12-month price target derived from forward EV/EBITDA bridge to 2027 estimates. Targets are <em>consensus + photonics-multiple-expansion overlay</em>.</p>
+<div style="overflow-x:auto;">
+<table style="width:100%;border-collapse:collapse;font-size:13px;background:#161618;border-radius:8px;overflow:hidden;">
+<thead style="background:#1f1f24;">
+<tr>
+<th style="text-align:left;padding:10px;color:#22d3ee;">Ticker</th>
+<th style="text-align:right;padding:10px;color:#22d3ee;">Px (4/25)</th>
+<th style="text-align:right;padding:10px;color:#22d3ee;">200-DMA</th>
+<th style="text-align:left;padding:10px;color:#22d3ee;">Trend</th>
+<th style="text-align:right;padding:10px;color:#22d3ee;">RSI(14)</th>
+<th style="text-align:right;padding:10px;color:#22d3ee;">Key Support</th>
+<th style="text-align:right;padding:10px;color:#22d3ee;">Resistance</th>
+<th style="text-align:right;padding:10px;color:#22d3ee;">12M PT</th>
+<th style="text-align:right;padding:10px;color:#22d3ee;">Implied Upside</th>
+<th style="text-align:left;padding:10px;color:#22d3ee;">Catalyst Window</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-top:1px solid #2a2a30;"><td style="padding:8px;color:#22d3ee;font-weight:600;">NVDA*</td><td style="padding:8px;text-align:right;">$182</td><td style="padding:8px;text-align:right;">$165</td><td style="padding:8px;color:#10b981;">Uptrend</td><td style="padding:8px;text-align:right;">62</td><td style="padding:8px;text-align:right;">$165</td><td style="padding:8px;text-align:right;">$200</td><td style="padding:8px;text-align:right;color:#10b981;">$235</td><td style="padding:8px;text-align:right;color:#10b981;">+29%</td><td style="padding:8px;">Quantum-X CPO ship H2'26</td></tr>
+<tr style="border-top:1px solid #2a2a30;"><td style="padding:8px;color:#22d3ee;font-weight:600;">AVGO</td><td style="padding:8px;text-align:right;">$298</td><td style="padding:8px;text-align:right;">$262</td><td style="padding:8px;color:#10b981;">Uptrend</td><td style="padding:8px;text-align:right;">58</td><td style="padding:8px;text-align:right;">$270</td><td style="padding:8px;text-align:right;">$320</td><td style="padding:8px;text-align:right;color:#10b981;">$380</td><td style="padding:8px;text-align:right;color:#10b981;">+28%</td><td style="padding:8px;">TH-Ultra design-in '26-27</td></tr>
+<tr style="border-top:1px solid #2a2a30;"><td style="padding:8px;color:#22d3ee;font-weight:600;">MRVL</td><td style="padding:8px;text-align:right;">$83</td><td style="padding:8px;text-align:right;">$75</td><td style="padding:8px;color:#10b981;">Uptrend</td><td style="padding:8px;text-align:right;">55</td><td style="padding:8px;text-align:right;">$72</td><td style="padding:8px;text-align:right;">$95</td><td style="padding:8px;text-align:right;color:#10b981;">$118</td><td style="padding:8px;text-align:right;color:#10b981;">+42%</td><td style="padding:8px;">Aquila CPO platform Q3'26</td></tr>
+<tr style="border-top:1px solid #2a2a30;"><td style="padding:8px;color:#22d3ee;font-weight:600;">COHR</td><td style="padding:8px;text-align:right;">$104</td><td style="padding:8px;text-align:right;">$92</td><td style="padding:8px;color:#10b981;">Uptrend</td><td style="padding:8px;text-align:right;">60</td><td style="padding:8px;text-align:right;">$88</td><td style="padding:8px;text-align:right;">$115</td><td style="padding:8px;text-align:right;color:#10b981;">$148</td><td style="padding:8px;text-align:right;color:#10b981;">+42%</td><td style="padding:8px;">1.6T ramp + CPO laser awards H2'26</td></tr>
+<tr style="border-top:1px solid #2a2a30;"><td style="padding:8px;color:#22d3ee;font-weight:600;">LITE</td><td style="padding:8px;text-align:right;">$98</td><td style="padding:8px;text-align:right;">$80</td><td style="padding:8px;color:#10b981;">Uptrend</td><td style="padding:8px;text-align:right;">66</td><td style="padding:8px;text-align:right;">$78</td><td style="padding:8px;text-align:right;">$110</td><td style="padding:8px;text-align:right;color:#10b981;">$140</td><td style="padding:8px;text-align:right;color:#10b981;">+43%</td><td style="padding:8px;">Cloud Light revenue inflection Q2'26</td></tr>
+<tr style="border-top:1px solid #2a2a30;"><td style="padding:8px;color:#22d3ee;font-weight:600;">FN</td><td style="padding:8px;text-align:right;">$310</td><td style="padding:8px;text-align:right;">$258</td><td style="padding:8px;color:#10b981;">Uptrend</td><td style="padding:8px;text-align:right;">63</td><td style="padding:8px;text-align:right;">$260</td><td style="padding:8px;text-align:right;">$325</td><td style="padding:8px;text-align:right;color:#10b981;">$395</td><td style="padding:8px;text-align:right;color:#10b981;">+27%</td><td style="padding:8px;">NVDA CPO assembly award</td></tr>
+<tr style="border-top:1px solid #2a2a30;"><td style="padding:8px;color:#22d3ee;font-weight:600;">CIEN</td><td style="padding:8px;text-align:right;">$76</td><td style="padding:8px;text-align:right;">$68</td><td style="padding:8px;color:#10b981;">Uptrend</td><td style="padding:8px;text-align:right;">54</td><td style="padding:8px;text-align:right;">$66</td><td style="padding:8px;text-align:right;">$84</td><td style="padding:8px;text-align:right;color:#10b981;">$98</td><td style="padding:8px;text-align:right;color:#10b981;">+29%</td><td style="padding:8px;">WaveLogic 6 hyperscaler PO</td></tr>
+<tr style="border-top:1px solid #2a2a30;"><td style="padding:8px;color:#22d3ee;font-weight:600;">CRDO</td><td style="padding:8px;text-align:right;">$48</td><td style="padding:8px;text-align:right;">$38</td><td style="padding:8px;color:#10b981;">Strong up</td><td style="padding:8px;text-align:right;">71</td><td style="padding:8px;text-align:right;">$36</td><td style="padding:8px;text-align:right;">$55</td><td style="padding:8px;text-align:right;color:#10b981;">$72</td><td style="padding:8px;text-align:right;color:#10b981;">+50%</td><td style="padding:8px;">AEC ramp + AWS expansion</td></tr>
+<tr style="border-top:1px solid #2a2a30;"><td style="padding:8px;color:#22d3ee;font-weight:600;">SNPS</td><td style="padding:8px;text-align:right;">$595</td><td style="padding:8px;text-align:right;">$540</td><td style="padding:8px;color:#10b981;">Uptrend</td><td style="padding:8px;text-align:right;">57</td><td style="padding:8px;text-align:right;">$540</td><td style="padding:8px;text-align:right;">$640</td><td style="padding:8px;text-align:right;color:#10b981;">$735</td><td style="padding:8px;text-align:right;color:#10b981;">+24%</td><td style="padding:8px;">Ansys synergies '26-27</td></tr>
+<tr style="border-top:1px solid #2a2a30;"><td style="padding:8px;color:#22d3ee;font-weight:600;">TSM</td><td style="padding:8px;text-align:right;">$210</td><td style="padding:8px;text-align:right;">$195</td><td style="padding:8px;color:#10b981;">Uptrend</td><td style="padding:8px;text-align:right;">59</td><td style="padding:8px;text-align:right;">$190</td><td style="padding:8px;text-align:right;">$225</td><td style="padding:8px;text-align:right;color:#10b981;">$265</td><td style="padding:8px;text-align:right;color:#10b981;">+26%</td><td style="padding:8px;">COUPE volume + CoWoS expansion</td></tr>
+<tr style="border-top:1px solid #2a2a30;"><td style="padding:8px;color:#22d3ee;font-weight:600;">GFS</td><td style="padding:8px;text-align:right;">$48</td><td style="padding:8px;text-align:right;">$42</td><td style="padding:8px;color:#10b981;">Recovering</td><td style="padding:8px;text-align:right;">52</td><td style="padding:8px;text-align:right;">$40</td><td style="padding:8px;text-align:right;">$55</td><td style="padding:8px;text-align:right;color:#10b981;">$68</td><td style="padding:8px;text-align:right;color:#10b981;">+42%</td><td style="padding:8px;">Fotonix capacity wins '26</td></tr>
+<tr style="border-top:1px solid #2a2a30;"><td style="padding:8px;color:#22d3ee;font-weight:600;">POET</td><td style="padding:8px;text-align:right;">$5.10</td><td style="padding:8px;text-align:right;">$4.20</td><td style="padding:8px;color:#f59e0b;">Volatile up</td><td style="padding:8px;text-align:right;">68</td><td style="padding:8px;text-align:right;">$3.80</td><td style="padding:8px;text-align:right;">$6.50</td><td style="padding:8px;text-align:right;color:#10b981;">$9.50</td><td style="padding:8px;text-align:right;color:#10b981;">+86%</td><td style="padding:8px;">First commercial 1.6T shipment</td></tr>
+<tr style="border-top:1px solid #2a2a30;"><td style="padding:8px;color:#22d3ee;font-weight:600;">LWLG</td><td style="padding:8px;text-align:right;">$1.85</td><td style="padding:8px;text-align:right;">$1.95</td><td style="padding:8px;color:#ef4444;">Choppy</td><td style="padding:8px;text-align:right;">44</td><td style="padding:8px;text-align:right;">$1.60</td><td style="padding:8px;text-align:right;">$2.40</td><td style="padding:8px;text-align:right;color:#10b981;">$3.50</td><td style="padding:8px;text-align:right;color:#10b981;">+89%</td><td style="padding:8px;">Polymer modulator commercial PO</td></tr>
+</tbody>
+</table>
+</div>
+
+<p style="font-size:12px;color:#6b7280;margin-top:8px;">*NVDA included for context — not in the formal company-card list. Prices as of close 2026-04-25. PTs blend 27E EV/EBITDA at sector-relative multiple + photonics-mix expansion. Not investment advice.</p>
+
+<h3>Relative-strength snapshot (1y returns vs SOX)</h3>
+<svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:800px;height:auto;background:#0e0e10;border-radius:8px;font-family:ui-sans-serif,system-ui;">
+  <text x="400" y="24" text-anchor="middle" fill="#e6e6e9" font-size="15" font-weight="600">Trailing 12-month total return (%) — vs SOX +18% benchmark</text>
+  <line x1="80" y1="245" x2="780" y2="245" stroke="#2a2a30"/>
+  <line x1="80" y1="60" x2="80" y2="245" stroke="#2a2a30"/>
+  <!-- benchmark line -->
+  <line x1="80" y1="180" x2="780" y2="180" stroke="#f59e0b" stroke-dasharray="4 3" opacity="0.7"/>
+  <text x="785" y="184" fill="#f59e0b" font-size="10">SOX +18%</text>
+  <g font-size="11" fill="#9ca3af" text-anchor="middle">
+    <text x="115" y="262">CRDO</text><text x="175" y="262">LITE</text><text x="235" y="262">COHR</text><text x="295" y="262">FN</text><text x="355" y="262">MRVL</text><text x="415" y="262">AVGO</text><text x="475" y="262">NVDA</text><text x="535" y="262">TSM</text><text x="595" y="262">CIEN</text><text x="655" y="262">SNPS</text><text x="715" y="262">GFS</text><text x="775" y="262">POET</text>
+  </g>
+  <g>
+    <rect x="100" y="80" width="30" height="165" fill="#22d3ee"/><text x="115" y="75" font-size="10" fill="#fff" text-anchor="middle">+98</text>
+    <rect x="160" y="105" width="30" height="140" fill="#22d3ee"/><text x="175" y="100" font-size="10" fill="#fff" text-anchor="middle">+72</text>
+    <rect x="220" y="115" width="30" height="130" fill="#22d3ee"/><text x="235" y="110" font-size="10" fill="#fff" text-anchor="middle">+65</text>
+    <rect x="280" y="120" width="30" height="125" fill="#22d3ee"/><text x="295" y="115" font-size="10" fill="#fff" text-anchor="middle">+60</text>
+    <rect x="340" y="135" width="30" height="110" fill="#22d3ee"/><text x="355" y="130" font-size="10" fill="#fff" text-anchor="middle">+45</text>
+    <rect x="400" y="145" width="30" height="100" fill="#22d3ee"/><text x="415" y="140" font-size="10" fill="#fff" text-anchor="middle">+38</text>
+    <rect x="460" y="155" width="30" height="90" fill="#22d3ee"/><text x="475" y="150" font-size="10" fill="#fff" text-anchor="middle">+30</text>
+    <rect x="520" y="170" width="30" height="75" fill="#22d3ee"/><text x="535" y="165" font-size="10" fill="#fff" text-anchor="middle">+22</text>
+    <rect x="580" y="175" width="30" height="70" fill="#22d3ee"/><text x="595" y="170" font-size="10" fill="#fff" text-anchor="middle">+18</text>
+    <rect x="640" y="195" width="30" height="50" fill="#9ca3af"/><text x="655" y="190" font-size="10" fill="#fff" text-anchor="middle">+8</text>
+    <rect x="700" y="205" width="30" height="40" fill="#9ca3af"/><text x="715" y="200" font-size="10" fill="#fff" text-anchor="middle">+2</text>
+    <rect x="760" y="220" width="30" height="25" fill="#ef4444"/><text x="775" y="215" font-size="10" fill="#fff" text-anchor="middle">-12</text>
+  </g>
+</svg>
+
+<p>The spread tells you the market has <em>already</em> started to discount the photonics story for the proven names (CRDO, LITE, COHR, FN) but is still skeptical on the slow-burn (GFS) and binary (POET) plays — that&#39;s where the asymmetry sits.</p>
+<h2>6. Catalyst calendar — when the prints land</h2>
+<p>The PT timeline below is keyed to specific catalysts. The &quot;expected&quot; column is when I expect price targets to be reached, conditional on the catalyst landing on time.</p>
+<div style="overflow-x:auto;">
+<table style="width:100%;border-collapse:collapse;font-size:13px;background:#161618;border-radius:8px;overflow:hidden;">
+<thead style="background:#1f1f24;">
+<tr>
+<th style="text-align:left;padding:10px;color:#22d3ee;">Date</th>
+<th style="text-align:left;padding:10px;color:#22d3ee;">Catalyst</th>
+<th style="text-align:left;padding:10px;color:#22d3ee;">Names Most Affected</th>
+<th style="text-align:left;padding:10px;color:#22d3ee;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-top:1px solid #2a2a30;"><td style="padding:8px;color:#9ca3af;">May 2026</td><td style="padding:8px;">NVIDIA Computex keynote — CPO product roadmap update</td><td style="padding:8px;">NVDA, COHR, LITE, FN, MRVL</td><td style="padding:8px;color:#22d3ee;">Catalytic</td></tr>
+<tr style="border-top:1px solid #2a2a30;"><td style="padding:8px;color:#9ca3af;">Jun 2026</td><td style="padding:8px;">OFC follow-on / CIOE — 1.6T LPO/LRO reliability data</td><td style="padding:8px;">CRDO, MTSI, COHR</td><td style="padding:8px;color:#a78bfa;">Industry</td></tr>
+<tr style="border-top:1px solid #2a2a30;"><td style="padding:8px;color:#9ca3af;">Jul 2026</td><td style="padding:8px;">Q2 earnings: 1.6T pluggable revenue ramp visibility</td><td style="padding:8px;">COHR, LITE, FN, CIEN</td><td style="padding:8px;color:#22d3ee;">Earnings</td></tr>
+<tr style="border-top:1px solid #2a2a30;"><td style="padding:8px;color:#9ca3af;">Aug 2026</td><td style="padding:8px;">SIGGRAPH — NVIDIA + TSMC joint COUPE deep-dive (rumored)</td><td style="padding:8px;">TSM, NVDA, COHR</td><td style="padding:8px;color:#a78bfa;">Industry</td></tr>
+<tr style="border-top:1px solid #2a2a30;"><td style="padding:8px;color:#9ca3af;">Sep 2026</td><td style="padding:8px;">Marvell Aquila CPO platform launch</td><td style="padding:8px;">MRVL, AVGO (read-across)</td><td style="padding:8px;color:#22d3ee;">Catalytic</td></tr>
+<tr style="border-top:1px solid #2a2a30;"><td style="padding:8px;color:#9ca3af;">Oct 2026</td><td style="padding:8px;">Q3 earnings — first CPO module BOM disclosed in supplier filings</td><td style="padding:8px;">All names</td><td style="padding:8px;color:#22d3ee;">Earnings</td></tr>
+<tr style="border-top:1px solid #2a2a30;"><td style="padding:8px;color:#9ca3af;">Nov 2026</td><td style="padding:8px;">SC26 supercomputing — first CPO switch in production at scale</td><td style="padding:8px;">NVDA, FN, COHR, AMKR</td><td style="padding:8px;color:#22d3ee;">Catalytic</td></tr>
+<tr style="border-top:1px solid #2a2a30;"><td style="padding:8px;color:#9ca3af;">Dec 2026</td><td style="padding:8px;">Hyperscaler 2027 capex guides — optical mix disclosed</td><td style="padding:8px;">All names</td><td style="padding:8px;color:#a78bfa;">Macro</td></tr>
+<tr style="border-top:1px solid #2a2a30;"><td style="padding:8px;color:#9ca3af;">Mar 2027</td><td style="padding:8px;">OFC 2027 — first 3.2T module demos, photonic-compute benchmarks</td><td style="padding:8px;">LWLG, POET, AEHR</td><td style="padding:8px;color:#a78bfa;">Industry</td></tr>
+<tr style="border-top:1px solid #2a2a30;"><td style="padding:8px;color:#9ca3af;">H2 2027</td><td style="padding:8px;">Possible Intel photonics carve-out / IPO</td><td style="padding:8px;">INTC</td><td style="padding:8px;color:#f59e0b;">Speculative</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Expected price-target timing</h3>
+<table>
+<thead>
+<tr>
+<th>Ticker</th>
+<th>Current</th>
+<th>12-mo PT</th>
+<th>Expected hit</th>
+<th>Trigger</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>COHR</strong></td>
+<td>$104</td>
+<td>$148</td>
+<td>Q4 2026</td>
+<td>1.6T ramp + CPO laser-source award</td>
+</tr>
+<tr>
+<td><strong>LITE</strong></td>
+<td>$98</td>
+<td>$140</td>
+<td>Q1 2027</td>
+<td>Cloud Light revenue inflection visible</td>
+</tr>
+<tr>
+<td><strong>FN</strong></td>
+<td>$310</td>
+<td>$395</td>
+<td>Q4 2026</td>
+<td>NVDA CPO assembly contract disclosed</td>
+</tr>
+<tr>
+<td><strong>MRVL</strong></td>
+<td>$83</td>
+<td>$118</td>
+<td>Q1 2027</td>
+<td>Aquila CPO launch + Trainium2 ramp</td>
+</tr>
+<tr>
+<td><strong>AVGO</strong></td>
+<td>$298</td>
+<td>$380</td>
+<td>Q2 2027</td>
+<td>TH-Ultra design wins visible</td>
+</tr>
+<tr>
+<td><strong>CRDO</strong></td>
+<td>$48</td>
+<td>$72</td>
+<td>Q3 2026</td>
+<td>AEC + 1.6T DSP shipments</td>
+</tr>
+<tr>
+<td><strong>TSM</strong></td>
+<td>$210</td>
+<td>$265</td>
+<td>Q1 2027</td>
+<td>COUPE volume disclosed</td>
+</tr>
+<tr>
+<td><strong>GFS</strong></td>
+<td>$48</td>
+<td>$68</td>
+<td>Q2 2027</td>
+<td>Fotonix utilization guide</td>
+</tr>
+<tr>
+<td><strong>POET</strong></td>
+<td>$5.10</td>
+<td>$9.50</td>
+<td>H1 2027</td>
+<td>First volume 1.6T design ship</td>
+</tr>
+<tr>
+<td><strong>SNPS</strong></td>
+<td>$595</td>
+<td>$735</td>
+<td>Q1 2027</td>
+<td>Ansys cross-sell visible</td>
+</tr>
+</tbody></table>
+<h2>7. Position-sizing matrix</h2>
+<p>I think about this as a <strong>layered basket</strong>, not a pick. The CPO BOM is too distributed for any single name to capture all the upside. Suggested allocation for a thematic 25-30% portfolio sleeve:</p>
+<svg viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:800px;height:auto;background:#0e0e10;border-radius:8px;font-family:ui-sans-serif,system-ui;">
+  <text x="400" y="24" text-anchor="middle" fill="#e6e6e9" font-size="15" font-weight="600">Suggested Photonics Sleeve — Position Weights (% of sleeve)</text>
+  <!-- horizontal stacked bars -->
+  <g font-size="12" fill="#e6e6e9">
+    <text x="20" y="70">TSM</text><rect x="80" y="58" width="180" height="18" fill="#22d3ee"/><text x="270" y="71">22%</text>
+    <text x="20" y="100">AVGO</text><rect x="80" y="88" width="160" height="18" fill="#22d3ee"/><text x="250" y="101">20%</text>
+    <text x="20" y="130">COHR</text><rect x="80" y="118" width="120" height="18" fill="#22d3ee"/><text x="210" y="131">15%</text>
+    <text x="20" y="160">MRVL</text><rect x="80" y="148" width="80" height="18" fill="#a78bfa"/><text x="170" y="161">10%</text>
+    <text x="20" y="190">FN</text><rect x="80" y="178" width="64" height="18" fill="#a78bfa"/><text x="154" y="191">8%</text>
+    <text x="20" y="220">LITE</text><rect x="80" y="208" width="56" height="18" fill="#a78bfa"/><text x="146" y="221">7%</text>
+    <text x="20" y="250">SNPS</text><rect x="80" y="238" width="48" height="18" fill="#a78bfa"/><text x="138" y="251">6%</text>
+    <text x="20" y="280">GFS / CIEN / CRDO</text><rect x="180" y="268" width="64" height="18" fill="#f472b6"/><text x="254" y="281">8% combined</text>
+    <text x="20" y="310">POET / LWLG / AEHR (lottery)</text><rect x="220" y="298" width="32" height="18" fill="#ef4444"/><text x="262" y="311">4% combined</text>
+  </g>
+</svg>
+
+<p><strong>Rationale:</strong> Anchor on TSM/AVGO (large-cap quality you would own anyway). Add the laser-side torque (COHR/LITE/FN). Pure-plays are options-like — the downside is real, the upside is multi-bagger.</p>
+<h2>8. Bear case — what kills this</h2>
+<p>I&#39;ve spent most of this issue describing the bull. Here&#39;s how it ends in tears:</p>
+<ol>
+<li><strong>CPO yield wall.</strong> Hermetic photonic packaging at &gt;70% yield is unproven at volume. If TSMC COUPE ramps slow (yields stuck at 50%), the entire 2026-27 catalyst calendar slides 12-18 months. Premium multiples on COHR/LITE/FN compress hard.</li>
+<li><strong>LPO/LRO eats the TAM.</strong> Linear-drive pluggables (LPO) at 1.6T are 30% cheaper than DSP-based modules and &quot;good enough&quot; for most fabrics. If LPO becomes the standard, MRVL/AVGO DSP TAM gets cut, and CPO&#39;s value prop weakens.</li>
+<li><strong>AI capex air-pocket.</strong> Any DeepSeek-style efficiency shock or hyperscaler capex pause hits the entire optics complex disproportionately — these are torque names.</li>
+<li><strong>Geopolitics.</strong> ~70% of optical module assembly today happens in China (Innolight, HiSense, Eoptolink). Tariff escalation reshuffles the BOM but creates 12-month transition pain.</li>
+</ol>
+<p>Risk-managed sizing: keep the photonics sleeve &lt;25% of total equity, and split the basket across foundry / DSP / laser / packaging so no single layer failure unwinds the whole thesis.</p>
+<h2>9. The under-discussed angle</h2>
+<p>Everyone talks about transceiver ASPs and CPO timelines. Almost nobody talks about <strong>lasers as the actual choke point</strong>. A single Quantum-X CPO module needs ~16 external DFB lasers. A hyperscaler ordering 100K modules needs 1.6M lasers. Coherent + Lumentum&#39;s combined InP DFB capacity in 2026 is roughly <strong>8M units/year</strong> — comfortable today, <em>uncomfortable in 2027 if NVDA, AMD, Broadcom, and Marvell all ship CPO simultaneously</em>. This is why I weight COHR &gt; MRVL on a 24-month view despite MRVL being the higher-beta narrative — the constraint, not the demand, prices the equity.</p>
+<p>The second-order play here is <strong>quantum-dot lasers</strong> (more thermally stable, longer life). Whoever scales QD first re-prices the whole laser BOM. Watch privates Aurrion (Juniper-acquired), Quintessent, and university IP coming out of UCSB — that&#39;s where the next M&amp;A target will emerge.</p>
+<hr>
+<p><em>This issue is research, not advice. I hold positions in NVDA, AVGO, TSM, COHR. Past performance, future performance, you know the drill.</em></p>
+
+                </div>
+
+                <h3 style="font-size: var(--text-base); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-tertiary); margin: var(--space-8) 0 var(--space-4);">Key Takeaways</h3>
+
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-4);">
+
+                    <li style="display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-4); background: var(--bg-card); border: 1px solid var(--border-primary); border-radius: var(--radius-md);">
+                        <span style="color: var(--accent-primary); font-weight: 600;">1.</span>
+                        <span style="color: var(--text-secondary);">Copper SerDes is hitting a thermodynamic wall at 224G/lane — 448G is signal-integrity hostile, forcing optical I/O onto the package by 2026-27 in AI scale-out fabrics</span>
+                    </li>
+                    <li style="display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-4); background: var(--bg-card); border: 1px solid var(--border-primary); border-radius: var(--radius-md);">
+                        <span style="color: var(--accent-primary); font-weight: 600;">2.</span>
+                        <span style="color: var(--text-secondary);">CPO TAM inflects from &lt;$0.5B (2025) to ~$5-7B (2027) and ~$25B (2030) per LightCounting / Dell'Oro — a ~30%+ CAGR concentrated in 4-5 vendors</span>
+                    </li>
+                    <li style="display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-4); background: var(--bg-card); border: 1px solid var(--border-primary); border-radius: var(--radius-md);">
+                        <span style="color: var(--accent-primary); font-weight: 600;">3.</span>
+                        <span style="color: var(--text-secondary);">The bottleneck is NOT silicon — it is external laser sources (DFB / quantum-dot), high-bandwidth modulators (thin-film LiNbO3), and hermetic photonic packaging at &gt;70% yield</span>
+                    </li>
+                    <li style="display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-4); background: var(--bg-card); border: 1px solid var(--border-primary); border-radius: var(--radius-md);">
+                        <span style="color: var(--accent-primary); font-weight: 600;">4.</span>
+                        <span style="color: var(--text-secondary);">NVIDIA Quantum-X CPO switches enter volume in H2'26; this is the single biggest dated catalyst — Coherent, Lumentum, Fabrinet, MRVL all sit in that BOM</span>
+                    </li>
+                    <li style="display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-4); background: var(--bg-card); border: 1px solid var(--border-primary); border-radius: var(--radius-md);">
+                        <span style="color: var(--accent-primary); font-weight: 600;">5.</span>
+                        <span style="color: var(--text-secondary);">Pure-play photonic compute (Lightmatter, Ayar Labs) remains private; the listed proxy basket — POET, LWLG, AEHR, CRDO — is high beta and high binary risk, size accordingly</span>
+                    </li>
+                    <li style="display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-4); background: var(--bg-card); border: 1px solid var(--border-primary); border-radius: var(--radius-md);">
+                        <span style="color: var(--accent-primary); font-weight: 600;">6.</span>
+                        <span style="color: var(--text-secondary);">Bear case: CPO slips to 2028 (yield/reliability), pluggable 1.6T LPO/LRO eats the near-term TAM, and incumbents (AVGO, MRVL) capture all the value while pure-plays burn cash</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Theme 1: EDA & PIC Design Tooling -->
+        <section id="theme-1" class="theme-section">
+            <div class="theme-header">
+                <h2 class="theme-title">EDA &amp; PIC Design Tooling</h2>
+                <p class="theme-thesis">Every photonic chip starts in a tool. Lumerical (now Ansys/Synopsys) and Cadence Virtuoso/Curvy own the photonic-electronic co-simulation stack. Margins are software-grade and the customer base is captive. The cleanest, lowest-beta way to play the build-out — these names get paid whether CPO wins or pluggables stay dominant.</p>
+            </div>
+
+            <div class="company-grid">
+
+                <article class="company-card">
+                    <div class="company-header">
+                        <div class="company-identity">
+                            <span class="company-ticker">SNPS</span>
+                            <button class="company-copy-btn" data-ticker="SNPS" aria-label="Copy ticker">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                            </button>
+                        </div>
+                        <span class="company-rating rating-buy">Buy</span>
+                    </div>
+                    <div class="company-body">
+                        <div class="company-name">Synopsys</div>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <span class="metric-value">$92B</span>
+                                <span class="metric-label">Market Cap</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">38.0</span>
+                                <span class="metric-label">P/E</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">+15%</span>
+                                <span class="metric-label">Rev Growth</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">81%</span>
+                                <span class="metric-label">Gross Margin</span>
+                            </div>
+                        </div>
+
+                        <div class="company-cases">
+                            <div class="case-box case-bull">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                                    Bull Case
+                                </div>
+                                <p class="case-text">Acquired Ansys (closed Q3'25) — now owns Lumerical FDTD, the dominant photonic device simulator. OptoCompiler co-design flow with Cadence is the de-facto standard at TSMC, GF, Tower. Software-grade gross margins, multi-year subscription tail, AI-design tailwind on top of photonics.</p>
+                            </div>
+                            <div class="case-box case-bear">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" /></svg>
+                                    Bear Case
+                                </div>
+                                <p class="case-text">Ansys integration overhang. Multiple already prices in flawless execution. Photonics is a small slice of revenue today — story stock for now.</p>
+                            </div>
+                        </div>
+
+                        <div class="company-target">
+                            <div class="target-item">
+                                <div class="target-label">Conviction</div>
+                                <div class="target-value accent">Medium-High</div>
+                            </div>
+                            <div class="target-item">
+                                <div class="target-label">Position Size</div>
+                                <div class="target-value">3-4%</div>
+                            </div>
+                        </div>
+
+                        <p style="font-size: var(--text-sm); color: var(--text-tertiary);"><strong style="color: var(--text-secondary);">Rationale:</strong> Lowest-beta photonics exposure with optionality on the broader AI-design supercycle</p>
+                    </div>
+                </article>
+
+                <article class="company-card">
+                    <div class="company-header">
+                        <div class="company-identity">
+                            <span class="company-ticker">CDNS</span>
+                            <button class="company-copy-btn" data-ticker="CDNS" aria-label="Copy ticker">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                            </button>
+                        </div>
+                        <span class="company-rating rating-buy">Buy</span>
+                    </div>
+                    <div class="company-body">
+                        <div class="company-name">Cadence Design Systems</div>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <span class="metric-value">$84B</span>
+                                <span class="metric-label">Market Cap</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">42.0</span>
+                                <span class="metric-label">P/E</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">+14%</span>
+                                <span class="metric-label">Rev Growth</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">89%</span>
+                                <span class="metric-label">Gross Margin</span>
+                            </div>
+                        </div>
+
+                        <div class="company-cases">
+                            <div class="case-box case-bull">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                                    Bull Case
+                                </div>
+                                <p class="case-text">Curvy / Virtuoso photonic flow is the design entry point at GlobalFoundries Fotonix. Tight integration with Lumerical via OpenAccess. Backlog at all-time highs.</p>
+                            </div>
+                            <div class="case-box case-bear">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" /></svg>
+                                    Bear Case
+                                </div>
+                                <p class="case-text">Premium multiple even by EDA standards. Less photonic-specific IP than SNPS post-Ansys.</p>
+                            </div>
+                        </div>
+
+                        <div class="company-target">
+                            <div class="target-item">
+                                <div class="target-label">Conviction</div>
+                                <div class="target-value accent">Medium</div>
+                            </div>
+                            <div class="target-item">
+                                <div class="target-label">Position Size</div>
+                                <div class="target-value">2-3%</div>
+                            </div>
+                        </div>
+
+                        <p style="font-size: var(--text-sm); color: var(--text-tertiary);"><strong style="color: var(--text-secondary);">Rationale:</strong> Co-leader; size below SNPS due to less direct PIC ownership</p>
+                    </div>
+                </article>
+
+                <article class="company-card">
+                    <div class="company-header">
+                        <div class="company-identity">
+                            <span class="company-ticker">KEYS</span>
+                            <button class="company-copy-btn" data-ticker="KEYS" aria-label="Copy ticker">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                            </button>
+                        </div>
+                        <span class="company-rating rating-buy">Buy</span>
+                    </div>
+                    <div class="company-body">
+                        <div class="company-name">Keysight Technologies</div>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <span class="metric-value">$30B</span>
+                                <span class="metric-label">Market Cap</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">26.5</span>
+                                <span class="metric-label">P/E</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">+8%</span>
+                                <span class="metric-label">Rev Growth</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">64%</span>
+                                <span class="metric-label">Gross Margin</span>
+                            </div>
+                        </div>
+
+                        <div class="company-cases">
+                            <div class="case-box case-bull">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                                    Bull Case
+                                </div>
+                                <p class="case-text">Owns the test & measurement stack for 224G/448G electrical and 200G-per-lane optical — every CPO module gets validated on Keysight gear. Quiet picks-and-shovels winner.</p>
+                            </div>
+                            <div class="case-box case-bear">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" /></svg>
+                                    Bear Case
+                                </div>
+                                <p class="case-text">Cyclical T&M exposure to broader semicap. Optical is one segment of many.</p>
+                            </div>
+                        </div>
+
+                        <div class="company-target">
+                            <div class="target-item">
+                                <div class="target-label">Conviction</div>
+                                <div class="target-value accent">Medium</div>
+                            </div>
+                            <div class="target-item">
+                                <div class="target-label">Position Size</div>
+                                <div class="target-value">2-3%</div>
+                            </div>
+                        </div>
+
+                        <p style="font-size: var(--text-sm); color: var(--text-tertiary);"><strong style="color: var(--text-secondary);">Rationale:</strong> Diversified instrument leader with direct CPO test exposure</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Theme 2: PIC Foundries & Process -->
+        <section id="theme-2" class="theme-section">
+            <div class="theme-header">
+                <h2 class="theme-title">PIC Foundries &amp; Process</h2>
+                <p class="theme-thesis">Photonic ICs need silicon-photonics-capable fabs. TSMC (COUPE), GlobalFoundries (Fotonix 45SPCLO), and Tower Semiconductor are the only commercial players with credible high-volume PDKs. Intel Foundry is the wildcard — its silicon photonics IP is best-in-class but the foundry business is unproven. Capacity, not technology, is the chokepoint through 2027.</p>
+            </div>
+
+            <div class="company-grid">
+
+                <article class="company-card">
+                    <div class="company-header">
+                        <div class="company-identity">
+                            <span class="company-ticker">TSM</span>
+                            <button class="company-copy-btn" data-ticker="TSM" aria-label="Copy ticker">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                            </button>
+                        </div>
+                        <span class="company-rating rating-buy">Buy</span>
+                    </div>
+                    <div class="company-body">
+                        <div class="company-name">Taiwan Semiconductor</div>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <span class="metric-value">$1.05T</span>
+                                <span class="metric-label">Market Cap</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">27.0</span>
+                                <span class="metric-label">P/E</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">+28%</span>
+                                <span class="metric-label">Rev Growth</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">57%</span>
+                                <span class="metric-label">Gross Margin</span>
+                            </div>
+                        </div>
+
+                        <div class="company-cases">
+                            <div class="case-box case-bull">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                                    Bull Case
+                                </div>
+                                <p class="case-text">COUPE (Compact Universal Photonic Engine) tape-out completed Q4'25. Sits inside CoWoS — the same packaging ecosystem that hosts every NVIDIA / AMD / Broadcom AI accelerator. Owns the packaging adjacency that competitors lack.</p>
+                            </div>
+                            <div class="case-box case-bear">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" /></svg>
+                                    Bear Case
+                                </div>
+                                <p class="case-text">Geopolitical tail risk (always). Photonics is rounding-error revenue near term.</p>
+                            </div>
+                        </div>
+
+                        <div class="company-target">
+                            <div class="target-item">
+                                <div class="target-label">Conviction</div>
+                                <div class="target-value accent">High</div>
+                            </div>
+                            <div class="target-item">
+                                <div class="target-label">Position Size</div>
+                                <div class="target-value">5-7%</div>
+                            </div>
+                        </div>
+
+                        <p style="font-size: var(--text-sm); color: var(--text-tertiary);"><strong style="color: var(--text-secondary);">Rationale:</strong> Owns the AI substrate and now owns the AI photonic package — core position regardless of CPO timing</p>
+                    </div>
+                </article>
+
+                <article class="company-card">
+                    <div class="company-header">
+                        <div class="company-identity">
+                            <span class="company-ticker">GFS</span>
+                            <button class="company-copy-btn" data-ticker="GFS" aria-label="Copy ticker">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                            </button>
+                        </div>
+                        <span class="company-rating rating-buy">Buy</span>
+                    </div>
+                    <div class="company-body">
+                        <div class="company-name">GlobalFoundries</div>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <span class="metric-value">$26B</span>
+                                <span class="metric-label">Market Cap</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">32.0</span>
+                                <span class="metric-label">P/E</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">+6%</span>
+                                <span class="metric-label">Rev Growth</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">26%</span>
+                                <span class="metric-label">Gross Margin</span>
+                            </div>
+                        </div>
+
+                        <div class="company-cases">
+                            <div class="case-box case-bull">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                                    Bull Case
+                                </div>
+                                <p class="case-text">Fotonix 45SPCLO is the most mature commercial silicon-photonics PDK — used by Cisco/Acacia, Nvidia LinkX, Ranovus, Ayar Labs. CHIPS Act money funds Malta NY fab expansion specifically for photonics. Pure-play PIC foundry beneficiary.</p>
+                            </div>
+                            <div class="case-box case-bear">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" /></svg>
+                                    Bear Case
+                                </div>
+                                <p class="case-text">Trades at a premium to its trailing fundamentals. Mature-node weakness in handsets / industrial drags. Photonics ramp is back-half-loaded.</p>
+                            </div>
+                        </div>
+
+                        <div class="company-target">
+                            <div class="target-item">
+                                <div class="target-label">Conviction</div>
+                                <div class="target-value accent">Medium-High</div>
+                            </div>
+                            <div class="target-item">
+                                <div class="target-label">Position Size</div>
+                                <div class="target-value">3-5%</div>
+                            </div>
+                        </div>
+
+                        <p style="font-size: var(--text-sm); color: var(--text-tertiary);"><strong style="color: var(--text-secondary);">Rationale:</strong> Highest-purity listed PIC-foundry torque; cyclical floor + photonics call option</p>
+                    </div>
+                </article>
+
+                <article class="company-card">
+                    <div class="company-header">
+                        <div class="company-identity">
+                            <span class="company-ticker">INTC</span>
+                            <button class="company-copy-btn" data-ticker="INTC" aria-label="Copy ticker">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                            </button>
+                        </div>
+                        <span class="company-rating rating-hold">Hold</span>
+                    </div>
+                    <div class="company-body">
+                        <div class="company-name">Intel</div>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <span class="metric-value">$110B</span>
+                                <span class="metric-label">Market Cap</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">N/M</span>
+                                <span class="metric-label">P/E</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">+2%</span>
+                                <span class="metric-label">Rev Growth</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">38%</span>
+                                <span class="metric-label">Gross Margin</span>
+                            </div>
+                        </div>
+
+                        <div class="company-cases">
+                            <div class="case-box case-bull">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                                    Bull Case
+                                </div>
+                                <p class="case-text">Best-in-class hybrid-bonded III-V-on-silicon laser integration (the OG silicon-photonics IP). Persistent rumors of a photonics spin-out / IPO of the optical I/O business in 2026-27 — large unmodeled value crystallization.</p>
+                            </div>
+                            <div class="case-box case-bear">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" /></svg>
+                                    Bear Case
+                                </div>
+                                <p class="case-text">Foundry strategy still unproven. Burning cash. Photonics IP is a small asset inside a struggling consolidated entity.</p>
+                            </div>
+                        </div>
+
+                        <div class="company-target">
+                            <div class="target-item">
+                                <div class="target-label">Conviction</div>
+                                <div class="target-value accent">Medium</div>
+                            </div>
+                            <div class="target-item">
+                                <div class="target-label">Position Size</div>
+                                <div class="target-value">1-2%</div>
+                            </div>
+                        </div>
+
+                        <p style="font-size: var(--text-sm); color: var(--text-tertiary);"><strong style="color: var(--text-secondary);">Rationale:</strong> Optionality trade on a photonics carve-out; not a long-term core</p>
+                    </div>
+                </article>
+
+                <article class="company-card">
+                    <div class="company-header">
+                        <div class="company-identity">
+                            <span class="company-ticker">TSEM</span>
+                            <button class="company-copy-btn" data-ticker="TSEM" aria-label="Copy ticker">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                            </button>
+                        </div>
+                        <span class="company-rating rating-buy">Buy</span>
+                    </div>
+                    <div class="company-body">
+                        <div class="company-name">Tower Semiconductor</div>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <span class="metric-value">$5.5B</span>
+                                <span class="metric-label">Market Cap</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">22.0</span>
+                                <span class="metric-label">P/E</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">+12%</span>
+                                <span class="metric-label">Rev Growth</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">27%</span>
+                                <span class="metric-label">Gross Margin</span>
+                            </div>
+                        </div>
+
+                        <div class="company-cases">
+                            <div class="case-box case-bull">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                                    Bull Case
+                                </div>
+                                <p class="case-text">Niche silicon-photonics PDK serving Lumentum, II-VI/Coherent, several CPO startups. Smaller, more nimble, picks up overflow when GF capacity tightens.</p>
+                            </div>
+                            <div class="case-box case-bear">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" /></svg>
+                                    Bear Case
+                                </div>
+                                <p class="case-text">Sub-scale vs TSM/GF. Customer concentration risk.</p>
+                            </div>
+                        </div>
+
+                        <div class="company-target">
+                            <div class="target-item">
+                                <div class="target-label">Conviction</div>
+                                <div class="target-value accent">Medium</div>
+                            </div>
+                            <div class="target-item">
+                                <div class="target-label">Position Size</div>
+                                <div class="target-value">1-2%</div>
+                            </div>
+                        </div>
+
+                        <p style="font-size: var(--text-sm); color: var(--text-tertiary);"><strong style="color: var(--text-secondary);">Rationale:</strong> Small-cap foundry kicker</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Theme 3: Lasers & Light Sources -->
+        <section id="theme-3" class="theme-section">
+            <div class="theme-header">
+                <h2 class="theme-title">Lasers &amp; Light Sources</h2>
+                <p class="theme-thesis">Silicon doesn't lase. Every silicon photonic chip needs an external light source — DFB lasers, quantum-dot lasers, or remote pumped sources via fiber array. This is where Coherent and Lumentum print money, and where the BOM concentration is highest. CPO needs ~8-16 lasers per package — laser supply is the literal bottleneck.</p>
+            </div>
+
+            <div class="company-grid">
+
+                <article class="company-card">
+                    <div class="company-header">
+                        <div class="company-identity">
+                            <span class="company-ticker">COHR</span>
+                            <button class="company-copy-btn" data-ticker="COHR" aria-label="Copy ticker">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                            </button>
+                        </div>
+                        <span class="company-rating rating-buy">Buy</span>
+                    </div>
+                    <div class="company-body">
+                        <div class="company-name">Coherent Corp</div>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <span class="metric-value">$16B</span>
+                                <span class="metric-label">Market Cap</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">32.0</span>
+                                <span class="metric-label">P/E</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">+24%</span>
+                                <span class="metric-label">Rev Growth</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">37%</span>
+                                <span class="metric-label">Gross Margin</span>
+                            </div>
+                        </div>
+
+                        <div class="company-cases">
+                            <div class="case-box case-bull">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                                    Bull Case
+                                </div>
+                                <p class="case-text">Largest InP DFB laser house globally, vertically integrated from epi to package. Datacom segment growing 40%+ YoY on AI optics. Dominant 800G/1.6T transceiver share. CPO laser source incumbent.</p>
+                            </div>
+                            <div class="case-box case-bear">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" /></svg>
+                                    Bear Case
+                                </div>
+                                <p class="case-text">Debt load from II-VI merger still a drag. Margins below 2021 peak. Telecom segment cyclical.</p>
+                            </div>
+                        </div>
+
+                        <div class="company-target">
+                            <div class="target-item">
+                                <div class="target-label">Conviction</div>
+                                <div class="target-value accent">High</div>
+                            </div>
+                            <div class="target-item">
+                                <div class="target-label">Position Size</div>
+                                <div class="target-value">5-7%</div>
+                            </div>
+                        </div>
+
+                        <p style="font-size: var(--text-sm); color: var(--text-tertiary);"><strong style="color: var(--text-secondary);">Rationale:</strong> Best risk-adjusted core in the laser/transceiver theme</p>
+                    </div>
+                </article>
+
+                <article class="company-card">
+                    <div class="company-header">
+                        <div class="company-identity">
+                            <span class="company-ticker">LITE</span>
+                            <button class="company-copy-btn" data-ticker="LITE" aria-label="Copy ticker">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                            </button>
+                        </div>
+                        <span class="company-rating rating-buy">Buy</span>
+                    </div>
+                    <div class="company-body">
+                        <div class="company-name">Lumentum</div>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <span class="metric-value">$7.5B</span>
+                                <span class="metric-label">Market Cap</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">28.0</span>
+                                <span class="metric-label">P/E</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">+30%</span>
+                                <span class="metric-label">Rev Growth</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">32%</span>
+                                <span class="metric-label">Gross Margin</span>
+                            </div>
+                        </div>
+
+                        <div class="company-cases">
+                            <div class="case-box case-bull">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                                    Bull Case
+                                </div>
+                                <p class="case-text">Direct second-source to Coherent on InP lasers. Cloud Light acquisition gives in-house transceiver assembly. 1.6T qualified at multiple hyperscalers Q1'26.</p>
+                            </div>
+                            <div class="case-box case-bear">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" /></svg>
+                                    Bear Case
+                                </div>
+                                <p class="case-text">Telecom + 3D-sensing legacy still drag mix. Lower scale = thinner margin cushion than COHR.</p>
+                            </div>
+                        </div>
+
+                        <div class="company-target">
+                            <div class="target-item">
+                                <div class="target-label">Conviction</div>
+                                <div class="target-value accent">Medium-High</div>
+                            </div>
+                            <div class="target-item">
+                                <div class="target-label">Position Size</div>
+                                <div class="target-value">3-5%</div>
+                            </div>
+                        </div>
+
+                        <p style="font-size: var(--text-sm); color: var(--text-tertiary);"><strong style="color: var(--text-secondary);">Rationale:</strong> Higher-torque sibling to COHR</p>
+                    </div>
+                </article>
+
+                <article class="company-card">
+                    <div class="company-header">
+                        <div class="company-identity">
+                            <span class="company-ticker">IIVI</span>
+                            <button class="company-copy-btn" data-ticker="IIVI" aria-label="Copy ticker">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                            </button>
+                        </div>
+                        <span class="company-rating rating-hold">Hold</span>
+                    </div>
+                    <div class="company-body">
+                        <div class="company-name">(merged into COHR — see above)</div>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <span class="metric-value">N/A</span>
+                                <span class="metric-label">Market Cap</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">N/A</span>
+                                <span class="metric-label">P/E</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">N/A</span>
+                                <span class="metric-label">Rev Growth</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">N/A</span>
+                                <span class="metric-label">Gross Margin</span>
+                            </div>
+                        </div>
+
+                        <div class="company-cases">
+                            <div class="case-box case-bull">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                                    Bull Case
+                                </div>
+                                <p class="case-text">Listed for completeness — II-VI is the predecessor to COHR; its InP wafer / SiC laser IP is now inside Coherent.</p>
+                            </div>
+                            <div class="case-box case-bear">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" /></svg>
+                                    Bear Case
+                                </div>
+                                <p class="case-text">Use COHR ticker for exposure.</p>
+                            </div>
+                        </div>
+
+                        <div class="company-target">
+                            <div class="target-item">
+                                <div class="target-label">Conviction</div>
+                                <div class="target-value accent">Low-Medium</div>
+                            </div>
+                            <div class="target-item">
+                                <div class="target-label">Position Size</div>
+                                <div class="target-value">0%</div>
+                            </div>
+                        </div>
+
+                        <p style="font-size: var(--text-sm); color: var(--text-tertiary);"><strong style="color: var(--text-secondary);">Rationale:</strong> Reference entry only</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Theme 4: DSP, SerDes & Optical Networking Silicon -->
+        <section id="theme-4" class="theme-section">
+            <div class="theme-header">
+                <h2 class="theme-title">DSP, SerDes &amp; Optical Networking Silicon</h2>
+                <p class="theme-thesis">Optics still need electronics — to drive modulators, recover clocks, and convert SerDes lanes. Marvell and Broadcom dominate the merchant DSP and switch silicon that sits next to (and eventually inside) the photonic engine. This is where the largest dollar concentration is, and where CPO either disintermediates or transforms the business model.</p>
+            </div>
+
+            <div class="company-grid">
+
+                <article class="company-card">
+                    <div class="company-header">
+                        <div class="company-identity">
+                            <span class="company-ticker">AVGO</span>
+                            <button class="company-copy-btn" data-ticker="AVGO" aria-label="Copy ticker">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                            </button>
+                        </div>
+                        <span class="company-rating rating-buy">Buy</span>
+                    </div>
+                    <div class="company-body">
+                        <div class="company-name">Broadcom</div>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <span class="metric-value">$1.4T</span>
+                                <span class="metric-label">Market Cap</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">38.0</span>
+                                <span class="metric-label">P/E</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">+44%</span>
+                                <span class="metric-label">Rev Growth</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">63%</span>
+                                <span class="metric-label">Gross Margin</span>
+                            </div>
+                        </div>
+
+                        <div class="company-cases">
+                            <div class="case-box case-bull">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                                    Bull Case
+                                </div>
+                                <p class="case-text">Tomahawk 6 (102.4T) shipping, Tomahawk Ultra in design-in. CPO switch reference designs co-developed with TSMC COUPE. ASIC business (Google TPU, Meta MTIA) is the second engine. Owns more optical-adjacent silicon TAM than anyone.</p>
+                            </div>
+                            <div class="case-box case-bear">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" /></svg>
+                                    Bear Case
+                                </div>
+                                <p class="case-text">Multiple priced for perfection. ASIC concentration risk. CPO cannibalises some pluggable DSP revenue.</p>
+                            </div>
+                        </div>
+
+                        <div class="company-target">
+                            <div class="target-item">
+                                <div class="target-label">Conviction</div>
+                                <div class="target-value accent">High</div>
+                            </div>
+                            <div class="target-item">
+                                <div class="target-label">Position Size</div>
+                                <div class="target-value">5-7%</div>
+                            </div>
+                        </div>
+
+                        <p style="font-size: var(--text-sm); color: var(--text-tertiary);"><strong style="color: var(--text-secondary);">Rationale:</strong> Core AI silicon position; CPO is incremental, not existential</p>
+                    </div>
+                </article>
+
+                <article class="company-card">
+                    <div class="company-header">
+                        <div class="company-identity">
+                            <span class="company-ticker">MRVL</span>
+                            <button class="company-copy-btn" data-ticker="MRVL" aria-label="Copy ticker">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                            </button>
+                        </div>
+                        <span class="company-rating rating-buy">Buy</span>
+                    </div>
+                    <div class="company-body">
+                        <div class="company-name">Marvell Technology</div>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <span class="metric-value">$72B</span>
+                                <span class="metric-label">Market Cap</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">44.0</span>
+                                <span class="metric-label">P/E</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">+38%</span>
+                                <span class="metric-label">Rev Growth</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">47%</span>
+                                <span class="metric-label">Gross Margin</span>
+                            </div>
+                        </div>
+
+                        <div class="company-cases">
+                            <div class="case-box case-bull">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                                    Bull Case
+                                </div>
+                                <p class="case-text">Inphi acquisition gives the leading PAM4 DSP franchise — 3nm 1.6T DSP shipping. Co-packaged optics roadmap with announced Aquila CPO platform. Custom ASIC win at Amazon Trainium2.</p>
+                            </div>
+                            <div class="case-box case-bear">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" /></svg>
+                                    Bear Case
+                                </div>
+                                <p class="case-text">Highest near-term torque also means highest beta. CPO timing slip would compress narrative more than for AVGO.</p>
+                            </div>
+                        </div>
+
+                        <div class="company-target">
+                            <div class="target-item">
+                                <div class="target-label">Conviction</div>
+                                <div class="target-value accent">Medium-High</div>
+                            </div>
+                            <div class="target-item">
+                                <div class="target-label">Position Size</div>
+                                <div class="target-value">4-5%</div>
+                            </div>
+                        </div>
+
+                        <p style="font-size: var(--text-sm); color: var(--text-tertiary);"><strong style="color: var(--text-secondary);">Rationale:</strong> Highest pure-play AI optical-silicon torque among large-caps</p>
+                    </div>
+                </article>
+
+                <article class="company-card">
+                    <div class="company-header">
+                        <div class="company-identity">
+                            <span class="company-ticker">CRDO</span>
+                            <button class="company-copy-btn" data-ticker="CRDO" aria-label="Copy ticker">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                            </button>
+                        </div>
+                        <span class="company-rating rating-speculative">Speculative</span>
+                    </div>
+                    <div class="company-body">
+                        <div class="company-name">Credo Technology</div>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <span class="metric-value">$8B</span>
+                                <span class="metric-label">Market Cap</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">85.0</span>
+                                <span class="metric-label">P/E</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">+95%</span>
+                                <span class="metric-label">Rev Growth</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">65%</span>
+                                <span class="metric-label">Gross Margin</span>
+                            </div>
+                        </div>
+
+                        <div class="company-cases">
+                            <div class="case-box case-bull">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                                    Bull Case
+                                </div>
+                                <p class="case-text">AECs (active electrical cables) bridge the gap before CPO matures — explosive AEC adoption at AWS / Microsoft. Optical DSP roadmap. Small-cap with hyperscaler design wins.</p>
+                            </div>
+                            <div class="case-box case-bear">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" /></svg>
+                                    Bear Case
+                                </div>
+                                <p class="case-text">Valuation rich on any miss. Customer concentration (top-2 ~70% of revenue). AEC is a transitional product.</p>
+                            </div>
+                        </div>
+
+                        <div class="company-target">
+                            <div class="target-item">
+                                <div class="target-label">Conviction</div>
+                                <div class="target-value accent">Medium</div>
+                            </div>
+                            <div class="target-item">
+                                <div class="target-label">Position Size</div>
+                                <div class="target-value">2-3%</div>
+                            </div>
+                        </div>
+
+                        <p style="font-size: var(--text-sm); color: var(--text-tertiary);"><strong style="color: var(--text-secondary);">Rationale:</strong> Small-cap optical-bridge play; size for binary outcomes</p>
+                    </div>
+                </article>
+
+                <article class="company-card">
+                    <div class="company-header">
+                        <div class="company-identity">
+                            <span class="company-ticker">MTSI</span>
+                            <button class="company-copy-btn" data-ticker="MTSI" aria-label="Copy ticker">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                            </button>
+                        </div>
+                        <span class="company-rating rating-buy">Buy</span>
+                    </div>
+                    <div class="company-body">
+                        <div class="company-name">MACOM Technology</div>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <span class="metric-value">$10B</span>
+                                <span class="metric-label">Market Cap</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">55.0</span>
+                                <span class="metric-label">P/E</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">+22%</span>
+                                <span class="metric-label">Rev Growth</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">58%</span>
+                                <span class="metric-label">Gross Margin</span>
+                            </div>
+                        </div>
+
+                        <div class="company-cases">
+                            <div class="case-box case-bull">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                                    Bull Case
+                                </div>
+                                <p class="case-text">Acquired Wolfspeed RF + Linearizer. Owns InP HBT process — required for 200G/lane optical drivers and TIAs. The 'analog photonics' play.</p>
+                            </div>
+                            <div class="case-box case-bear">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" /></svg>
+                                    Bear Case
+                                </div>
+                                <p class="case-text">Smaller scale, less hyperscaler direct exposure than AVGO/MRVL.</p>
+                            </div>
+                        </div>
+
+                        <div class="company-target">
+                            <div class="target-item">
+                                <div class="target-label">Conviction</div>
+                                <div class="target-value accent">Medium</div>
+                            </div>
+                            <div class="target-item">
+                                <div class="target-label">Position Size</div>
+                                <div class="target-value">1-2%</div>
+                            </div>
+                        </div>
+
+                        <p style="font-size: var(--text-sm); color: var(--text-tertiary);"><strong style="color: var(--text-secondary);">Rationale:</strong> Niche analog optical exposure; complements AVGO/MRVL</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Theme 5: Transceivers, Modules & Packaging -->
+        <section id="theme-5" class="theme-section">
+            <div class="theme-header">
+                <h2 class="theme-title">Transceivers, Modules &amp; Packaging</h2>
+                <p class="theme-thesis">Where the photons meet the fiber. Fabrinet does the assembly nobody else can do at scale, Ciena owns coherent telecom, and Amkor / ASE own the advanced packaging required for CPO co-package. The 1.6T pluggable cycle is happening NOW (2026 ramp), CPO is the 2027-28 follow-on.</p>
+            </div>
+
+            <div class="company-grid">
+
+                <article class="company-card">
+                    <div class="company-header">
+                        <div class="company-identity">
+                            <span class="company-ticker">FN</span>
+                            <button class="company-copy-btn" data-ticker="FN" aria-label="Copy ticker">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                            </button>
+                        </div>
+                        <span class="company-rating rating-buy">Buy</span>
+                    </div>
+                    <div class="company-body">
+                        <div class="company-name">Fabrinet</div>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <span class="metric-value">$11B</span>
+                                <span class="metric-label">Market Cap</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">26.0</span>
+                                <span class="metric-label">P/E</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">+19%</span>
+                                <span class="metric-label">Rev Growth</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">12%</span>
+                                <span class="metric-label">Gross Margin</span>
+                            </div>
+                        </div>
+
+                        <div class="company-cases">
+                            <div class="case-box case-bull">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                                    Bull Case
+                                </div>
+                                <p class="case-text">Builds the optical modules for NVIDIA InfiniBand and Spectrum-X, Cisco, Ciena. Thailand-based optics manufacturing scale with no real competitor at this volume. Direct CPO module assembly partner for NVDA.</p>
+                            </div>
+                            <div class="case-box case-bear">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" /></svg>
+                                    Bear Case
+                                </div>
+                                <p class="case-text">Customer concentration (NVDA + Cisco). Margin profile is contract-manufacturing thin. China optics exposure.</p>
+                            </div>
+                        </div>
+
+                        <div class="company-target">
+                            <div class="target-item">
+                                <div class="target-label">Conviction</div>
+                                <div class="target-value accent">Medium-High</div>
+                            </div>
+                            <div class="target-item">
+                                <div class="target-label">Position Size</div>
+                                <div class="target-value">4-5%</div>
+                            </div>
+                        </div>
+
+                        <p style="font-size: var(--text-sm); color: var(--text-tertiary);"><strong style="color: var(--text-secondary);">Rationale:</strong> Highest-purity NVIDIA optical BOM exposure outside NVDA itself</p>
+                    </div>
+                </article>
+
+                <article class="company-card">
+                    <div class="company-header">
+                        <div class="company-identity">
+                            <span class="company-ticker">CIEN</span>
+                            <button class="company-copy-btn" data-ticker="CIEN" aria-label="Copy ticker">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                            </button>
+                        </div>
+                        <span class="company-rating rating-buy">Buy</span>
+                    </div>
+                    <div class="company-body">
+                        <div class="company-name">Ciena</div>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <span class="metric-value">$11B</span>
+                                <span class="metric-label">Market Cap</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">30.0</span>
+                                <span class="metric-label">P/E</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">+18%</span>
+                                <span class="metric-label">Rev Growth</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">44%</span>
+                                <span class="metric-label">Gross Margin</span>
+                            </div>
+                        </div>
+
+                        <div class="company-cases">
+                            <div class="case-box case-bull">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                                    Bull Case
+                                </div>
+                                <p class="case-text">WaveLogic 6 (1.6T coherent) ramping at hyperscaler DCI. Owns the long-haul + metro coherent franchise. Submarine + DCI are AI-load beneficiaries.</p>
+                            </div>
+                            <div class="case-box case-bear">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" /></svg>
+                                    Bear Case
+                                </div>
+                                <p class="case-text">Service-provider segment lumpy. Less pure-play AI than COHR/LITE.</p>
+                            </div>
+                        </div>
+
+                        <div class="company-target">
+                            <div class="target-item">
+                                <div class="target-label">Conviction</div>
+                                <div class="target-value accent">Medium</div>
+                            </div>
+                            <div class="target-item">
+                                <div class="target-label">Position Size</div>
+                                <div class="target-value">2-3%</div>
+                            </div>
+                        </div>
+
+                        <p style="font-size: var(--text-sm); color: var(--text-tertiary);"><strong style="color: var(--text-secondary);">Rationale:</strong> DCI / coherent kicker</p>
+                    </div>
+                </article>
+
+                <article class="company-card">
+                    <div class="company-header">
+                        <div class="company-identity">
+                            <span class="company-ticker">AMKR</span>
+                            <button class="company-copy-btn" data-ticker="AMKR" aria-label="Copy ticker">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                            </button>
+                        </div>
+                        <span class="company-rating rating-buy">Buy</span>
+                    </div>
+                    <div class="company-body">
+                        <div class="company-name">Amkor Technology</div>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <span class="metric-value">$8B</span>
+                                <span class="metric-label">Market Cap</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">20.0</span>
+                                <span class="metric-label">P/E</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">+11%</span>
+                                <span class="metric-label">Rev Growth</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">16%</span>
+                                <span class="metric-label">Gross Margin</span>
+                            </div>
+                        </div>
+
+                        <div class="company-cases">
+                            <div class="case-box case-bull">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                                    Bull Case
+                                </div>
+                                <p class="case-text">Advanced packaging for CPO requires hermetic, fiber-attach-capable OSAT. Amkor's Vietnam V2 fab is built for it. CHIPS Act money. TSMC overflow.</p>
+                            </div>
+                            <div class="case-box case-bear">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" /></svg>
+                                    Bear Case
+                                </div>
+                                <p class="case-text">Thin OSAT margins. Capex-heavy ramp.</p>
+                            </div>
+                        </div>
+
+                        <div class="company-target">
+                            <div class="target-item">
+                                <div class="target-label">Conviction</div>
+                                <div class="target-value accent">Medium</div>
+                            </div>
+                            <div class="target-item">
+                                <div class="target-label">Position Size</div>
+                                <div class="target-value">2-3%</div>
+                            </div>
+                        </div>
+
+                        <p style="font-size: var(--text-sm); color: var(--text-tertiary);"><strong style="color: var(--text-secondary);">Rationale:</strong> Picks-and-shovels on CPO packaging</p>
+                    </div>
+                </article>
+
+                <article class="company-card">
+                    <div class="company-header">
+                        <div class="company-identity">
+                            <span class="company-ticker">AEHR</span>
+                            <button class="company-copy-btn" data-ticker="AEHR" aria-label="Copy ticker">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                            </button>
+                        </div>
+                        <span class="company-rating rating-speculative">Speculative</span>
+                    </div>
+                    <div class="company-body">
+                        <div class="company-name">Aehr Test Systems</div>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <span class="metric-value">$0.5B</span>
+                                <span class="metric-label">Market Cap</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">N/M</span>
+                                <span class="metric-label">P/E</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">-15%</span>
+                                <span class="metric-label">Rev Growth</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">32%</span>
+                                <span class="metric-label">Gross Margin</span>
+                            </div>
+                        </div>
+
+                        <div class="company-cases">
+                            <div class="case-box case-bull">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                                    Bull Case
+                                </div>
+                                <p class="case-text">Wafer-level burn-in for silicon photonics — only credible production-test platform for PIC reliability screening. Strategic small-cap on a CPO yield bet.</p>
+                            </div>
+                            <div class="case-box case-bear">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" /></svg>
+                                    Bear Case
+                                </div>
+                                <p class="case-text">Revenue collapse after EV/SiC bust. Photonics ramp unproven. Cash burn, dilution risk.</p>
+                            </div>
+                        </div>
+
+                        <div class="company-target">
+                            <div class="target-item">
+                                <div class="target-label">Conviction</div>
+                                <div class="target-value accent">Low-Medium</div>
+                            </div>
+                            <div class="target-item">
+                                <div class="target-label">Position Size</div>
+                                <div class="target-value">0.5-1%</div>
+                            </div>
+                        </div>
+
+                        <p style="font-size: var(--text-sm); color: var(--text-tertiary);"><strong style="color: var(--text-secondary);">Rationale:</strong> Lottery-ticket size only — high binary outcome</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Theme 6: Pure-Play Photonic Compute & Materials -->
+        <section id="theme-6" class="theme-section">
+            <div class="theme-header">
+                <h2 class="theme-title">Pure-Play Photonic Compute &amp; Materials</h2>
+                <p class="theme-thesis">The moonshot tier. Photonic compute (matrix-multiply in light) and novel materials (electro-optic polymers, thin-film LiNbO3) could reset the entire stack — or burn out. The serious privates (Lightmatter, Ayar Labs, PsiQuantum) aren't listed yet. The listed names are speculative; treat as a basket.</p>
+            </div>
+
+            <div class="company-grid">
+
+                <article class="company-card">
+                    <div class="company-header">
+                        <div class="company-identity">
+                            <span class="company-ticker">POET</span>
+                            <button class="company-copy-btn" data-ticker="POET" aria-label="Copy ticker">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                            </button>
+                        </div>
+                        <span class="company-rating rating-speculative">Speculative</span>
+                    </div>
+                    <div class="company-body">
+                        <div class="company-name">POET Technologies</div>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <span class="metric-value">$0.4B</span>
+                                <span class="metric-label">Market Cap</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">N/M</span>
+                                <span class="metric-label">P/E</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">N/M</span>
+                                <span class="metric-label">Rev Growth</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">N/M</span>
+                                <span class="metric-label">Gross Margin</span>
+                            </div>
+                        </div>
+
+                        <div class="company-cases">
+                            <div class="case-box case-bull">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                                    Bull Case
+                                </div>
+                                <p class="case-text">Optical Interposer platform — chiplet-style integration of lasers, modulators, and DSP onto a single passive substrate. Multiple 800G/1.6T design wins announced; Foxconn JV gives manufacturing scale.</p>
+                            </div>
+                            <div class="case-box case-bear">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" /></svg>
+                                    Bear Case
+                                </div>
+                                <p class="case-text">Pre-revenue. History of milestone slips. Dilution-funded. Small float = high vol.</p>
+                            </div>
+                        </div>
+
+                        <div class="company-target">
+                            <div class="target-item">
+                                <div class="target-label">Conviction</div>
+                                <div class="target-value accent">Low-Medium</div>
+                            </div>
+                            <div class="target-item">
+                                <div class="target-label">Position Size</div>
+                                <div class="target-value">0.5-1%</div>
+                            </div>
+                        </div>
+
+                        <p style="font-size: var(--text-sm); color: var(--text-tertiary);"><strong style="color: var(--text-secondary);">Rationale:</strong> Basket-level position on photonic-interposer call option</p>
+                    </div>
+                </article>
+
+                <article class="company-card">
+                    <div class="company-header">
+                        <div class="company-identity">
+                            <span class="company-ticker">LWLG</span>
+                            <button class="company-copy-btn" data-ticker="LWLG" aria-label="Copy ticker">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                            </button>
+                        </div>
+                        <span class="company-rating rating-speculative">Speculative</span>
+                    </div>
+                    <div class="company-body">
+                        <div class="company-name">Lightwave Logic</div>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <span class="metric-value">$0.3B</span>
+                                <span class="metric-label">Market Cap</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">N/M</span>
+                                <span class="metric-label">P/E</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">N/M</span>
+                                <span class="metric-label">Rev Growth</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">N/M</span>
+                                <span class="metric-label">Gross Margin</span>
+                            </div>
+                        </div>
+
+                        <div class="company-cases">
+                            <div class="case-box case-bull">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                                    Bull Case
+                                </div>
+                                <p class="case-text">Electro-optic polymer modulator IP — theoretically 200+ GHz bandwidth at lower drive voltage than LiNbO3. Polaryx joint-development with major foundry.</p>
+                            </div>
+                            <div class="case-box case-bear">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" /></svg>
+                                    Bear Case
+                                </div>
+                                <p class="case-text">Decade of 'almost commercial.' No revenue. Reliability data thin.</p>
+                            </div>
+                        </div>
+
+                        <div class="company-target">
+                            <div class="target-item">
+                                <div class="target-label">Conviction</div>
+                                <div class="target-value accent">Low-Medium</div>
+                            </div>
+                            <div class="target-item">
+                                <div class="target-label">Position Size</div>
+                                <div class="target-value">0.25-0.5%</div>
+                            </div>
+                        </div>
+
+                        <p style="font-size: var(--text-sm); color: var(--text-tertiary);"><strong style="color: var(--text-secondary);">Rationale:</strong> Lottery ticket on a materials breakthrough</p>
+                    </div>
+                </article>
+
+                <article class="company-card">
+                    <div class="company-header">
+                        <div class="company-identity">
+                            <span class="company-ticker">IPGP</span>
+                            <button class="company-copy-btn" data-ticker="IPGP" aria-label="Copy ticker">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                            </button>
+                        </div>
+                        <span class="company-rating rating-hold">Hold</span>
+                    </div>
+                    <div class="company-body">
+                        <div class="company-name">IPG Photonics</div>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <span class="metric-value">$3B</span>
+                                <span class="metric-label">Market Cap</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">N/M</span>
+                                <span class="metric-label">P/E</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">-22%</span>
+                                <span class="metric-label">Rev Growth</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">32%</span>
+                                <span class="metric-label">Gross Margin</span>
+                            </div>
+                        </div>
+
+                        <div class="company-cases">
+                            <div class="case-box case-bull">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                                    Bull Case
+                                </div>
+                                <p class="case-text">Vertically integrated fiber-laser leader. Russia/Ukraine reset complete. Industrial laser cycle bottoming.</p>
+                            </div>
+                            <div class="case-box case-bear">
+                                <div class="case-header">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" /></svg>
+                                    Bear Case
+                                </div>
+                                <p class="case-text">Industrial, not datacom. Cycle exposure. Limited AI-photonics tailwind.</p>
+                            </div>
+                        </div>
+
+                        <div class="company-target">
+                            <div class="target-item">
+                                <div class="target-label">Conviction</div>
+                                <div class="target-value accent">Low-Medium</div>
+                            </div>
+                            <div class="target-item">
+                                <div class="target-label">Position Size</div>
+                                <div class="target-value">0-1%</div>
+                            </div>
+                        </div>
+
+                        <p style="font-size: var(--text-sm); color: var(--text-tertiary);"><strong style="color: var(--text-secondary);">Rationale:</strong> Industrial photonics; not the AI play but a related industry barometer</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Position Sizing Summary -->
+        <section class="theme-section">
+            <div class="container-narrow" style="margin: 0 auto;">
+                <h2 style="font-size: var(--text-2xl); margin-bottom: var(--space-6);">Position Sizing Summary</h2>
+
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; font-size: var(--text-sm);">
+                        <thead>
+                            <tr style="border-bottom: 2px solid var(--border-primary);">
+                                <th style="text-align: left; padding: var(--space-3); color: var(--text-tertiary); font-weight: 600;">Ticker</th>
+                                <th style="text-align: left; padding: var(--space-3); color: var(--text-tertiary); font-weight: 600;">Company</th>
+                                <th style="text-align: center; padding: var(--space-3); color: var(--text-tertiary); font-weight: 600;">Rating</th>
+                                <th style="text-align: right; padding: var(--space-3); color: var(--text-tertiary); font-weight: 600;">Mkt Cap</th>
+                                <th style="text-align: right; padding: var(--space-3); color: var(--text-tertiary); font-weight: 600;">P/E</th>
+                                <th style="text-align: center; padding: var(--space-3); color: var(--text-tertiary); font-weight: 600;">Position</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr style=" border-bottom: 1px solid var(--border-primary);">
+                                <td style="padding: var(--space-3); font-weight: 600; color: var(--accent-primary);">SNPS</td>
+                                <td style="padding: var(--space-3); color: var(--text-secondary);">Synopsys</td>
+                                <td style="padding: var(--space-3); text-align: center;"><span class="company-rating rating-buy" style="font-size: var(--text-xs);">Buy</span></td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">$92B</td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">38.0</td>
+                                <td style="padding: var(--space-3); text-align: center; color: var(--text-primary); font-weight: 600;">3-4%</td>
+                            </tr>
+                            <tr style=" border-bottom: 1px solid var(--border-primary);">
+                                <td style="padding: var(--space-3); font-weight: 600; color: var(--accent-primary);">CDNS</td>
+                                <td style="padding: var(--space-3); color: var(--text-secondary);">Cadence Design Systems</td>
+                                <td style="padding: var(--space-3); text-align: center;"><span class="company-rating rating-buy" style="font-size: var(--text-xs);">Buy</span></td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">$84B</td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">42.0</td>
+                                <td style="padding: var(--space-3); text-align: center; color: var(--text-primary); font-weight: 600;">2-3%</td>
+                            </tr>
+                            <tr style=" border-bottom: 1px solid var(--border-primary);">
+                                <td style="padding: var(--space-3); font-weight: 600; color: var(--accent-primary);">KEYS</td>
+                                <td style="padding: var(--space-3); color: var(--text-secondary);">Keysight Technologies</td>
+                                <td style="padding: var(--space-3); text-align: center;"><span class="company-rating rating-buy" style="font-size: var(--text-xs);">Buy</span></td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">$30B</td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">26.5</td>
+                                <td style="padding: var(--space-3); text-align: center; color: var(--text-primary); font-weight: 600;">2-3%</td>
+                            </tr>
+                            <tr style=" border-bottom: 1px solid var(--border-primary);">
+                                <td style="padding: var(--space-3); font-weight: 600; color: var(--accent-primary);">TSM</td>
+                                <td style="padding: var(--space-3); color: var(--text-secondary);">Taiwan Semiconductor</td>
+                                <td style="padding: var(--space-3); text-align: center;"><span class="company-rating rating-buy" style="font-size: var(--text-xs);">Buy</span></td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">$1.05T</td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">27.0</td>
+                                <td style="padding: var(--space-3); text-align: center; color: var(--text-primary); font-weight: 600;">5-7%</td>
+                            </tr>
+                            <tr style=" border-bottom: 1px solid var(--border-primary);">
+                                <td style="padding: var(--space-3); font-weight: 600; color: var(--accent-primary);">GFS</td>
+                                <td style="padding: var(--space-3); color: var(--text-secondary);">GlobalFoundries</td>
+                                <td style="padding: var(--space-3); text-align: center;"><span class="company-rating rating-buy" style="font-size: var(--text-xs);">Buy</span></td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">$26B</td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">32.0</td>
+                                <td style="padding: var(--space-3); text-align: center; color: var(--text-primary); font-weight: 600;">3-5%</td>
+                            </tr>
+                            <tr style=" border-bottom: 1px solid var(--border-primary);">
+                                <td style="padding: var(--space-3); font-weight: 600; color: var(--accent-primary);">INTC</td>
+                                <td style="padding: var(--space-3); color: var(--text-secondary);">Intel</td>
+                                <td style="padding: var(--space-3); text-align: center;"><span class="company-rating rating-hold" style="font-size: var(--text-xs);">Hold</span></td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">$110B</td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">N/M</td>
+                                <td style="padding: var(--space-3); text-align: center; color: var(--text-primary); font-weight: 600;">1-2%</td>
+                            </tr>
+                            <tr style=" border-bottom: 1px solid var(--border-primary);">
+                                <td style="padding: var(--space-3); font-weight: 600; color: var(--accent-primary);">TSEM</td>
+                                <td style="padding: var(--space-3); color: var(--text-secondary);">Tower Semiconductor</td>
+                                <td style="padding: var(--space-3); text-align: center;"><span class="company-rating rating-buy" style="font-size: var(--text-xs);">Buy</span></td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">$5.5B</td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">22.0</td>
+                                <td style="padding: var(--space-3); text-align: center; color: var(--text-primary); font-weight: 600;">1-2%</td>
+                            </tr>
+                            <tr style=" border-bottom: 1px solid var(--border-primary);">
+                                <td style="padding: var(--space-3); font-weight: 600; color: var(--accent-primary);">COHR</td>
+                                <td style="padding: var(--space-3); color: var(--text-secondary);">Coherent Corp</td>
+                                <td style="padding: var(--space-3); text-align: center;"><span class="company-rating rating-buy" style="font-size: var(--text-xs);">Buy</span></td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">$16B</td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">32.0</td>
+                                <td style="padding: var(--space-3); text-align: center; color: var(--text-primary); font-weight: 600;">5-7%</td>
+                            </tr>
+                            <tr style=" border-bottom: 1px solid var(--border-primary);">
+                                <td style="padding: var(--space-3); font-weight: 600; color: var(--accent-primary);">LITE</td>
+                                <td style="padding: var(--space-3); color: var(--text-secondary);">Lumentum</td>
+                                <td style="padding: var(--space-3); text-align: center;"><span class="company-rating rating-buy" style="font-size: var(--text-xs);">Buy</span></td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">$7.5B</td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">28.0</td>
+                                <td style="padding: var(--space-3); text-align: center; color: var(--text-primary); font-weight: 600;">3-5%</td>
+                            </tr>
+                            <tr style=" border-bottom: 1px solid var(--border-primary);">
+                                <td style="padding: var(--space-3); font-weight: 600; color: var(--accent-primary);">IIVI</td>
+                                <td style="padding: var(--space-3); color: var(--text-secondary);">(merged into COHR — see above)</td>
+                                <td style="padding: var(--space-3); text-align: center;"><span class="company-rating rating-hold" style="font-size: var(--text-xs);">Hold</span></td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">N/A</td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">N/A</td>
+                                <td style="padding: var(--space-3); text-align: center; color: var(--text-primary); font-weight: 600;">0%</td>
+                            </tr>
+                            <tr style=" border-bottom: 1px solid var(--border-primary);">
+                                <td style="padding: var(--space-3); font-weight: 600; color: var(--accent-primary);">AVGO</td>
+                                <td style="padding: var(--space-3); color: var(--text-secondary);">Broadcom</td>
+                                <td style="padding: var(--space-3); text-align: center;"><span class="company-rating rating-buy" style="font-size: var(--text-xs);">Buy</span></td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">$1.4T</td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">38.0</td>
+                                <td style="padding: var(--space-3); text-align: center; color: var(--text-primary); font-weight: 600;">5-7%</td>
+                            </tr>
+                            <tr style=" border-bottom: 1px solid var(--border-primary);">
+                                <td style="padding: var(--space-3); font-weight: 600; color: var(--accent-primary);">MRVL</td>
+                                <td style="padding: var(--space-3); color: var(--text-secondary);">Marvell Technology</td>
+                                <td style="padding: var(--space-3); text-align: center;"><span class="company-rating rating-buy" style="font-size: var(--text-xs);">Buy</span></td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">$72B</td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">44.0</td>
+                                <td style="padding: var(--space-3); text-align: center; color: var(--text-primary); font-weight: 600;">4-5%</td>
+                            </tr>
+                            <tr style=" border-bottom: 1px solid var(--border-primary);">
+                                <td style="padding: var(--space-3); font-weight: 600; color: var(--accent-primary);">CRDO</td>
+                                <td style="padding: var(--space-3); color: var(--text-secondary);">Credo Technology</td>
+                                <td style="padding: var(--space-3); text-align: center;"><span class="company-rating rating-speculative" style="font-size: var(--text-xs);">Speculative</span></td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">$8B</td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">85.0</td>
+                                <td style="padding: var(--space-3); text-align: center; color: var(--text-primary); font-weight: 600;">2-3%</td>
+                            </tr>
+                            <tr style=" border-bottom: 1px solid var(--border-primary);">
+                                <td style="padding: var(--space-3); font-weight: 600; color: var(--accent-primary);">MTSI</td>
+                                <td style="padding: var(--space-3); color: var(--text-secondary);">MACOM Technology</td>
+                                <td style="padding: var(--space-3); text-align: center;"><span class="company-rating rating-buy" style="font-size: var(--text-xs);">Buy</span></td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">$10B</td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">55.0</td>
+                                <td style="padding: var(--space-3); text-align: center; color: var(--text-primary); font-weight: 600;">1-2%</td>
+                            </tr>
+                            <tr style=" border-bottom: 1px solid var(--border-primary);">
+                                <td style="padding: var(--space-3); font-weight: 600; color: var(--accent-primary);">FN</td>
+                                <td style="padding: var(--space-3); color: var(--text-secondary);">Fabrinet</td>
+                                <td style="padding: var(--space-3); text-align: center;"><span class="company-rating rating-buy" style="font-size: var(--text-xs);">Buy</span></td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">$11B</td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">26.0</td>
+                                <td style="padding: var(--space-3); text-align: center; color: var(--text-primary); font-weight: 600;">4-5%</td>
+                            </tr>
+                            <tr style=" border-bottom: 1px solid var(--border-primary);">
+                                <td style="padding: var(--space-3); font-weight: 600; color: var(--accent-primary);">CIEN</td>
+                                <td style="padding: var(--space-3); color: var(--text-secondary);">Ciena</td>
+                                <td style="padding: var(--space-3); text-align: center;"><span class="company-rating rating-buy" style="font-size: var(--text-xs);">Buy</span></td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">$11B</td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">30.0</td>
+                                <td style="padding: var(--space-3); text-align: center; color: var(--text-primary); font-weight: 600;">2-3%</td>
+                            </tr>
+                            <tr style=" border-bottom: 1px solid var(--border-primary);">
+                                <td style="padding: var(--space-3); font-weight: 600; color: var(--accent-primary);">AMKR</td>
+                                <td style="padding: var(--space-3); color: var(--text-secondary);">Amkor Technology</td>
+                                <td style="padding: var(--space-3); text-align: center;"><span class="company-rating rating-buy" style="font-size: var(--text-xs);">Buy</span></td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">$8B</td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">20.0</td>
+                                <td style="padding: var(--space-3); text-align: center; color: var(--text-primary); font-weight: 600;">2-3%</td>
+                            </tr>
+                            <tr style=" border-bottom: 1px solid var(--border-primary);">
+                                <td style="padding: var(--space-3); font-weight: 600; color: var(--accent-primary);">AEHR</td>
+                                <td style="padding: var(--space-3); color: var(--text-secondary);">Aehr Test Systems</td>
+                                <td style="padding: var(--space-3); text-align: center;"><span class="company-rating rating-speculative" style="font-size: var(--text-xs);">Speculative</span></td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">$0.5B</td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">N/M</td>
+                                <td style="padding: var(--space-3); text-align: center; color: var(--text-primary); font-weight: 600;">0.5-1%</td>
+                            </tr>
+                            <tr style=" border-bottom: 1px solid var(--border-primary);">
+                                <td style="padding: var(--space-3); font-weight: 600; color: var(--accent-primary);">POET</td>
+                                <td style="padding: var(--space-3); color: var(--text-secondary);">POET Technologies</td>
+                                <td style="padding: var(--space-3); text-align: center;"><span class="company-rating rating-speculative" style="font-size: var(--text-xs);">Speculative</span></td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">$0.4B</td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">N/M</td>
+                                <td style="padding: var(--space-3); text-align: center; color: var(--text-primary); font-weight: 600;">0.5-1%</td>
+                            </tr>
+                            <tr style=" border-bottom: 1px solid var(--border-primary);">
+                                <td style="padding: var(--space-3); font-weight: 600; color: var(--accent-primary);">LWLG</td>
+                                <td style="padding: var(--space-3); color: var(--text-secondary);">Lightwave Logic</td>
+                                <td style="padding: var(--space-3); text-align: center;"><span class="company-rating rating-speculative" style="font-size: var(--text-xs);">Speculative</span></td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">$0.3B</td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">N/M</td>
+                                <td style="padding: var(--space-3); text-align: center; color: var(--text-primary); font-weight: 600;">0.25-0.5%</td>
+                            </tr>
+                            <tr style="">
+                                <td style="padding: var(--space-3); font-weight: 600; color: var(--accent-primary);">IPGP</td>
+                                <td style="padding: var(--space-3); color: var(--text-secondary);">IPG Photonics</td>
+                                <td style="padding: var(--space-3); text-align: center;"><span class="company-rating rating-hold" style="font-size: var(--text-xs);">Hold</span></td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">$3B</td>
+                                <td style="padding: var(--space-3); text-align: right; color: var(--text-secondary);">N/M</td>
+                                <td style="padding: var(--space-3); text-align: center; color: var(--text-primary); font-weight: 600;">0-1%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Issue Navigation -->
+        <nav class="issue-navigation" aria-label="Issue navigation">
+            <a href="2026-04-25-nuclear-renaissance-smr-commercialization.html" class="nav-prev">
+                <span class="nav-label">← Previous Issue</span>
+                <span class="nav-title">Nuclear Renaissance — The SMR Commercialization Trade</span>
+            </a>
+            <a href="../archive.html" class="nav-next" style="opacity: 0.5; pointer-events: none;">
+                <span class="nav-label">Next Issue →</span>
+                <span class="nav-title">None</span>
+            </a>
+        </nav>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-mark">A</div>
+                        <span class="logo-text">Atoms <span>Over Bits</span></span>
+                    </div>
+                    <p class="footer-description">Weekly investment research on physical infrastructure businesses with software-like valuations.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Navigation</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="../index.html">Latest Issue</a></li>
+                        <li class="footer-link"><a href="../archive.html">Archive</a></li>
+                        <li class="footer-link"><a href="../themes.html">Themes</a></li>
+                        <li class="footer-link"><a href="../about.html">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="../sitemap.xml">Sitemap</a></li>
+                        <li class="footer-link"><a href="#" onclick="window.print(); return false;">Print Issue</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="../about.html#disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 Atoms Over Bits. Generated by Kimi Claw via OpenClaw.</p>
+                <p class="footer-disclaimer">Research for informational purposes only. Not investment advice.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

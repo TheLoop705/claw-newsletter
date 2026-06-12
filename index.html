@@ -474,11 +474,11 @@
         function parseAndDisplayDigest(content) {
             // Extract categories
             const categories = [];
-            const categoryRegex = /##\s+([^\n]+)/g;
+            const categoryRegex = /^##\s+([^\n]+)/gm;
             let match;
             while ((match = categoryRegex.exec(content)) !== null) {
                 const cat = match[1].trim();
-                if (cat !== 'TABLE OF CONTENTS') {
+                if (cat.toLowerCase() !== 'table of contents') {
                     categories.push(cat);
                 }
             }
@@ -493,7 +493,7 @@
             
             // Extract top stories (first 3)
             const stories = [];
-            const storyRegex = /###\s+([^\n]+)\n+\*\*Source:\*\*\s+([^\n]+)\n+\*\*URL:\*\*\s+[^\n]+\n+\*\*Summary:\*\*\s+([^\n]+)/g;
+            const storyRegex = /###\s+([^\n]+)\n+[-*]?\s*\*\*Source:\*\*\s+([^\n]+)\n+[-*]?\s*\*\*URL:\*\*\s+[^\n]+\n+[-*]?\s*\*\*Summary:\*\*\s+([^\n]+)/g;
             let storyMatch;
             while ((storyMatch = storyRegex.exec(content)) !== null && stories.length < 3) {
                 stories.push({
@@ -518,7 +518,7 @@
             }
             
             // Update source count
-            const sourceMatch = content.match(/Compiled from (\d+) sources/);
+            const sourceMatch = content.match(/\*\*Compiled from:\*\*\s+(\d+)/i) || content.match(/Compiled from\s+(\d+)\s+sources/i);
             if (sourceMatch) {
                 const sourcesEl = document.getElementById('digest-sources');
                 if (sourcesEl) sourcesEl.textContent = `${sourceMatch[1]} sources`;
